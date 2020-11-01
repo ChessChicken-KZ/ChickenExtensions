@@ -1,0 +1,18 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "kz.chesschicken.chickenextensions.mixin",
+  "compatibilityLevel": "JAVA_8",
+  "mixins": [
+    "CowMeatMixin",
+    "SheepMeatMixin",
+    "ChickenMeatMixin"
+  ],
+  "server": [
+  ],
+  "client": [
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

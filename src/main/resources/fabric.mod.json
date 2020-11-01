@@ -1,0 +1,34 @@
+{
+  "schemaVersion": 1,
+  "id": "chickenextensions",
+  "version": "${version}",
+
+  "name": "Chicken Extensions",
+  "description": "Random, cool, old aesthetic things!",
+  "authors": [
+    "ChessChicken"
+  ],
+  "contact": {
+    "issues": "https://github.com/minecraft-cursed-legacy/Example-Mod/issues",
+    "sources": "https://github.com/minecraft-cursed-legacy/Example-Mod"
+  },
+
+  "license": "MIT",
+  "icon": "assets/chickenextensions/icon.png",
+
+  "environment": "*",
+  "entrypoints": {
+    "stationmod": [
+      "kz.chesschicken.chickenextensions.ChickenMod"
+    ]
+  },
+  "mixins": [
+    "chickenextensions.mixins.json"
+  ],
+
+  "depends": {
+    "fabricloader": "*",
+    "minecraft": "1.0.0-beta.7.3",
+    "stationloader": "*"
+  }
+}
