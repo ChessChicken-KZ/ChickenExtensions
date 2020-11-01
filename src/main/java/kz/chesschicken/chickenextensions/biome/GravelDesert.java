@@ -1,7 +1,6 @@
 package kz.chesschicken.chickenextensions.biome;
 
 import net.minecraft.block.BlockBase;
-import net.minecraft.level.biome.Biome;
 import net.minecraft.level.biome.SparseBiome;
 
 public class GravelDesert extends SparseBiome {

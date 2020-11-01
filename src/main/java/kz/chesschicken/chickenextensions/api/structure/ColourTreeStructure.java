@@ -6,7 +6,6 @@ import net.minecraft.block.material.Material;
 import net.minecraft.level.Level;
 import net.minecraft.level.structure.Structure;
 
-import javax.swing.*;
 import java.util.Random;
 
 public class ColourTreeStructure extends Structure {

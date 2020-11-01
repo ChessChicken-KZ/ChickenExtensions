@@ -18,7 +18,7 @@ public class SoulBrickDungeon extends Structure {
                 {
                     int lol = rand.nextInt(5);
                     for(int i2 = 0; i2<lol;i2++)
-                        level.setTileWithMetadata(x+plusminusget(x1), y+i2, z+plusminusget(z1), RegisteringClass.blockCouple1.id, rand.nextBoolean() ? 0 : 1);
+                        level.setTileWithMetadata(x+getPlusMinus(x1), y+i2, z+getPlusMinus(z1), RegisteringClass.blockCouple1.id, rand.nextBoolean() ? 0 : 1);
                 }
             }
             return true;
@@ -26,7 +26,7 @@ public class SoulBrickDungeon extends Structure {
         return false;
     }
 
-    private Integer plusminusget(int i)
+    private Integer getPlusMinus(int i)
     {
         if((new Random()).nextBoolean())
             return i;

@@ -16,10 +16,8 @@ import kz.chesschicken.chickenextensions.item.mobcatcher.ItemMobCatcher;
 import kz.chesschicken.chickenextensions.item.goldenegg.GoldenEgg;
 import net.minecraft.block.BlockBase;
 import net.minecraft.entity.EntityBase;
-import net.minecraft.entity.monster.ZombiePigman;
 import net.minecraft.item.ItemBase;
 import net.minecraft.item.food.FoodBase;
-import net.modificationstation.stationloader.api.common.StationLoader;
 import net.modificationstation.stationloader.api.common.config.Category;
 import net.modificationstation.stationloader.api.common.config.Configuration;
 import net.modificationstation.stationloader.api.common.config.Property;
@@ -259,6 +257,10 @@ Property blockChandelierID = blockIdsCategory.getProperty("blockChandelier", 160
 
     @Override
     public void registerEntities(TriConsumer<Class<? extends EntityBase>, String, Integer> triConsumer) {
-        triConsumer.accept(BloodyPigman.class, "BloodPigman", 20);
+        Configuration config = ChickenMod.INSTANCE.getDefaultConfig();
+        Category mobIDsCategory = config.getCategory("Mob IDs");
+        Property bloodPigmanID = mobIDsCategory.getProperty("bloodPigmanID", 20);
+        triConsumer.accept(BloodyPigman.class, "BloodPigman", bloodPigmanID.getIntValue());
+        config.save();
     }
 }
