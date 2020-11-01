@@ -22,13 +22,9 @@ public class BlockCeilingLamp extends BlockBase {
         return super.canPlaceAt(level, x, y, z) && !level.isAir(x,y+1,z);
     }
     public void onScheduledTick(Level level, int x, int y, int z, Random rand) {
-        this.method_1684(level, x, y, z);
-    }
-
-    protected final void method_1684(Level arg, int i, int j, int k) {
-        if (!canPlaceAt(arg, i, j, k)) {
-            this.drop(arg, i, j, k, arg.getTileMeta(i, j, k));
-            arg.setTile(i, j, k, 0);
+        if (!canPlaceAt(level, x, y, z)) {
+            this.drop(level, x, y, z, level.getTileMeta(x, y, z));
+            level.setTile(x, y, z, 0);
         }
     }
 

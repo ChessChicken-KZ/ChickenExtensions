@@ -72,8 +72,8 @@ public class BlockStones extends BlockBase implements BlockItemProvider {
         {
             for(int q1 = 0; q1 < 3; q1++)
             {
-                Item itemgold = new Item(arg, x,y,z, new ItemInstance(RegisteringClass.itemLimestone));
-                arg.spawnEntity(itemgold);
+                Item itemToDrop = new Item(arg, x,y,z, new ItemInstance(RegisteringClass.itemLimestone));
+                arg.spawnEntity(itemToDrop);
             }
         }
     }

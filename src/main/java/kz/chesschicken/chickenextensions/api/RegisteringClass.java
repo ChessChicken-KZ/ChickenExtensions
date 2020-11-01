@@ -204,8 +204,8 @@ public class RegisteringClass implements ItemRegister, BlockRegister, EntityRegi
         Property furnitureBoxID = blockIdsCategory.getProperty("furnitureBox", 156);
         Property furnitureLockerID = blockIdsCategory.getProperty("furnitureLocker", 157);
         Property furnitureCommodeID = blockIdsCategory.getProperty("furnitureCommode", 158);
-Property furnitureFridgeID = blockIdsCategory.getProperty("furnitureFridge", 159);
-Property blockChandelierID = blockIdsCategory.getProperty("blockChandelier", 160);
+        Property furnitureFridgeID = blockIdsCategory.getProperty("furnitureFridge", 159);
+        Property blockChandelierID = blockIdsCategory.getProperty("blockChandelier", 160);
 
 
         blockCouple1 = new BlockStones(blockCouple1ID.getIntValue()).setName("chickenextensions:blockCouple1");
@@ -260,6 +260,8 @@ Property blockChandelierID = blockIdsCategory.getProperty("blockChandelier", 160
         Configuration config = ChickenMod.INSTANCE.getDefaultConfig();
         Category mobIDsCategory = config.getCategory("Mob IDs");
         Property bloodPigmanID = mobIDsCategory.getProperty("bloodPigmanID", 20);
+
+
         triConsumer.accept(BloodyPigman.class, "BloodPigman", bloodPigmanID.getIntValue());
         config.save();
     }
