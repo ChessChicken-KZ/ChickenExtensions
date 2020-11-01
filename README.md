@@ -1,4 +1,4 @@
-# Fabric Example Mod with BIN Mappings for beta 1.7.3 server + client
+# ChickenExtensions - plenty of things, but Fabric.
 
 ## Info
 A StationLoader mod!
