@@ -1,6 +1,5 @@
 package kz.chesschicken.chickenextensions.block;
 
-import kz.chesschicken.chickenextensions.ChickenMod;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 import net.minecraft.block.BlockBase;

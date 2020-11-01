@@ -1,10 +1,8 @@
 package kz.chesschicken.chickenextensions.block;
 
-import kz.chesschicken.chickenextensions.ChickenMod;
 import kz.chesschicken.chickenextensions.api.RegisteringClass;
 import net.minecraft.block.BlockBase;
 import net.minecraft.block.material.Material;
-import net.minecraft.item.ItemBase;
 
 import java.util.Random;
 

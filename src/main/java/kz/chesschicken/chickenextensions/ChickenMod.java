@@ -116,10 +116,6 @@ public class ChickenMod implements StationMod, TextureRegister, RecipeRegister
 
     public static int texMachineCartDispenser;
 
-
-    public static int a1;
-    public static int a2;
-
     public static int texCabinetTop;
     public static int texCabinetSide;
     public static int texCabinetFront;
@@ -161,8 +157,6 @@ public class ChickenMod implements StationMod, TextureRegister, RecipeRegister
         RegisteringClass.lampCeiling.texture = TextureFactory.INSTANCE.addTexture(TextureRegistry.getRegistry("TERRAIN"), "/assets/chickenextensions/textures/block/blockCeilingLamp.png");
 
 
-        a1 = TextureFactory.INSTANCE.addTexture(TextureRegistry.getRegistry("GUI_ITEMS"), "/assets/chickenextensions/textures/item/itemMobCatcher.png");
-        a2 = TextureFactory.INSTANCE.addTexture(TextureRegistry.getRegistry("GUI_ITEMS"), "/assets/chickenextensions/textures/item/itemMobCatcher_a.png");
         RegisteringClass.itemBrickSoul.setTexturePosition(TextureFactory.INSTANCE.addTexture(TextureRegistry.getRegistry("GUI_ITEMS"), "/assets/chickenextensions/textures/item/itemBrickSoul.png"));
         RegisteringClass.itemLightShoker.setTexturePosition(TextureFactory.INSTANCE.addTexture(TextureRegistry.getRegistry("GUI_ITEMS"), "/assets/chickenextensions/textures/item/itemLightShoker.png"));
         RegisteringClass.itemBrickNether.setTexturePosition(TextureFactory.INSTANCE.addTexture(TextureRegistry.getRegistry("GUI_ITEMS"), "/assets/chickenextensions/textures/item/itemBrickNether.png"));
@@ -179,7 +173,7 @@ public class ChickenMod implements StationMod, TextureRegister, RecipeRegister
         RegisteringClass.itemIronNugget.setTexturePosition(TextureFactory.INSTANCE.addTexture(TextureRegistry.getRegistry("GUI_ITEMS"), "/assets/chickenextensions/textures/item/itemNugget_iron.png"));
         RegisteringClass.itemGoldNugget.setTexturePosition(TextureFactory.INSTANCE.addTexture(TextureRegistry.getRegistry("GUI_ITEMS"), "/assets/chickenextensions/textures/item/itemNugget_gold.png"));
         RegisteringClass.itemDiamondNugget.setTexturePosition(TextureFactory.INSTANCE.addTexture(TextureRegistry.getRegistry("GUI_ITEMS"), "/assets/chickenextensions/textures/item/itemNugget_diamond.png"));
-        RegisteringClass.itemMobCatcher.setTexturePosition(a1);
+        RegisteringClass.itemMobCatcher.setTexturePosition(TextureFactory.INSTANCE.addTexture(TextureRegistry.getRegistry("GUI_ITEMS"), "/assets/chickenextensions/textures/item/itemMobCatcher.png"));
 
         RegisteringClass.itemEggGold.setTexturePosition(TextureFactory.INSTANCE.addTexture(TextureRegistry.getRegistry("GUI_ITEMS"), "/assets/chickenextensions/textures/item/itemEggGold.png"));
         RegisteringClass.itemBiomeLocator.setTexturePosition(TextureFactory.INSTANCE.addTexture(TextureRegistry.getRegistry("GUI_ITEMS"), "/assets/chickenextensions/textures/item/itemBiomeLocator.png"));
@@ -304,7 +298,7 @@ public class ChickenMod implements StationMod, TextureRegister, RecipeRegister
                 CraftingRegistry.INSTANCE.addShapelessRecipe(new ItemInstance(RegisteringClass.itemMobCatcher), BlockBase.DIRT);
                 CraftingRegistry.INSTANCE.addShapelessRecipe(new ItemInstance(RegisteringClass.furnitureNightstand), ItemBase.stick);
                 CraftingRegistry.INSTANCE.addShapelessRecipe(new ItemInstance(RegisteringClass.furnitureBox), BlockBase.WOOD);
-
+                //DEBUG
                 break;
             }
             case SMELTING: {
