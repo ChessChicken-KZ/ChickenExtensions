@@ -9,7 +9,7 @@ import net.minecraft.util.io.ListTag;
 
 public class TileEntityExtended extends TileEntityChest implements InventoryBase {
     private ItemInstance[] contents = new ItemInstance[36];
-private String name;
+private final String name;
     public TileEntityExtended(String s) {
         this.name = s;
     }
@@ -65,7 +65,7 @@ private String name;
         for(int var3 = 0; var3 < var2.size(); ++var3) {
             CompoundTag var4 = (CompoundTag)var2.get(var3);
             int var5 = var4.getByte("Slot") & 255;
-            if (var5 >= 0 && var5 < this.contents.length) {
+            if (var5 < this.contents.length) {
                 this.contents[var5] = new ItemInstance(var4);
             }
         }
