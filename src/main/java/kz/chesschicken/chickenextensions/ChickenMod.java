@@ -152,9 +152,7 @@ public class ChickenMod implements StationMod, TextureRegister, RecipeRegister
         texBrickNormal3 = TextureFactory.INSTANCE.addTexture(TextureRegistry.getRegistry("TERRAIN"), "/assets/chickenextensions/textures/block/blockBrickNormal3.png");
 
         texMachineCartDispenser = TextureFactory.INSTANCE.addTexture(TextureRegistry.getRegistry("TERRAIN"), "/assets/chickenextensions/textures/block/machineCartDispenser.png");
-
         RegisteringClass.lampCeiling.texture = TextureFactory.INSTANCE.addTexture(TextureRegistry.getRegistry("TERRAIN"), "/assets/chickenextensions/textures/block/blockCeilingLamp.png");
-
 
         RegisteringClass.itemBrickSoul.setTexturePosition(TextureFactory.INSTANCE.addTexture(TextureRegistry.getRegistry("GUI_ITEMS"), "/assets/chickenextensions/textures/item/itemBrickSoul.png"));
         RegisteringClass.itemLightShoker.setTexturePosition(TextureFactory.INSTANCE.addTexture(TextureRegistry.getRegistry("GUI_ITEMS"), "/assets/chickenextensions/textures/item/itemLightShoker.png"));
@@ -294,7 +292,7 @@ public class ChickenMod implements StationMod, TextureRegister, RecipeRegister
                 CraftingRegistry.INSTANCE.addShapelessRecipe(new ItemInstance(RegisteringClass.itemDiamondNugget, 9), ItemBase.diamond);
 
                 //DEBUG
-                CraftingRegistry.INSTANCE.addShapelessRecipe(new ItemInstance(RegisteringClass.itemMobCatcher), BlockBase.DIRT);
+                CraftingRegistry.INSTANCE.addShapelessRecipe(new ItemInstance(RegisteringClass.lampCeiling), BlockBase.DIRT);
                 CraftingRegistry.INSTANCE.addShapelessRecipe(new ItemInstance(RegisteringClass.furnitureNightstand), ItemBase.stick);
                 CraftingRegistry.INSTANCE.addShapelessRecipe(new ItemInstance(RegisteringClass.furnitureBox), BlockBase.WOOD);
                 //DEBUG

@@ -1,17 +1,19 @@
 package kz.chesschicken.chickenextensions.block;
 
+import kz.chesschicken.chickenextensions.ChickenMod;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 import net.minecraft.block.BlockBase;
+import net.minecraft.block.Plant;
 import net.minecraft.block.material.Material;
 import net.minecraft.level.Level;
 import net.minecraft.util.maths.Box;
 
 import java.util.Random;
 
-public class BlockCeilingLamp extends BlockBase {
+public class BlockCeilingLamp extends Plant {
     public BlockCeilingLamp(int id) {
-        super(id, Material.PLANT);
+        super(id, 0);
         this.setHardness(0.0F);
         this.setLightEmittance(0.9375F);
         this.sounds(WOOD_SOUNDS);
