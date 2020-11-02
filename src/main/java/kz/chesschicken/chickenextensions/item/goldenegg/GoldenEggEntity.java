@@ -75,11 +75,11 @@ public class GoldenEggEntity extends Egg {
             List var5 = this.level.getEntities(this, this.boundingBox.method_86(this.velocityX, this.velocityY, this.velocityZ).expand(1.0D, 1.0D, 1.0D));
             double var6 = 0.0D;
 
-            for(int var8 = 0; var8 < var5.size(); ++var8) {
-                EntityBase var9 = (EntityBase)var5.get(var8);
+            for (Object o : var5) {
+                EntityBase var9 = (EntityBase) o;
                 if (var9.method_1356() && (var9 != this.field_2044 || this.field_2046 >= 5)) {
                     float var10 = 0.3F;
-                    Box var11 = var9.boundingBox.expand((double)var10, (double)var10, (double)var10);
+                    Box var11 = var9.boundingBox.expand(var10, var10, var10);
                     HitResult var12 = var11.method_89(var15, var2);
                     if (var12 != null) {
                         double var13 = var15.method_1294(var12.field_1988);
@@ -97,7 +97,8 @@ public class GoldenEggEntity extends Egg {
         }
 
         if (var3 != null) {
-            if (var3.field_1989 != null && var3.field_1989.damage(this.field_2044, 4)) {
+            if (var3.field_1989 != null) {
+                var3.field_1989.damage(this.field_2044, 4);
             }
 
             for(int q1 = 0; q1 < 16; q1++)
@@ -123,11 +124,9 @@ public class GoldenEggEntity extends Egg {
         this.x += this.velocityX;
         this.y += this.velocityY;
         this.z += this.velocityZ;
-        float var20 = MathHelper.sqrt(this.velocityX * this.velocityX + this.velocityZ * this.velocityZ);
+        MathHelper.sqrt(this.velocityX * this.velocityX + this.velocityZ * this.velocityZ);
         this.yaw = (float)(Math.atan2(this.velocityX, this.velocityZ) * 180.0D / 3.1415927410125732D);
 
-        for(this.pitch = (float)(Math.atan2(this.velocityY, (double)var20) * 180.0D / 3.1415927410125732D); this.pitch - this.prevPitch < -180.0F; this.prevPitch -= 360.0F) {
-        }
 
         while(this.pitch - this.prevPitch >= 180.0F) {
             this.prevPitch += 360.0F;
@@ -165,7 +164,7 @@ public class GoldenEggEntity extends Egg {
     {
         for(int i1 = 0; i1 < 3; i1++)
         {
-            double gteqd = (new Random()).nextInt(10)*0.05 * (((new Random()).nextBoolean() == true) ? 1 : -1);
+            double gteqd = (new Random()).nextInt(10)*0.05 * (((new Random()).nextBoolean()) ? 1 : -1);
             if(i1 == 0)
                 x1 = x1 + gteqd;
             else if(i1 == 1)

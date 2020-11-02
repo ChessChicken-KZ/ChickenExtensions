@@ -10,8 +10,8 @@ import java.util.Random;
 
 public class ColourTreeStructure extends Structure {
     public int randomTreeBlock;
-    private int selectedType;
-    private int selectedMetadata;
+    private final int selectedType;
+    private final int selectedMetadata;
     public ColourTreeStructure(int metadata)
     {
         selectedType = (new Random()).nextInt(2);
