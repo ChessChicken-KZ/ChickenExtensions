@@ -55,11 +55,10 @@ public class VersionGui extends ScreenBase {
 
 
     public void render(int mouseX, int mouseY, float delta) {
-        TranslationStorage var4 = TranslationStorage.getInstance();
         this.renderBackground();
-        this.drawTextWithShadowCentred(this.textManager, var4.translate("multiplayer.title"), this.width / 2, this.height / 4 - 60 + 20, 16777215);
-        this.drawTextWithShadow(this.textManager, var4.translate("multiplayer.info1"), this.width / 2 - 140, this.height / 4 - 60 + 60 + 0, 10526880);
-        this.drawTextWithShadow(this.textManager, var4.translate("multiplayer.info2"), this.width / 2 - 140, this.height / 4 - 60 + 60 + 9, 10526880);
+        this.drawTextWithShadowCentred(this.textManager, "New Version Found", this.width / 2, this.height / 4 - 60 + 20, 16777215);
+        this.drawTextWithShadow(this.textManager, "A new version of ChickenExtensions is in public!", this.width / 2 - 140, this.height / 4 - 60 + 60 + 0, 10526880);
+        this.drawTextWithShadow(this.textManager, "You should download it! Or keep using this version.", this.width / 2 - 140, this.height / 4 - 60 + 60 + 9, 10526880);
         super.render(mouseX, mouseY, delta);
     }
 }

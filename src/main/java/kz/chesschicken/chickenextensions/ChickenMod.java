@@ -30,7 +30,7 @@ public class ChickenMod implements StationMod, TextureRegister, RecipeRegister
         INSTANCE = this;
     }
 
-    public static String VERSION = "0.0.1era-alpha";
+    public static String VERSION = "0.0.2era-alpha";
 
 
     @Override

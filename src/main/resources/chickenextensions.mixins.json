@@ -6,7 +6,8 @@
   "mixins": [
     "CowMeatMixin",
     "SheepMeatMixin",
-    "ChickenMeatMixin"
+    "ChickenMeatMixin",
+    "VersionCheckMixin"
   ],
   "server": [
   ],

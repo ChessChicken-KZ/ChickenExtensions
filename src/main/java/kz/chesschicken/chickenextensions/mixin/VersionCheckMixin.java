@@ -34,7 +34,7 @@ public abstract class VersionCheckMixin {
         String i = "";
         try
         {
-            URL url = new URL("http://domain.com/file.txt");
+            URL url = new URL("https://raw.githubusercontent.com/ChessChicken-KZ/ChickenExtensions/main/LATEST_VERSION");
             BufferedReader read = new BufferedReader(
                     new InputStreamReader(url.openStream()));
             i = read.readLine();
