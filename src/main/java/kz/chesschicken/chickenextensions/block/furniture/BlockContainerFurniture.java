@@ -31,28 +31,22 @@ public class BlockContainerFurniture extends BlockWithEntity {
     @Environment(EnvType.CLIENT)
     public int method_1626(TileView arg, int i, int j, int k, int i1) {
         if(this.id == RegisteringClass.furnitureCabinet.id) {
-            if (i1 == 1) {
-                return ChickenMod.texCabinetTop;
-            } else if (i1 == 0) {
+            if (i1 == 1 || i1 == 0) {
                 return ChickenMod.texCabinetTop;
             } else {
                 int var6 = arg.getTileMeta(i, j, k);
                 return i1 != var6 ? ChickenMod.texCabinetSide : ChickenMod.texCabinetFront;
             }
         }else if(this.id == RegisteringClass.furnitureNightstand.id) {
-            if (i1 == 1) {
+            if (i1 == 1 || i1 == 0) {
                 return ChickenMod.texNightstandTop;
-            } else if (i1 == 0) {
-                return ChickenMod.texCabinetTop;
             } else {
                 int var6 = arg.getTileMeta(i, j, k);
                 return i1 != var6 ? ChickenMod.texNightstandSide : ChickenMod.texNightstandFront;
             }
         }else if(this.id == RegisteringClass.furnitureBox.id) {
-            if (i1 == 1) {
+            if (i1 == 1 || i1 == 0) {
                 return ChickenMod.texBoxTop;
-            } else if (i1 == 0) {
-                return ChickenMod.texBoxSide;
             } else {
                 int var6 = arg.getTileMeta(i, j, k);
                 return i1 != var6 ? ChickenMod.texBoxSide : ChickenMod.texBoxFront;
@@ -60,18 +54,14 @@ public class BlockContainerFurniture extends BlockWithEntity {
         }else if(this.id == RegisteringClass.furnitureLocker.id) {
            return ChickenMod.texLocker;
         }else if(this.id == RegisteringClass.furnitureCommode.id) {
-            if (i1 == 1) {
-                return ChickenMod.texCommodeTop;
-            } else if (i1 == 0) {
+            if (i1 == 1 || i1 == 0) {
                 return ChickenMod.texCommodeTop;
             } else {
                 int var6 = arg.getTileMeta(i, j, k);
                 return i1 != var6 ? ChickenMod.texCommodeSide : ChickenMod.texCommodeFront;
             }
         }else if(this.id == RegisteringClass.furnitureFridge.id) {
-            if (i1 == 1) {
-                return ChickenMod.texFridgeSide;
-            } else if (i1 == 0) {
+            if (i1 == 1 || i1 == 0) {
                 return ChickenMod.texFridgeSide;
             } else {
                 int var6 = arg.getTileMeta(i, j, k);
@@ -84,28 +74,22 @@ public class BlockContainerFurniture extends BlockWithEntity {
     public int getTextureForSide(int side) {
         if(this.id == RegisteringClass.furnitureCabinet.id)
         {
-            if (side == 1) {
-                return ChickenMod.texCabinetTop;
-            } else if (side == 0) {
+            if (side == 1 || side == 0) {
                 return ChickenMod.texCabinetTop;
             } else {
                 return side == 3 ? ChickenMod.texCabinetFront: ChickenMod.texCabinetSide;
             }
         }else if(this.id == RegisteringClass.furnitureNightstand.id)
         {
-            if (side == 1) {
+            if (side == 1 || side == 0) {
                 return ChickenMod.texNightstandTop;
-            } else if (side == 0) {
-                return ChickenMod.texCabinetTop;
             } else {
                 return side == 3 ? ChickenMod.texNightstandFront : ChickenMod.texNightstandSide;
             }
         }else if(this.id == RegisteringClass.furnitureBox.id)
         {
-            if (side == 1) {
+            if (side == 1 || side == 0) {
                 return ChickenMod.texBoxTop;
-            } else if (side == 0) {
-                return ChickenMod.texBoxSide;
             } else {
                 return side == 3 ? ChickenMod.texBoxFront : ChickenMod.texBoxSide;
             }
@@ -113,18 +97,14 @@ public class BlockContainerFurniture extends BlockWithEntity {
             return ChickenMod.texLocker;
         }else if(this.id == RegisteringClass.furnitureCommode.id)
         {
-            if (side == 1) {
-                return ChickenMod.texCommodeTop;
-            } else if (side == 0) {
+            if (side == 1 || side == 0) {
                 return ChickenMod.texCommodeTop;
             } else {
                 return side == 3 ? ChickenMod.texCommodeFront : ChickenMod.texCommodeSide;
             }
         }else if(this.id == RegisteringClass.furnitureFridge.id)
         {
-            if (side == 1) {
-                return ChickenMod.texFridgeSide;
-            } else if (side == 0) {
+            if (side == 1 || side == 0) {
                 return ChickenMod.texFridgeSide;
             } else {
                 return side == 3 ? ChickenMod.texFridgeFront : ChickenMod.texFridgeSide;
