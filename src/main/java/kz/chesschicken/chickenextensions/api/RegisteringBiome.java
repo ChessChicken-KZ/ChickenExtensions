@@ -12,10 +12,14 @@ public class RegisteringBiome implements BiomeRegister {
 
     public static Biome biomeGravelDesert;
     public static Biome biomeAlphiumBiome;
+    public static Biome biomeSnowGravelDesert;
+    public static Biome biomeSnowAlphiumBiome;
     @Override
     public void registerBiomes() {
         ((BiomeAccessor) Biome.NETHER).getMonsters().add(new EntityEntry(BloodyPigman.class, 10));
-        biomeGravelDesert = new GravelDesert();
-        biomeAlphiumBiome = new AlphiumBiome();
+        biomeGravelDesert = new GravelDesert(false);
+        biomeAlphiumBiome = new AlphiumBiome(false);
+        biomeSnowGravelDesert = new GravelDesert(true);
+        biomeSnowAlphiumBiome = new AlphiumBiome(true);
     }
 }
