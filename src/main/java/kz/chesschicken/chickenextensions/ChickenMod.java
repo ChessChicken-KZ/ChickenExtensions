@@ -36,12 +36,13 @@ public class ChickenMod implements StationMod, TextureRegister, RecipeRegister
     @Override
     public void preInit()
     {
+        RegisteringClass registeringClass = new RegisteringClass();
 
         TextureRegister.EVENT.register(this);
 
-        ItemRegister.EVENT.register(new RegisteringClass());
-        BlockRegister.EVENT.register(new RegisteringClass());
-        EntityRegister.EVENT.register(new RegisteringClass());
+        ItemRegister.EVENT.register(registeringClass);
+        BlockRegister.EVENT.register(registeringClass);
+        EntityRegister.EVENT.register(registeringClass);
         RecipeRegister.EVENT.register(this);
         BiomeRegister.EVENT.register(new RegisteringBiome());
         ChunkPopulator.EVENT.register(new RegisteringPopulator());

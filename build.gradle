@@ -72,7 +72,6 @@ dependencies {
 	//modImplementation "net.glasslauncher:HMI-Fabric:5.0.2-Unofficial:dev"
 
 	modImplementation files('newlibs/StationLoader-1.2-dev.jar')
-
 }
 
 
