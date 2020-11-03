@@ -45,6 +45,10 @@ public class RegisteringMetals implements TextureRegister, ItemRegister, BlockRe
         textureOreSaphire = TextureFactory.INSTANCE.addTexture(TextureRegistry.getRegistry("TERRAIN"), "/assets/chickenextensions/textures/block/ore/saphire.png");
         textureOreCopper = TextureFactory.INSTANCE.addTexture(TextureRegistry.getRegistry("TERRAIN"), "/assets/chickenextensions/textures/block/ore/copper.png");
 
+        textureBlockRuby = TextureFactory.INSTANCE.addTexture(TextureRegistry.getRegistry("TERRAIN"), "/assets/chickenextensions/textures/block/oreblock/ruby.png");
+        textureBlockSaphire = TextureFactory.INSTANCE.addTexture(TextureRegistry.getRegistry("TERRAIN"), "/assets/chickenextensions/textures/block/oreblock/saphire.png");
+        textureBlockCopper = TextureFactory.INSTANCE.addTexture(TextureRegistry.getRegistry("TERRAIN"), "/assets/chickenextensions/textures/block/oreblock/copper.png");
+
     }
 
     /*
