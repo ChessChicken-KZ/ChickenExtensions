@@ -11,13 +11,18 @@ import net.minecraft.util.maths.Box;
 
 import java.util.Random;
 
-public class BlockCeilingLamp extends Plant {
+public class BlockCeilingLamp extends BlockBase {
     public BlockCeilingLamp(int id) {
-        super(id, 0);
+        super(id, Material.WOOD);
         this.setHardness(0.0F);
         this.setLightEmittance(0.9375F);
         this.sounds(WOOD_SOUNDS);
         this.disableNotifyOnMetaDataChange();
+    }
+
+    @Override
+    public int getTextureForSide(int side, int meta) {
+        return super.getTextureForSide(side, meta);
     }
 
     public boolean canPlaceAt(Level level, int x, int y, int z) {

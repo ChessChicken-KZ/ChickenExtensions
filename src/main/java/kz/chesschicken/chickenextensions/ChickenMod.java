@@ -132,6 +132,8 @@ public class ChickenMod implements StationMod, TextureRegister, RecipeRegister
     public static int texFridgeFront;
     public static int texFridgeBack;
 
+    public static int texCeilingLamp;
+
 
     @Override
     public void registerTextures() {
@@ -152,7 +154,7 @@ public class ChickenMod implements StationMod, TextureRegister, RecipeRegister
         texBrickNormal3 = TextureFactory.INSTANCE.addTexture(TextureRegistry.getRegistry("TERRAIN"), "/assets/chickenextensions/textures/block/blockBrickNormal3.png");
 
         texMachineCartDispenser = TextureFactory.INSTANCE.addTexture(TextureRegistry.getRegistry("TERRAIN"), "/assets/chickenextensions/textures/block/machineCartDispenser.png");
-        RegisteringClass.lampCeiling.texture = TextureFactory.INSTANCE.addTexture(TextureRegistry.getRegistry("TERRAIN"), "/assets/chickenextensions/textures/block/blockCeilingLamp.png");
+        texCeilingLamp = TextureFactory.INSTANCE.addTexture(TextureRegistry.getRegistry("TERRAIN"), "/assets/chickenextensions/textures/block/blockCeilingLamp.png");
 
         RegisteringClass.itemBrickSoul.setTexturePosition(TextureFactory.INSTANCE.addTexture(TextureRegistry.getRegistry("GUI_ITEMS"), "/assets/chickenextensions/textures/item/itemBrickSoul.png"));
         RegisteringClass.itemLightShoker.setTexturePosition(TextureFactory.INSTANCE.addTexture(TextureRegistry.getRegistry("GUI_ITEMS"), "/assets/chickenextensions/textures/item/itemLightShoker.png"));
