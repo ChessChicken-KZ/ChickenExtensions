@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern":
+  [
+    "XXX",
+    "X X"
+  ],
+  "key":
+  {
+    "X":
+    {
+      "item": "chickenextensions:itemSaphire"
+    }
+  },
+  "result":
+  {
+    "item": "chickenextensions:helmetSaphire",
+    "count": 1
+  }
+}

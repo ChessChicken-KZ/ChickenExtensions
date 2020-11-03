@@ -42,6 +42,7 @@ public class ChickenMod implements StationMod, TextureRegister, RecipeRegister
         RegisteringMetals registeringMetals = new RegisteringMetals();
 
         TextureRegister.EVENT.register(this);
+        TextureRegister.EVENT.register(registeringMetals);
 
         ItemRegister.EVENT.register(registeringClass);
         ItemRegister.EVENT.register(registeringMetals);

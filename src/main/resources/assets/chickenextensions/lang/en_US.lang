@@ -128,12 +128,6 @@ tile.chickenextensions\:extendedSlabs8.name=Stone Slab
 tile.chickenextensions\:lampCeiling.name=Ceiling Lamp
 item.chickenextensions\:itemBiomeLocator.name=Biome Locator
 
-item.chickenextensions\:itemRuby.name=Ruby
-item.chickenextensions\:itemSaphire.name=Saphire
-
-tile.chickenextensions\:oreRuby.name=Ruby Ore
-tile.chickenextensions\:oreSaphire.name=Saphire Ore
-
 tile.chickenextensions\:furnitureCabinet.name=Cabinet
 tile.chickenextensions\:furnitureNightstand.name=Nightstand
 tile.chickenextensions\:furnitureBox.name=Box
