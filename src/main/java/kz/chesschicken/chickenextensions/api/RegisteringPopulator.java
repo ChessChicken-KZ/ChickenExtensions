@@ -2,6 +2,7 @@ package kz.chesschicken.chickenextensions.api;
 
 import kz.chesschicken.chickenextensions.api.structure.AquamarineGenStructure;
 import kz.chesschicken.chickenextensions.api.structure.ColourTreeStructure;
+import kz.chesschicken.chickenextensions.api.structure.OreMeta;
 import kz.chesschicken.chickenextensions.api.structure.SoulBrickDungeon;
 import net.minecraft.block.BlockBase;
 import net.minecraft.level.Level;
@@ -56,14 +57,14 @@ public class RegisteringPopulator implements ChunkPopulator {
                 int chunkpX = i + random.nextInt(16);
                 int chunkpZ = j + random.nextInt(16);
                 int chunkpY = random.nextInt(16);
-                (new Ore(RegisteringClass.oreRuby.id, 7)).generate(level, random, chunkpX, chunkpY, chunkpZ);
+                (new OreMeta(RegisteringMetals.allMetalsOre.id, 0, 7)).generate(level, random, chunkpX, chunkpY, chunkpZ);
             }
 
             for(int iq = 0; iq < 1; ++iq) {
                 int chunkpX = i + random.nextInt(16);
                 int chunkpZ = j + random.nextInt(16);
                 int chunkpY = random.nextInt(16);
-                (new Ore(RegisteringClass.oreSaphire.id, 7)).generate(level, random, chunkpX, chunkpY, chunkpZ);
+                (new OreMeta(RegisteringMetals.allMetalsOre.id, 1, 7)).generate(level, random, chunkpX, chunkpY, chunkpZ);
             }
         }
         if(levelSource.getClass() == NetherLevelSource.class)

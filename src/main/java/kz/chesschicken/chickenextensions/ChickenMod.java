@@ -2,9 +2,11 @@ package kz.chesschicken.chickenextensions;
 
 
 import kz.chesschicken.chickenextensions.api.RegisteringBiome;
+import kz.chesschicken.chickenextensions.api.RegisteringMetals;
 import kz.chesschicken.chickenextensions.api.RegisteringPopulator;
 import kz.chesschicken.chickenextensions.api.RegisteringClass;
 import net.minecraft.block.BlockBase;
+import net.minecraft.entity.Item;
 import net.minecraft.item.ItemBase;
 import net.minecraft.item.ItemInstance;
 import net.modificationstation.stationloader.api.client.event.texture.TextureRegister;
@@ -37,11 +39,15 @@ public class ChickenMod implements StationMod, TextureRegister, RecipeRegister
     public void preInit()
     {
         RegisteringClass registeringClass = new RegisteringClass();
+        RegisteringMetals registeringMetals = new RegisteringMetals();
 
         TextureRegister.EVENT.register(this);
 
         ItemRegister.EVENT.register(registeringClass);
+        ItemRegister.EVENT.register(registeringMetals);
         BlockRegister.EVENT.register(registeringClass);
+        BlockRegister.EVENT.register(registeringMetals);
+
         EntityRegister.EVENT.register(registeringClass);
         RecipeRegister.EVENT.register(this);
         BiomeRegister.EVENT.register(new RegisteringBiome());
@@ -160,7 +166,6 @@ public class ChickenMod implements StationMod, TextureRegister, RecipeRegister
         RegisteringClass.itemBrickSoul.setTexturePosition(TextureFactory.INSTANCE.addTexture(TextureRegistry.getRegistry("GUI_ITEMS"), "/assets/chickenextensions/textures/item/materials/brickSoul.png"));
         RegisteringClass.itemLightShoker.setTexturePosition(TextureFactory.INSTANCE.addTexture(TextureRegistry.getRegistry("GUI_ITEMS"), "/assets/chickenextensions/textures/item/itemLightShoker.png"));
         RegisteringClass.itemBrickNether.setTexturePosition(TextureFactory.INSTANCE.addTexture(TextureRegistry.getRegistry("GUI_ITEMS"), "/assets/chickenextensions/textures/item/materials/brickNether.png"));
-        RegisteringClass.itemAquamarine.setTexturePosition(TextureFactory.INSTANCE.addTexture(TextureRegistry.getRegistry("GUI_ITEMS"), "/assets/chickenextensions/textures/item/materials/aquamarine.png"));
 
         RegisteringClass.itemSteakRaw.setTexturePosition(TextureFactory.INSTANCE.addTexture(TextureRegistry.getRegistry("GUI_ITEMS"), "/assets/chickenextensions/textures/item/food/SteakRaw.png"));
         RegisteringClass.itemSteakCooked.setTexturePosition(TextureFactory.INSTANCE.addTexture(TextureRegistry.getRegistry("GUI_ITEMS"), "/assets/chickenextensions/textures/item/food/SteakCook.png"));
@@ -177,12 +182,6 @@ public class ChickenMod implements StationMod, TextureRegister, RecipeRegister
 
         RegisteringClass.itemEggGold.setTexturePosition(TextureFactory.INSTANCE.addTexture(TextureRegistry.getRegistry("GUI_ITEMS"), "/assets/chickenextensions/textures/item/itemEggGold.png"));
         RegisteringClass.itemBiomeLocator.setTexturePosition(TextureFactory.INSTANCE.addTexture(TextureRegistry.getRegistry("GUI_ITEMS"), "/assets/chickenextensions/textures/item/itemBiomeLocator.png"));
-        RegisteringClass.itemRuby.setTexturePosition(TextureFactory.INSTANCE.addTexture(TextureRegistry.getRegistry("GUI_ITEMS"), "/assets/chickenextensions/textures/item/materials/ruby.png"));
-        RegisteringClass.itemSaphire.setTexturePosition(TextureFactory.INSTANCE.addTexture(TextureRegistry.getRegistry("GUI_ITEMS"), "/assets/chickenextensions/textures/item/materials/saphire.png"));
-
-        RegisteringClass.oreAquamarine.texture = TextureFactory.INSTANCE.addTexture(TextureRegistry.getRegistry("TERRAIN"), "/assets/chickenextensions/textures/block/ore/aquamarine.png");
-        RegisteringClass.oreRuby.texture = TextureFactory.INSTANCE.addTexture(TextureRegistry.getRegistry("TERRAIN"), "/assets/chickenextensions/textures/block/ore/ruby.png");
-        RegisteringClass.oreSaphire.texture = TextureFactory.INSTANCE.addTexture(TextureRegistry.getRegistry("TERRAIN"), "/assets/chickenextensions/textures/block/ore/saphire.png");
 
         texCabinetTop = TextureFactory.INSTANCE.addTexture(TextureRegistry.getRegistry("TERRAIN"), "/assets/chickenextensions/textures/block/furniture/furnitureCabinetTop.png");
         texCabinetSide = TextureFactory.INSTANCE.addTexture(TextureRegistry.getRegistry("TERRAIN"), "/assets/chickenextensions/textures/block/furniture/furnitureCabinetSide.png");

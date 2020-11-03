@@ -1,6 +1,7 @@
 package kz.chesschicken.chickenextensions.block;
 
 import kz.chesschicken.chickenextensions.api.RegisteringClass;
+import kz.chesschicken.chickenextensions.api.RegisteringMetals;
 import net.minecraft.block.BlockBase;
 import net.minecraft.block.material.Material;
 
@@ -14,7 +15,7 @@ public class BlockOreAq extends BlockBase {
     }
 
     @Override
-    public int getDropId(int meta, Random rand) { return RegisteringClass.itemAquamarine.id; }
+    public int getDropId(int meta, Random rand) { return RegisteringMetals.itemAquamarine.id; }
     public int getDropCount(Random rand) {
         return 4 + rand.nextInt(5);
     }

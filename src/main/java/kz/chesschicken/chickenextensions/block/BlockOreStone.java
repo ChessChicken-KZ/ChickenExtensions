@@ -1,12 +1,14 @@
 package kz.chesschicken.chickenextensions.block;
 
-import kz.chesschicken.chickenextensions.api.RegisteringClass;
+import kz.chesschicken.chickenextensions.api.RegisteringMetals;
 import net.minecraft.block.BlockBase;
 import net.minecraft.block.material.Material;
+import net.minecraft.item.PlaceableTileEntity;
+import net.modificationstation.stationloader.api.common.block.BlockItemProvider;
 
 import java.util.Random;
 
-public class BlockOreStone extends BlockBase {
+public class BlockOreStone extends BlockBase implements BlockItemProvider {
     public BlockOreStone(int id) {
         super(id, Material.STONE);
         this.setHardness(3.0F);
@@ -16,11 +18,32 @@ public class BlockOreStone extends BlockBase {
 
     @Override
     public int getDropId(int meta, Random rand) {
-        if(id == RegisteringClass.oreRuby.id)
-            return RegisteringClass.itemRuby.id;
-        else if(id == RegisteringClass.oreSaphire.id)
-            return RegisteringClass.itemSaphire.id;
+        if(meta == 0)
+            return RegisteringMetals.itemRuby.id;
+        else if(meta == 1)
+            return RegisteringMetals.itemSaphire.id;
         else
-            return 0;
+            return id;
+    }
+
+    @Override
+    public int getTextureForSide(int side, int meta) {
+        switch (meta)
+        {
+            case 0:
+                return RegisteringMetals.textureOreRuby;
+            case 1:
+                return RegisteringMetals.textureOreSaphire;
+            case 2:
+                return RegisteringMetals.textureOreCopper;
+
+            default:
+                return 0;
+        }
+    }
+
+    @Override
+    public PlaceableTileEntity getBlockItem(int i) {
+        return new TileMaterialExtended(i);
     }
 }
