@@ -70,9 +70,6 @@ tile.chickenextensions\:blockFlowerC13.name=Dark Green Flower
 tile.chickenextensions\:blockFlowerC14.name=Red Flower
 tile.chickenextensions\:blockFlowerC15.name=Black Flower
 
-tile.chickenextensions\:oreAquamarine.name=Aquamarine Ore
-item.chickenextensions\:itemAquamarine.name=Aquamarine
-
 item.chickenextensions\:itemSteakRaw.name=Raw Steak
 item.chickenextensions\:itemSteakCooked.name=Cooked Steak
 item.chickenextensions\:itemMuttonRaw.name=Raw Mutton
@@ -140,3 +137,40 @@ item.chickenextensions\:itemTile.name=Tile
 item.chickenextensions\:itemSlakedLime.name=Slaked Lime
 
 tile.chickenextensions\:blockChandelier.name=Chandelier
+
+
+
+
+tile.chickenextensions\:oreAquamarine.name=Aquamarine Ore
+item.chickenextensions\:itemAquamarine.name=Aquamarine
+
+item.chickenextensions\:itemRuby.name=Ruby
+item.chickenextensions\:itemSaphire.name=Saphire
+item.chickenextensions\:itemCopper.name=Copper ingot
+
+item.chickenextensions\:nuggetRuby.name=Ruby Nugget
+item.chickenextensions\:nuggetSaphire.name=Saphire Nugget
+item.chickenextensions\:nuggetCopper.name=Copper ingot Nugget
+
+item.chickenextensions\:helmetRuby.name=Ruby Helmet
+item.chickenextensions\:chestplateRuby.name=Ruby Chestplate
+item.chickenextensions\:leggingsRuby.name=Ruby Leggings
+item.chickenextensions\:bootsRuby.name=Ruby Boots
+
+item.chickenextensions\:helmetSaphire.name=Saphire Helmet
+item.chickenextensions\:chestplateSaphire.name=Saphire Chestplate
+item.chickenextensions\:leggingsSaphire.name=Saphire Leggings
+item.chickenextensions\:bootsSaphire.name=Saphire Boots
+
+item.chickenextensions\:helmetCopper.name=Copper Helmet
+item.chickenextensions\:chestplateCopper.name=Copper Chestplate
+item.chickenextensions\:leggingsCopper.name=Copper Leggings
+item.chickenextensions\:bootsCopper.name=Copper Boots
+
+tile.chickenextensions\:allMetalsOre0.name=Ruby Ore
+tile.chickenextensions\:allMetalsOre1.name=Saphire Ore
+tile.chickenextensions\:allMetalsOre2.name=Copper Ore
+
+tile.chickenextensions\:allMetalsBlock0.name=Ruby Block
+tile.chickenextensions\:allMetalsBlock1.name=Saphire Block
+tile.chickenextensions\:allMetalsBlock2.name=Copper Block

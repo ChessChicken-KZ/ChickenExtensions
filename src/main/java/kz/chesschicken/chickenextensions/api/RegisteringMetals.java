@@ -132,7 +132,7 @@ public class RegisteringMetals implements TextureRegister, ItemRegister, BlockRe
         Property itemCopperID = itemIdsCategory.getProperty("itemCopper", 153);
         Property nuggetCopperID = itemIdsCategory.getProperty("nuggetCopper", 153);
 
-        itemAquamarine = new ItemBasic(itemAquamarineID.getIntValue()).setName("chickenextensions:itemAquamarine");
+        itemAquamarine = new ItemBasic(itemAquamarineID.getIntValue()).setName("itemAquamarine");
 
         itemRuby = new ItemBasic(itemRubyID.getIntValue()).setName("itemRuby");
         itemSaphire = new ItemBasic(itemSaphireID.getIntValue()).setName("itemSaphire");
