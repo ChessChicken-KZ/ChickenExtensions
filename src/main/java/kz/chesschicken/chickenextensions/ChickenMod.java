@@ -9,23 +9,29 @@ import net.minecraft.block.BlockBase;
 import net.minecraft.entity.Item;
 import net.minecraft.item.ItemBase;
 import net.minecraft.item.ItemInstance;
+import net.minecraft.item.tool.ToolMaterial;
 import net.modificationstation.stationloader.api.client.event.texture.TextureRegister;
 import net.modificationstation.stationloader.api.client.texture.TextureRegistry;
+import net.modificationstation.stationloader.api.common.StationLoader;
 import net.modificationstation.stationloader.api.common.event.block.BlockRegister;
 import net.modificationstation.stationloader.api.common.event.entity.EntityRegister;
 import net.modificationstation.stationloader.api.common.event.item.ItemRegister;
 import net.modificationstation.stationloader.api.common.event.level.biome.BiomeRegister;
 import net.modificationstation.stationloader.api.common.event.level.gen.ChunkPopulator;
 import net.modificationstation.stationloader.api.common.event.recipe.RecipeRegister;
+import net.modificationstation.stationloader.api.common.factory.GeneralFactory;
 import net.modificationstation.stationloader.api.common.mod.StationMod;
 import net.modificationstation.stationloader.api.common.recipe.CraftingRegistry;
 import net.modificationstation.stationloader.api.common.recipe.SmeltingRegistry;
 import net.modificationstation.stationloader.impl.client.texture.TextureFactory;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import java.awt.*;
 
 public class ChickenMod implements StationMod, TextureRegister, RecipeRegister
 {
+    protected static Logger MODLOGGER;
     public static ChickenMod INSTANCE;
     public ChickenMod()
     {
@@ -34,20 +40,29 @@ public class ChickenMod implements StationMod, TextureRegister, RecipeRegister
 
     public static String VERSION = "0.0.2era-alpha";
 
+    public static ToolMaterial toolGems;
+    public static ToolMaterial toolCopper;
 
     @Override
     public void preInit()
     {
+        MODLOGGER = LogManager.getFormatterLogger("ChickenExtensions|StationMod");
+        MODLOGGER.info("Hello world!");
         RegisteringClass registeringClass = new RegisteringClass();
         RegisteringMetals registeringMetals = new RegisteringMetals();
 
-        TextureRegister.EVENT.register(this);
-        TextureRegister.EVENT.register(registeringMetals);
+        toolGems = GeneralFactory.INSTANCE.newInst(ToolMaterial.class, "chickenextensions:GEMS",3, 1561, 8.0F, 3);
+        toolCopper = GeneralFactory.INSTANCE.newInst(ToolMaterial.class, "chickenextensions:COPPER", 1, 250, 5.0F, 2);
+
+
 
         ItemRegister.EVENT.register(registeringClass);
         ItemRegister.EVENT.register(registeringMetals);
         BlockRegister.EVENT.register(registeringClass);
         BlockRegister.EVENT.register(registeringMetals);
+
+        TextureRegister.EVENT.register(this);
+        TextureRegister.EVENT.register(registeringMetals);
 
         EntityRegister.EVENT.register(registeringClass);
         RecipeRegister.EVENT.register(this);

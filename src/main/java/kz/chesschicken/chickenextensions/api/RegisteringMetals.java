@@ -6,8 +6,12 @@ import kz.chesschicken.chickenextensions.block.BlockOreAq;
 import kz.chesschicken.chickenextensions.block.BlockOreStone;
 import kz.chesschicken.chickenextensions.item.ItemBasic;
 import kz.chesschicken.chickenextensions.item.tool.ArmourExtended;
+import kz.chesschicken.chickenextensions.item.tool.PickaxeBasic;
 import net.minecraft.block.BlockBase;
 import net.minecraft.item.ItemBase;
+import net.minecraft.item.tool.Pickaxe;
+import net.minecraft.item.tool.Sword;
+import net.minecraft.item.tool.ToolMaterial;
 import net.modificationstation.stationloader.api.client.event.texture.TextureRegister;
 import net.modificationstation.stationloader.api.client.texture.TextureRegistry;
 import net.modificationstation.stationloader.api.common.config.Category;
@@ -15,6 +19,7 @@ import net.modificationstation.stationloader.api.common.config.Configuration;
 import net.modificationstation.stationloader.api.common.config.Property;
 import net.modificationstation.stationloader.api.common.event.block.BlockRegister;
 import net.modificationstation.stationloader.api.common.event.item.ItemRegister;
+import net.modificationstation.stationloader.api.common.factory.GeneralFactory;
 import net.modificationstation.stationloader.impl.client.texture.TextureFactory;
 
 /**
@@ -23,6 +28,8 @@ import net.modificationstation.stationloader.impl.client.texture.TextureFactory;
  * @author ChessChicken-KZ
  */
 public class RegisteringMetals implements TextureRegister, ItemRegister, BlockRegister {
+
+
     public static int textureOreRuby;
     public static int textureOreSaphire;
     public static int textureOreCopper;
@@ -68,6 +75,13 @@ public class RegisteringMetals implements TextureRegister, ItemRegister, BlockRe
         leggingsSaphire.setTexturePosition(TextureFactory.INSTANCE.addTexture(TextureRegistry.getRegistry("GUI_ITEMS"), "/assets/chickenextensions/textures/item/tool/armor/saphire_leggings.png"));
         bootsSaphire.setTexturePosition(TextureFactory.INSTANCE.addTexture(TextureRegistry.getRegistry("GUI_ITEMS"), "/assets/chickenextensions/textures/item/tool/armor/saphire_boots.png"));
 
+        swordCopper.setTexturePosition(TextureFactory.INSTANCE.addTexture(TextureRegistry.getRegistry("GUI_ITEMS"), "/assets/chickenextensions/textures/item/tool/sword/copper.png"));
+        pickaxeCopper.setTexturePosition(TextureFactory.INSTANCE.addTexture(TextureRegistry.getRegistry("GUI_ITEMS"), "/assets/chickenextensions/textures/item/tool/pickaxe/copper.png"));
+        swordRuby.setTexturePosition(TextureFactory.INSTANCE.addTexture(TextureRegistry.getRegistry("GUI_ITEMS"), "/assets/chickenextensions/textures/item/tool/sword/ruby.png"));
+        pickaxeRuby.setTexturePosition(TextureFactory.INSTANCE.addTexture(TextureRegistry.getRegistry("GUI_ITEMS"), "/assets/chickenextensions/textures/item/tool/pickaxe/ruby.png"));
+        swordSaphire.setTexturePosition(TextureFactory.INSTANCE.addTexture(TextureRegistry.getRegistry("GUI_ITEMS"), "/assets/chickenextensions/textures/item/tool/sword/saphire.png"));
+        pickaxeSaphire.setTexturePosition(TextureFactory.INSTANCE.addTexture(TextureRegistry.getRegistry("GUI_ITEMS"), "/assets/chickenextensions/textures/item/tool/pickaxe/saphire.png"));
+
     }
 
     /*
@@ -106,6 +120,18 @@ public class RegisteringMetals implements TextureRegister, ItemRegister, BlockRe
     public static ItemBase chestplateSaphire;
     public static ItemBase leggingsSaphire;
     public static ItemBase bootsSaphire;
+
+
+    public static ItemBase swordCopper;
+    public static ItemBase pickaxeCopper;
+
+    public static ItemBase swordRuby;
+    public static ItemBase pickaxeRuby;
+
+    public static ItemBase swordSaphire;
+    public static ItemBase pickaxeSaphire;
+
+
     @Override
     public void registerBlocks() {
         Configuration config = ChickenMod.INSTANCE.getDefaultConfig();
@@ -171,6 +197,20 @@ public class RegisteringMetals implements TextureRegister, ItemRegister, BlockRe
         chestplateSaphire = new ArmourExtended(chestplateSaphireID.getIntValue(), 3, 3, 1).setName("chestplateSaphire");
         leggingsSaphire = new ArmourExtended(leggingsSaphireID.getIntValue(), 3, 3, 2).setName("leggingsSaphire");
         bootsSaphire = new ArmourExtended(bootsSaphireID.getIntValue(), 3, 3, 3).setName("bootsSaphire");
+
+        Property swordCopperID = itemIdsCategory.getProperty("swordCopper", 166);
+        Property pickaxeCopperID = itemIdsCategory.getProperty("pickaxeCopper", 167);
+        Property swordRubyID = itemIdsCategory.getProperty("swordRuby", 168);
+        Property pickaxeRubyID = itemIdsCategory.getProperty("pickaxeRuby", 169);
+        Property swordSaphireID = itemIdsCategory.getProperty("swordSaphire", 170);
+        Property pickaxeSaphireID = itemIdsCategory.getProperty("pickaxeSaphire", 171);
+
+        swordCopper = new Sword(swordCopperID.getIntValue(), ChickenMod.toolCopper).setName("swordCopper");
+        pickaxeCopper = new PickaxeBasic(pickaxeCopperID.getIntValue(), ChickenMod.toolCopper).setName("pickaxeCopper");
+        swordRuby = new Sword(swordRubyID.getIntValue(), ChickenMod.toolGems).setName("swordRuby");
+        pickaxeRuby = new PickaxeBasic(pickaxeRubyID.getIntValue(), ChickenMod.toolGems).setName("pickaxeRuby");
+        swordSaphire = new Sword(swordSaphireID.getIntValue(), ChickenMod.toolGems).setName("swordSaphire");
+        pickaxeSaphire = new PickaxeBasic(pickaxeSaphireID.getIntValue(), ChickenMod.toolGems).setName("pickaxeSaphire");
         config.save();
     }
 }
