@@ -1,4 +1,4 @@
-package kz.chesschicken.chickenextensions.api;
+package kz.chesschicken.chickenextensions.api.common;
 
 import net.minecraft.client.gui.screen.ScreenBase;
 import net.minecraft.client.gui.screen.menu.MainMenu;

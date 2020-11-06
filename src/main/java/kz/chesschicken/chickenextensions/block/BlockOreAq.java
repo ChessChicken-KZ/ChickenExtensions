@@ -1,7 +1,6 @@
 package kz.chesschicken.chickenextensions.block;
 
-import kz.chesschicken.chickenextensions.api.RegisteringClass;
-import kz.chesschicken.chickenextensions.api.RegisteringMetals;
+import kz.chesschicken.chickenextensions.api.common.RegisteringMetals;
 import net.minecraft.block.BlockBase;
 import net.minecraft.block.material.Material;
 

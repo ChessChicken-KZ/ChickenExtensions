@@ -1,6 +1,6 @@
 package kz.chesschicken.chickenextensions.item.goldenegg;
 
-import kz.chesschicken.chickenextensions.api.RegisteringClass;
+import kz.chesschicken.chickenextensions.api.common.RegisteringClass;
 import net.minecraft.entity.animal.Chicken;
 import net.minecraft.level.Level;
 

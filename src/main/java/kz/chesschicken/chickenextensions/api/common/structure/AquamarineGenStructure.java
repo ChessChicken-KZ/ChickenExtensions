@@ -1,7 +1,6 @@
-package kz.chesschicken.chickenextensions.api.structure;
+package kz.chesschicken.chickenextensions.api.common.structure;
 
-import kz.chesschicken.chickenextensions.api.RegisteringClass;
-import kz.chesschicken.chickenextensions.api.RegisteringMetals;
+import kz.chesschicken.chickenextensions.api.common.RegisteringMetals;
 import net.minecraft.block.BlockBase;
 import net.minecraft.level.Level;
 import net.minecraft.level.structure.Structure;

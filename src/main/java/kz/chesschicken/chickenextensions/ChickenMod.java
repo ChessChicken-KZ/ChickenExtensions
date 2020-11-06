@@ -1,21 +1,20 @@
 package kz.chesschicken.chickenextensions;
 
 
-import kz.chesschicken.chickenextensions.api.RegisteringBiome;
-import kz.chesschicken.chickenextensions.api.RegisteringMetals;
-import kz.chesschicken.chickenextensions.api.RegisteringPopulator;
-import kz.chesschicken.chickenextensions.api.RegisteringClass;
+import kz.chesschicken.chickenextensions.api.common.RegisteringBiome;
+import kz.chesschicken.chickenextensions.api.common.RegisteringMetals;
+import kz.chesschicken.chickenextensions.api.common.RegisteringPopulator;
+import kz.chesschicken.chickenextensions.api.common.RegisteringClass;
 import net.minecraft.block.BlockBase;
-import net.minecraft.entity.Item;
 import net.minecraft.item.ItemBase;
 import net.minecraft.item.ItemInstance;
 import net.minecraft.item.tool.ToolMaterial;
 import net.modificationstation.stationloader.api.client.event.texture.TextureRegister;
 import net.modificationstation.stationloader.api.client.texture.TextureRegistry;
-import net.modificationstation.stationloader.api.common.StationLoader;
 import net.modificationstation.stationloader.api.common.event.block.BlockRegister;
 import net.modificationstation.stationloader.api.common.event.entity.EntityRegister;
 import net.modificationstation.stationloader.api.common.event.item.ItemRegister;
+import net.modificationstation.stationloader.api.common.event.level.biome.BiomeByClimateProvider;
 import net.modificationstation.stationloader.api.common.event.level.biome.BiomeRegister;
 import net.modificationstation.stationloader.api.common.event.level.gen.ChunkPopulator;
 import net.modificationstation.stationloader.api.common.event.recipe.RecipeRegister;
@@ -67,11 +66,16 @@ public class ChickenMod implements StationMod, TextureRegister, RecipeRegister
         EntityRegister.EVENT.register(registeringClass);
         RecipeRegister.EVENT.register(this);
         BiomeRegister.EVENT.register(new RegisteringBiome());
+        BiomeByClimateProvider.EVENT.register(new RegisteringBiome());
         ChunkPopulator.EVENT.register(new RegisteringPopulator());
-
-
+        loadCustomConfigPart();
 
         getDefaultConfig().load();
+    }
+
+    private void loadCustomConfigPart()
+    {
+
     }
 
 
@@ -240,25 +244,9 @@ public class ChickenMod implements StationMod, TextureRegister, RecipeRegister
         Vanilla type = Vanilla.fromType(string);
         switch (type) {
             case CRAFTING_SHAPED: {
-                CraftingRegistry.INSTANCE.addShapedRecipe(new ItemInstance(RegisteringClass.blockCouple1, 1, 0), "XX", "XX", Character.valueOf('X'), RegisteringClass.itemBrickSoul);
-
-                CraftingRegistry.INSTANCE.addShapedRecipe(new ItemInstance(RegisteringClass.blockCouple1, 4, 3), "XX", "XX", Character.valueOf('X'), BlockBase.STONE);
-                CraftingRegistry.INSTANCE.addShapedRecipe(new ItemInstance(RegisteringClass.blockCouple1, 1, 2), "XX", "XX", Character.valueOf('X'), RegisteringClass.itemBrickNether);
-
-                CraftingRegistry.INSTANCE.addShapedRecipe(new ItemInstance(RegisteringClass.blockCouple1, 4, 3), "XX", "XX", Character.valueOf('X'), new ItemInstance(RegisteringClass.blockCouple1, 1, 6));
-                CraftingRegistry.INSTANCE.addShapedRecipe(new ItemInstance(RegisteringClass.blockCouple1, 4, 6), "XX", "XX", Character.valueOf('X'), new ItemInstance(RegisteringClass.blockCouple1, 1, 3));
 
                 CraftingRegistry.INSTANCE.addShapedRecipe(new ItemInstance(RegisteringClass.machineCartDiapenser), "XXX", "XHX", "XWX", Character.valueOf('X'), BlockBase.COBBLESTONE, Character.valueOf('H'), BlockBase.DETECTOR_RAIL, Character.valueOf('W'), ItemBase.redstoneDust);
-                CraftingRegistry.INSTANCE.addShapedRecipe(new ItemInstance(RegisteringClass.itemChainmail), " X ", "XHX", " X ", Character.valueOf('X'), RegisteringClass.itemIronNugget, Character.valueOf('H'), ItemBase.ironIngot);
 
-                CraftingRegistry.INSTANCE.addShapedRecipe(new ItemInstance(ItemBase.ironIngot), "XXX", "XXX", "XXX", Character.valueOf('X'), RegisteringClass.itemIronNugget);
-                CraftingRegistry.INSTANCE.addShapedRecipe(new ItemInstance(ItemBase.goldIngot), "XXX", "XXX", "XXX", Character.valueOf('X'), RegisteringClass.itemGoldNugget);
-                CraftingRegistry.INSTANCE.addShapedRecipe(new ItemInstance(ItemBase.diamond), "XXX", "XXX", "XXX", Character.valueOf('X'), RegisteringClass.itemDiamondNugget);
-
-                CraftingRegistry.INSTANCE.addShapedRecipe(new ItemInstance(ItemBase.chainHelmet), "XXX", "X X", Character.valueOf('X'), RegisteringClass.itemChainmail);
-                CraftingRegistry.INSTANCE.addShapedRecipe(new ItemInstance(ItemBase.chainChestplate), "X X", "XXX", "XXX", Character.valueOf('X'), RegisteringClass.itemChainmail);
-                CraftingRegistry.INSTANCE.addShapedRecipe(new ItemInstance(ItemBase.chainLeggings), "XXX", "X X", "X X", Character.valueOf('X'), RegisteringClass.itemChainmail);
-                CraftingRegistry.INSTANCE.addShapedRecipe(new ItemInstance(ItemBase.chainBoots), "X X", "X X", Character.valueOf('X'), RegisteringClass.itemChainmail);
 
                 CraftingRegistry.INSTANCE.addShapedRecipe(new ItemInstance(RegisteringClass.netherStairs, 4), "  X", " XX", "XXX", Character.valueOf('X'), BlockBase.NETHERRACK);
                 CraftingRegistry.INSTANCE.addShapedRecipe(new ItemInstance(RegisteringClass.mossyCobblestoneStairs, 4), "  X", " XX", "XXX", Character.valueOf('X'), BlockBase.MOSSY_COBBLESTONE);

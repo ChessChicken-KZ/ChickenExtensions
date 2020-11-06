@@ -1,4 +1,4 @@
-package kz.chesschicken.chickenextensions.api.structure;
+package kz.chesschicken.chickenextensions.api.common.structure;
 
 import net.minecraft.block.BlockBase;
 import net.minecraft.level.Level;

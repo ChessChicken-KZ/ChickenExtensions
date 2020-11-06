@@ -1,4 +1,4 @@
-package kz.chesschicken.chickenextensions.api;
+package kz.chesschicken.chickenextensions.api.common;
 
 import kz.chesschicken.chickenextensions.ChickenMod;
 import kz.chesschicken.chickenextensions.block.BlockMaterialExtended;
@@ -9,9 +9,7 @@ import kz.chesschicken.chickenextensions.item.tool.ArmourExtended;
 import kz.chesschicken.chickenextensions.item.tool.PickaxeBasic;
 import net.minecraft.block.BlockBase;
 import net.minecraft.item.ItemBase;
-import net.minecraft.item.tool.Pickaxe;
 import net.minecraft.item.tool.Sword;
-import net.minecraft.item.tool.ToolMaterial;
 import net.modificationstation.stationloader.api.client.event.texture.TextureRegister;
 import net.modificationstation.stationloader.api.client.texture.TextureRegistry;
 import net.modificationstation.stationloader.api.common.config.Category;
@@ -19,8 +17,9 @@ import net.modificationstation.stationloader.api.common.config.Configuration;
 import net.modificationstation.stationloader.api.common.config.Property;
 import net.modificationstation.stationloader.api.common.event.block.BlockRegister;
 import net.modificationstation.stationloader.api.common.event.item.ItemRegister;
-import net.modificationstation.stationloader.api.common.factory.GeneralFactory;
 import net.modificationstation.stationloader.impl.client.texture.TextureFactory;
+
+import java.awt.*;
 
 /**
  * Because of 0.0.3, I'll start inserting material textures here

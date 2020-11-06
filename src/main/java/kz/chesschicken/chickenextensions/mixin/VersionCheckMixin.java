@@ -1,7 +1,7 @@
 package kz.chesschicken.chickenextensions.mixin;
 
 import kz.chesschicken.chickenextensions.ChickenMod;
-import kz.chesschicken.chickenextensions.api.VersionGui;
+import kz.chesschicken.chickenextensions.api.common.VersionGui;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.screen.ScreenBase;
 import org.spongepowered.asm.mixin.Mixin;

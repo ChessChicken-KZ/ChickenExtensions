@@ -1,6 +1,6 @@
 package kz.chesschicken.chickenextensions.mixin;
 
-import kz.chesschicken.chickenextensions.api.RegisteringClass;
+import kz.chesschicken.chickenextensions.api.common.RegisteringClass;
 import net.minecraft.entity.EntityBase;
 import net.minecraft.entity.Item;
 import net.minecraft.entity.animal.AnimalBase;

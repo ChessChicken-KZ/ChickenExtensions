@@ -1,6 +1,6 @@
 package kz.chesschicken.chickenextensions.block.extensions;
 
-import kz.chesschicken.chickenextensions.api.RegisteringClass;
+import kz.chesschicken.chickenextensions.api.common.RegisteringClass;
 import net.minecraft.item.ItemInstance;
 import net.minecraft.item.PlaceableTileEntity;
 import net.modificationstation.stationloader.api.common.preset.item.PlaceableTileEntityWithMeta;

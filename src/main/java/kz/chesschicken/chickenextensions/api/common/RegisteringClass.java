@@ -1,6 +1,7 @@
-package kz.chesschicken.chickenextensions.api;
+package kz.chesschicken.chickenextensions.api.common;
 
 import kz.chesschicken.chickenextensions.ChickenMod;
+import kz.chesschicken.chickenextensions.api.player.CustomPlayerHandler;
 import kz.chesschicken.chickenextensions.block.*;
 import kz.chesschicken.chickenextensions.block.colour.*;
 import kz.chesschicken.chickenextensions.block.extensions.FenceExtended;
@@ -16,17 +17,22 @@ import kz.chesschicken.chickenextensions.item.mobcatcher.ItemMobCatcher;
 import kz.chesschicken.chickenextensions.item.goldenegg.GoldenEgg;
 import net.minecraft.block.BlockBase;
 import net.minecraft.entity.EntityBase;
+import net.minecraft.entity.player.PlayerBase;
 import net.minecraft.item.ItemBase;
 import net.minecraft.item.food.FoodBase;
 import net.modificationstation.stationloader.api.common.config.Category;
 import net.modificationstation.stationloader.api.common.config.Configuration;
 import net.modificationstation.stationloader.api.common.config.Property;
+import net.modificationstation.stationloader.api.common.entity.player.PlayerHandler;
 import net.modificationstation.stationloader.api.common.event.block.BlockRegister;
 import net.modificationstation.stationloader.api.common.event.entity.EntityRegister;
+import net.modificationstation.stationloader.api.common.event.entity.player.PlayerHandlerRegister;
 import net.modificationstation.stationloader.api.common.event.item.ItemRegister;
 import uk.co.benjiweber.expressions.functions.TriConsumer;
 
-public class RegisteringClass implements ItemRegister, BlockRegister, EntityRegister {
+import java.util.List;
+
+public class RegisteringClass implements ItemRegister, BlockRegister, EntityRegister, PlayerHandlerRegister {
     public static ItemBase itemLightShoker;
     public static ItemBase itemBrickSoul;
     public static ItemBase itemBrickNether;
@@ -204,5 +210,10 @@ public class RegisteringClass implements ItemRegister, BlockRegister, EntityRegi
 
         triConsumer.accept(BloodyPigman.class, "BloodPigman", bloodPigmanID.getIntValue());
         config.save();
+    }
+
+    @Override
+    public void registerPlayerHandlers(List<PlayerHandler> list, PlayerBase playerBase) {
+        list.add(new CustomPlayerHandler(playerBase));
     }
 }

@@ -1,16 +1,15 @@
-package kz.chesschicken.chickenextensions.api;
+package kz.chesschicken.chickenextensions.api.common;
 
-import kz.chesschicken.chickenextensions.api.structure.AquamarineGenStructure;
-import kz.chesschicken.chickenextensions.api.structure.ColourTreeStructure;
-import kz.chesschicken.chickenextensions.api.structure.OreMeta;
-import kz.chesschicken.chickenextensions.api.structure.SoulBrickDungeon;
+import kz.chesschicken.chickenextensions.api.common.structure.AquamarineGenStructure;
+import kz.chesschicken.chickenextensions.api.common.structure.ColourTreeStructure;
+import kz.chesschicken.chickenextensions.api.common.structure.OreMeta;
+import kz.chesschicken.chickenextensions.api.common.structure.SoulBrickDungeon;
 import net.minecraft.block.BlockBase;
 import net.minecraft.level.Level;
 import net.minecraft.level.biome.Biome;
 import net.minecraft.level.source.LevelSource;
 import net.minecraft.level.source.NetherLevelSource;
 import net.minecraft.level.source.OverworldLevelSource;
-import net.minecraft.structure.Ore;
 import net.modificationstation.stationloader.api.common.event.level.gen.ChunkPopulator;
 
 import java.util.Random;

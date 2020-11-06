@@ -1,7 +1,7 @@
 package kz.chesschicken.chickenextensions.block.colour;
 
 import kz.chesschicken.chickenextensions.ChickenMod;
-import kz.chesschicken.chickenextensions.api.structure.ColourTreeStructure;
+import kz.chesschicken.chickenextensions.api.common.structure.ColourTreeStructure;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 import net.minecraft.block.Plant;

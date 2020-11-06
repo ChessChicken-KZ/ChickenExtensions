@@ -10,6 +10,7 @@
     "VersionCheckMixin"
   ],
   "server": [
+    "MixinCommandHandler"
   ],
   "client": [
   ],
