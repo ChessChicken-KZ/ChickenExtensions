@@ -3,10 +3,10 @@
   "id": "chickenextensions",
   "version": "${version}",
 
-  "name": "Chicken Extensions",
-  "description": "Random, cool, old aesthetic things!",
+  "name": "Chicken Extensions (大母鸡)",
+  "description": "New cool and old design minecraft mod (新，旧设计 我的世界的修改)",
   "authors": [
-    "ChessChicken"
+    "ChessChicken （棋母鸡）"
   ],
   "contact": {
     "issues": "https://github.com/ChessChicken-KZ/ChickenExtensions/issues",
