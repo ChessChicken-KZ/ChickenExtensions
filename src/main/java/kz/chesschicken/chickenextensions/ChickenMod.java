@@ -51,7 +51,7 @@ public class ChickenMod implements StationMod, TextureRegister, RecipeRegister
         RegisteringMetals registeringMetals = new RegisteringMetals();
 
         toolGems = GeneralFactory.INSTANCE.newInst(ToolMaterial.class, "chickenextensions:GEMS",3, 1561, 8.0F, 3);
-        toolCopper = GeneralFactory.INSTANCE.newInst(ToolMaterial.class, "chickenextensions:COPPER", 1, 250, 5.0F, 2);
+        toolCopper = GeneralFactory.INSTANCE.newInst(ToolMaterial.class, "chickenextensions:COPPER", 1, 220, 5.0F, 2);
 
 
 
@@ -245,29 +245,6 @@ public class ChickenMod implements StationMod, TextureRegister, RecipeRegister
         switch (type) {
             case CRAFTING_SHAPED: {
 
-                CraftingRegistry.INSTANCE.addShapedRecipe(new ItemInstance(RegisteringClass.machineCartDiapenser), "XXX", "XHX", "XWX", Character.valueOf('X'), BlockBase.COBBLESTONE, Character.valueOf('H'), BlockBase.DETECTOR_RAIL, Character.valueOf('W'), ItemBase.redstoneDust);
-
-
-                CraftingRegistry.INSTANCE.addShapedRecipe(new ItemInstance(RegisteringClass.netherStairs, 4), "  X", " XX", "XXX", Character.valueOf('X'), BlockBase.NETHERRACK);
-                CraftingRegistry.INSTANCE.addShapedRecipe(new ItemInstance(RegisteringClass.mossyCobblestoneStairs, 4), "  X", " XX", "XXX", Character.valueOf('X'), BlockBase.MOSSY_COBBLESTONE);
-                CraftingRegistry.INSTANCE.addShapedRecipe(new ItemInstance(RegisteringClass.bricksStairs, 4), "  X", " XX", "XXX", Character.valueOf('X'), BlockBase.BRICK);
-                CraftingRegistry.INSTANCE.addShapedRecipe(new ItemInstance(RegisteringClass.soulBrickStairs, 4), "  X", " XX", "XXX", Character.valueOf('X'), new ItemInstance(RegisteringClass.blockCouple1, 1, 0));
-                CraftingRegistry.INSTANCE.addShapedRecipe(new ItemInstance(RegisteringClass.mossySoulBrickStairs, 4), "  X", " XX", "XXX", Character.valueOf('X'), new ItemInstance(RegisteringClass.blockCouple1, 1, 1));
-                CraftingRegistry.INSTANCE.addShapedRecipe(new ItemInstance(RegisteringClass.netherBrickStairs, 4), "  X", " XX", "XXX", Character.valueOf('X'), new ItemInstance(RegisteringClass.blockCouple1, 1, 2));
-                CraftingRegistry.INSTANCE.addShapedRecipe(new ItemInstance(RegisteringClass.normalBrickStairs, 4), "  X", " XX", "XXX", Character.valueOf('X'), new ItemInstance(RegisteringClass.blockCouple1, 1, 3));
-                CraftingRegistry.INSTANCE.addShapedRecipe(new ItemInstance(RegisteringClass.stoneStairs, 4), "  X", " XX", "XXX", Character.valueOf('X'), BlockBase.STONE);
-
-                CraftingRegistry.INSTANCE.addShapedRecipe(new ItemInstance(RegisteringClass.fenceExtended, 2, 0), "XXX", "XXX",  Character.valueOf('X'), BlockBase.NETHERRACK);
-                CraftingRegistry.INSTANCE.addShapedRecipe(new ItemInstance(RegisteringClass.fenceExtended, 2, 1), "XXX", "XXX",  Character.valueOf('X'), BlockBase.MOSSY_COBBLESTONE);
-                CraftingRegistry.INSTANCE.addShapedRecipe(new ItemInstance(RegisteringClass.fenceExtended, 2, 2), "XXX", "XXX",  Character.valueOf('X'), BlockBase.BRICK);
-                CraftingRegistry.INSTANCE.addShapedRecipe(new ItemInstance(RegisteringClass.fenceExtended, 2, 3), "XXX", "XXX",  Character.valueOf('X'), BlockBase.COBBLESTONE);
-                CraftingRegistry.INSTANCE.addShapedRecipe(new ItemInstance(RegisteringClass.fenceExtended, 2, 4), "XXX", "XXX",  Character.valueOf('X'), new ItemInstance(RegisteringClass.blockCouple1, 1, 0));
-                CraftingRegistry.INSTANCE.addShapedRecipe(new ItemInstance(RegisteringClass.fenceExtended, 2, 5), "XXX", "XXX",  Character.valueOf('X'), new ItemInstance(RegisteringClass.blockCouple1, 1, 1));
-                CraftingRegistry.INSTANCE.addShapedRecipe(new ItemInstance(RegisteringClass.fenceExtended, 2, 6), "XXX", "XXX",  Character.valueOf('X'), new ItemInstance(RegisteringClass.blockCouple1, 1, 2));
-                CraftingRegistry.INSTANCE.addShapedRecipe(new ItemInstance(RegisteringClass.fenceExtended, 2, 7), "XXX", "XXX",  Character.valueOf('X'), new ItemInstance(RegisteringClass.blockCouple1, 1, 3));
-                CraftingRegistry.INSTANCE.addShapedRecipe(new ItemInstance(RegisteringClass.fenceExtended, 2, 8), "XXX", "XXX", Character.valueOf('X'), BlockBase.STONE);
-                CraftingRegistry.INSTANCE.addShapedRecipe(new ItemInstance(RegisteringClass.fenceExtended, 2, 9), "XXX", "XXX", Character.valueOf('X'), BlockBase.SANDSTONE);
-                CraftingRegistry.INSTANCE.addShapedRecipe(new ItemInstance(RegisteringClass.fenceExtended, 2, 10), "XXX", "XXX", Character.valueOf('X'), BlockBase.STONE_SLAB);
 
                 CraftingRegistry.INSTANCE.addShapedRecipe(new ItemInstance(RegisteringClass.lampCeiling), "WWW", "XXX", " X ",  Character.valueOf('X'), BlockBase.TORCH, Character.valueOf('W'), new ItemInstance(BlockBase.STONE_SLAB, 1 ,2));
                 CraftingRegistry.INSTANCE.addShapedRecipe(new ItemInstance(RegisteringClass.sandStoneStairs), "  X", " XX", "XXX", Character.valueOf('X'), BlockBase.SANDSTONE);

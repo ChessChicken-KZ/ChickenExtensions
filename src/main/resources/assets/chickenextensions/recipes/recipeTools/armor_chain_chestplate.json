@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern":
+  [
+    "X X",
+    "XXX",
+    "XXX"
+  ],
+  "key":
+  {
+    "X":
+    {
+      "item": "chickenextensions:itemChainmail"
+    }
+  },
+  "result":
+  {
+    "item": "minecraft:chestplateChain",
+    "count": 1
+  }
+}

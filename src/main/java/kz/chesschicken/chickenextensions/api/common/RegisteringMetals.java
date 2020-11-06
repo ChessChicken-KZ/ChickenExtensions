@@ -182,20 +182,20 @@ public class RegisteringMetals implements TextureRegister, ItemRegister, BlockRe
         Property bootsSaphireID = itemIdsCategory.getProperty("bootsSaphire", 165);
 
 
-        helmetCopper = new ArmourExtended(helmetCopperID.getIntValue(), 1, 1, 0).setName("helmetCopper");
-        chestplateCopper = new ArmourExtended(chestplateCopperID.getIntValue(), 1, 1, 1).setName("chestplateCopper");
-        leggingsCopper = new ArmourExtended(leggingsCopperID.getIntValue(), 1, 1, 2).setName("leggingsCopper");
-        bootsCopper = new ArmourExtended(bootsCopperID.getIntValue(), 1, 1, 3).setName("bootsCopper");
+        helmetCopper = new ArmourExtended(helmetCopperID.getIntValue(), 1, 1, 0, 0).setName("helmetCopper");
+        chestplateCopper = new ArmourExtended(chestplateCopperID.getIntValue(), 1, 1, 1, 0).setName("chestplateCopper");
+        leggingsCopper = new ArmourExtended(leggingsCopperID.getIntValue(), 1, 1, 2, 0).setName("leggingsCopper");
+        bootsCopper = new ArmourExtended(bootsCopperID.getIntValue(), 1, 1, 3, 0).setName("bootsCopper");
 
-        helmetRuby = new ArmourExtended(helmetRubyID.getIntValue(), 3, 3, 0).setName("helmetRuby");
-        chestplateRuby = new ArmourExtended(chestplateRubyID.getIntValue(), 3, 3, 1).setName("chestplateRuby");
-        leggingsRuby = new ArmourExtended(leggingsRubyID.getIntValue(), 3, 3, 2).setName("leggingsRuby");
-        bootsRuby = new ArmourExtended(bootsRubyID.getIntValue(), 3, 3, 3).setName("bootsRuby");
+        helmetRuby = new ArmourExtended(helmetRubyID.getIntValue(), 3, 3, 0, 1).setName("helmetRuby");
+        chestplateRuby = new ArmourExtended(chestplateRubyID.getIntValue(), 3, 3, 1, 1).setName("chestplateRuby");
+        leggingsRuby = new ArmourExtended(leggingsRubyID.getIntValue(), 3, 3, 2, 1).setName("leggingsRuby");
+        bootsRuby = new ArmourExtended(bootsRubyID.getIntValue(), 3, 3, 3, 1).setName("bootsRuby");
 
-        helmetSaphire = new ArmourExtended(helmetSaphireID.getIntValue(), 3, 3, 0).setName("helmetSaphire");
-        chestplateSaphire = new ArmourExtended(chestplateSaphireID.getIntValue(), 3, 3, 1).setName("chestplateSaphire");
-        leggingsSaphire = new ArmourExtended(leggingsSaphireID.getIntValue(), 3, 3, 2).setName("leggingsSaphire");
-        bootsSaphire = new ArmourExtended(bootsSaphireID.getIntValue(), 3, 3, 3).setName("bootsSaphire");
+        helmetSaphire = new ArmourExtended(helmetSaphireID.getIntValue(), 3, 3, 0, 2).setName("helmetSaphire");
+        chestplateSaphire = new ArmourExtended(chestplateSaphireID.getIntValue(), 3, 3, 1, 2).setName("chestplateSaphire");
+        leggingsSaphire = new ArmourExtended(leggingsSaphireID.getIntValue(), 3, 3, 2, 2).setName("leggingsSaphire");
+        bootsSaphire = new ArmourExtended(bootsSaphireID.getIntValue(), 3, 3, 3, 2).setName("bootsSaphire");
 
         Property swordCopperID = itemIdsCategory.getProperty("swordCopper", 166);
         Property pickaxeCopperID = itemIdsCategory.getProperty("pickaxeCopper", 167);

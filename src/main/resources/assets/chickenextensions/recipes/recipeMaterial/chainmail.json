@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern":
+  [
+    " X ",
+    "XHX",
+    " X "
+  ],
+  "key":
+  {
+    "X":
+    {
+      "item": "chickenextensions:itemIronNugget"
+    },
+    "H":
+    {
+      "item": "minecraft:ingotIron"
+    }
+  },
+  "result":
+  {
+    "item": "chickenextensions:itemChainmail",
+    "count": 1
+  }
+}

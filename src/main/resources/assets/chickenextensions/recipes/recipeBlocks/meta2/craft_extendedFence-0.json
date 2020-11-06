@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern":
+  [
+    "XXX",
+    "XXX"
+  ],
+  "key":
+  {
+    "X":
+    {
+      "item": "minecraft:hellrock"
+    }
+  },
+  "result":
+  {
+    "item": "chickenextensions:fenceExtended",
+    "count": 2,
+    "damage": 0
+  }
+}

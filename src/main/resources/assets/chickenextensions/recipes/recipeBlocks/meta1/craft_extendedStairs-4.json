@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern":
+  [
+    "  X",
+    " XX",
+    "XXX"
+  ],
+  "key":
+  {
+    "X":
+    {
+      "item": "chickenextensions:blockCouple1",
+      "damage": 1
+    }
+  },
+  "result":
+  {
+    "item": "chickenextensions:mossySoulBrickStairs",
+    "count": 4
+  }
+}

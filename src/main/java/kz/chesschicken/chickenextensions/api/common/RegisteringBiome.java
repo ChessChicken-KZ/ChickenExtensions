@@ -30,5 +30,6 @@ public class RegisteringBiome implements BiomeRegister, BiomeByClimateProvider {
     public void getBiome(AtomicReference<Biome> atomicReference, float f, float f1) {
         if(f1 < 0.45F)
             atomicReference.set(biomeAlphiumBiome);
+
     }
 }

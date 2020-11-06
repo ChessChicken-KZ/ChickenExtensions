@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern":
+  [
+    "  X",
+    " XX",
+    "XXX"
+  ],
+  "key":
+  {
+    "X":
+    {
+      "item": "minecraft:stone"
+    }
+  },
+  "result":
+  {
+    "item": "chickenextensions:stoneStairs",
+    "count": 4
+  }
+}
