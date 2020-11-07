@@ -26,18 +26,16 @@ import net.modificationstation.stationloader.api.common.recipe.SmeltingRegistry;
 import net.modificationstation.stationloader.impl.client.texture.TextureFactory;
 
 import java.awt.*;
-import java.util.HashMap;
 
 public class ChickenMod implements StationMod, TextureRegister, RecipeRegister
 {
     public static ChickenMod INSTANCE;
-    public static HashMap<Integer, Integer> color16 = new HashMap<Integer, Integer>() {};
     public ChickenMod()
     {
         INSTANCE = this;
     }
 
-    public static String VERSION = "0.0.2era-alpha";
+    public static String VERSION = "0.0.3era-alpha";
 
     public static ToolMaterial toolGems;
     public static ToolMaterial toolCopper;
@@ -242,16 +240,6 @@ public class ChickenMod implements StationMod, TextureRegister, RecipeRegister
     public void registerRecipes(String string) {
         Vanilla type = Vanilla.fromType(string);
         switch (type) {
-            case CRAFTING_SHAPED: {
-
-                CraftingRegistry.INSTANCE.addShapedRecipe(new ItemInstance(RegisteringClass.blockCouple1, 4, 8), "XX", "XX", Character.valueOf('X'), BlockBase.SNOW_BLOCK);
-                CraftingRegistry.INSTANCE.addShapedRecipe(new ItemInstance(RegisteringClass.itemTile), "X", "X", Character.valueOf('X'), RegisteringClass.itemSlakedLime);
-
-                CraftingRegistry.INSTANCE.addShapedRecipe(new ItemInstance(RegisteringClass.blockCouple1, 4, 7), "XX", "XX", Character.valueOf('X'), RegisteringClass.itemLimestone);
-                CraftingRegistry.INSTANCE.addShapedRecipe(new ItemInstance(RegisteringClass.blockCouple1, 4, 9), "XX", "XX", Character.valueOf('X'), RegisteringClass.itemSlakedLime);
-
-                break;
-            }
             case SMELTING: {
                 SmeltingRegistry.INSTANCE.addSmeltingRecipe(BlockBase.SOUL_SAND.id, new ItemInstance(RegisteringClass.itemBrickSoul));
                 SmeltingRegistry.INSTANCE.addSmeltingRecipe(BlockBase.NETHERRACK.id, new ItemInstance(RegisteringClass.itemBrickNether));

@@ -35,6 +35,8 @@ public class RegisteringMetals implements TextureRegister, ItemRegister, BlockRe
     public static int textureBlockRuby;
     public static int textureBlockSaphire;
     public static int textureBlockCopper;
+    public static int textureOreTin;
+    public static int textureBlockTin;
     @Override
     public void registerTextures() {
         //ITEMS
@@ -210,6 +212,10 @@ public class RegisteringMetals implements TextureRegister, ItemRegister, BlockRe
         pickaxeRuby = new PickaxeBasic(pickaxeRubyID.getIntValue(), ChickenMod.toolGems).setName("pickaxeRuby");
         swordSaphire = new Sword(swordSaphireID.getIntValue(), ChickenMod.toolGems).setName("swordSaphire");
         pickaxeSaphire = new PickaxeBasic(pickaxeSaphireID.getIntValue(), ChickenMod.toolGems).setName("pickaxeSaphire");
+
+
+
+
         config.save();
     }
 }

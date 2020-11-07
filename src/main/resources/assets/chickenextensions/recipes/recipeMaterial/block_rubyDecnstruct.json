@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients":
+  [
+    {
+      "item": "chickenextensions:allMetalsBlock",
+      "damage": 0
+    }
+  ],
+  "result": {
+    "item": "chickenextensions:itemRuby",
+    "count": 9
+  }
+}

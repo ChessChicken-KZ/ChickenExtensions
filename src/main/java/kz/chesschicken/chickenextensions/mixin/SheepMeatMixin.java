@@ -17,7 +17,7 @@ public class SheepMeatMixin extends AnimalBase {
 
     @Override
     public void onKilledBy(EntityBase arg) {
-        Item lol = new Item(level, this.x, this.y, this.z, new ItemInstance(this.fire > 0 ? RegisteringClass.itemMuttonCooked : RegisteringClass.itemMuttonRaw, (new Random()).nextInt(3)));
+        Item lol = new Item(level, this.x, this.y, this.z, new ItemInstance(this.fire > 0 ? RegisteringClass.itemMuttonCooked : RegisteringClass.itemMuttonRaw, 1));
         level.spawnEntity(lol);
     }
 }

@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern":
+  [
+    "XXX",
+    "XXX",
+    "XXX"
+  ],
+  "key":
+  {
+    "X":
+    {
+      "item": "chickenextensions:itemRuby"
+    }
+  },
+  "result":
+  {
+    "item": "chickenextensions:allMetalsBlock",
+    "damage": 0
+  }
+}
