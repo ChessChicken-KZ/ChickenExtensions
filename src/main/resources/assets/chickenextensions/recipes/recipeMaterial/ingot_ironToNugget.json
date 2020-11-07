@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients":
+  [
+    {
+      "item": "minecraft:ingotIron"
+    }
+  ],
+  "result": {
+    "item": "chickenextensions:itemIronNugget",
+    "count": 9
+  }
+}

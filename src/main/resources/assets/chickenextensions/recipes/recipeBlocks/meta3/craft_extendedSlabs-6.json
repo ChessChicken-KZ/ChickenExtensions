@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern":
+  [
+    "XXX"
+  ],
+  "key":
+  {
+    "X":
+    {
+      "item": "chickenextensions:blockCouple1",
+      "damage": 2
+    }
+  },
+  "result":
+  {
+    "item": "chickenextensions:extendedSlabs",
+    "count": 3,
+    "damage": 6
+  }
+}
