@@ -153,9 +153,9 @@ public class RegisteringMetals implements TextureRegister, ItemRegister, BlockRe
         Property itemRubyID = itemIdsCategory.getProperty("itemRuby", 147);
         Property itemSaphireID = itemIdsCategory.getProperty("itemSaphire", 148);
         Property nuggetRubyID = itemIdsCategory.getProperty("nuggetRuby", 152);
-        Property nuggetSaphireID = itemIdsCategory.getProperty("nuggetSaphire", 153);
-        Property itemCopperID = itemIdsCategory.getProperty("itemCopper", 153);
-        Property nuggetCopperID = itemIdsCategory.getProperty("nuggetCopper", 153);
+        Property nuggetSaphireID = itemIdsCategory.getProperty("nuggetSaphire", 154);
+        Property itemCopperID = itemIdsCategory.getProperty("itemCopper", 155);
+        Property nuggetCopperID = itemIdsCategory.getProperty("nuggetCopper", 156);
 
         itemAquamarine = new ItemBasic(itemAquamarineID.getIntValue()).setName("itemAquamarine");
 
@@ -166,20 +166,20 @@ public class RegisteringMetals implements TextureRegister, ItemRegister, BlockRe
         itemCopper = new ItemBasic(itemCopperID.getIntValue()).setName("itemCopper");
         nuggetCopper = new ItemBasic(nuggetCopperID.getIntValue()).setName("nuggetCopper");
 
-        Property helmetCopperID = itemIdsCategory.getProperty("helmetCopper", 154);
-        Property chestplateCopperID = itemIdsCategory.getProperty("chestplateCopper", 155);
-        Property leggingsCopperID = itemIdsCategory.getProperty("leggingsCopper", 156);
-        Property bootsCopperID = itemIdsCategory.getProperty("bootsCopper", 157);
+        Property helmetCopperID = itemIdsCategory.getProperty("helmetCopper", 157);
+        Property chestplateCopperID = itemIdsCategory.getProperty("chestplateCopper", 158);
+        Property leggingsCopperID = itemIdsCategory.getProperty("leggingsCopper", 159);
+        Property bootsCopperID = itemIdsCategory.getProperty("bootsCopper", 160);
 
-        Property helmetRubyID = itemIdsCategory.getProperty("helmetRuby", 158);
-        Property chestplateRubyID = itemIdsCategory.getProperty("chestplateRuby", 159);
-        Property leggingsRubyID = itemIdsCategory.getProperty("leggingsRuby", 160);
-        Property bootsRubyID = itemIdsCategory.getProperty("bootsRuby", 161);
+        Property helmetRubyID = itemIdsCategory.getProperty("helmetRuby", 161);
+        Property chestplateRubyID = itemIdsCategory.getProperty("chestplateRuby", 162);
+        Property leggingsRubyID = itemIdsCategory.getProperty("leggingsRuby", 163);
+        Property bootsRubyID = itemIdsCategory.getProperty("bootsRuby", 164);
 
-        Property helmetSaphireID = itemIdsCategory.getProperty("helmetSaphire", 162);
-        Property chestplateSaphireID = itemIdsCategory.getProperty("chestplateSaphire", 163);
-        Property leggingsSaphireID = itemIdsCategory.getProperty("leggingsSaphire", 164);
-        Property bootsSaphireID = itemIdsCategory.getProperty("bootsSaphire", 165);
+        Property helmetSaphireID = itemIdsCategory.getProperty("helmetSaphire", 165);
+        Property chestplateSaphireID = itemIdsCategory.getProperty("chestplateSaphire", 166);
+        Property leggingsSaphireID = itemIdsCategory.getProperty("leggingsSaphire", 167);
+        Property bootsSaphireID = itemIdsCategory.getProperty("bootsSaphire", 168);
 
 
         helmetCopper = new ArmourExtended(helmetCopperID.getIntValue(), 1, 1, 0, 0).setName("helmetCopper");
@@ -197,12 +197,12 @@ public class RegisteringMetals implements TextureRegister, ItemRegister, BlockRe
         leggingsSaphire = new ArmourExtended(leggingsSaphireID.getIntValue(), 3, 3, 2, 2).setName("leggingsSaphire");
         bootsSaphire = new ArmourExtended(bootsSaphireID.getIntValue(), 3, 3, 3, 2).setName("bootsSaphire");
 
-        Property swordCopperID = itemIdsCategory.getProperty("swordCopper", 166);
-        Property pickaxeCopperID = itemIdsCategory.getProperty("pickaxeCopper", 167);
-        Property swordRubyID = itemIdsCategory.getProperty("swordRuby", 168);
-        Property pickaxeRubyID = itemIdsCategory.getProperty("pickaxeRuby", 169);
-        Property swordSaphireID = itemIdsCategory.getProperty("swordSaphire", 170);
-        Property pickaxeSaphireID = itemIdsCategory.getProperty("pickaxeSaphire", 171);
+        Property swordCopperID = itemIdsCategory.getProperty("swordCopper", 169);
+        Property pickaxeCopperID = itemIdsCategory.getProperty("pickaxeCopper", 170);
+        Property swordRubyID = itemIdsCategory.getProperty("swordRuby", 171);
+        Property pickaxeRubyID = itemIdsCategory.getProperty("pickaxeRuby", 172);
+        Property swordSaphireID = itemIdsCategory.getProperty("swordSaphire", 173);
+        Property pickaxeSaphireID = itemIdsCategory.getProperty("pickaxeSaphire", 174);
 
         swordCopper = new Sword(swordCopperID.getIntValue(), ChickenMod.toolCopper).setName("swordCopper");
         pickaxeCopper = new PickaxeBasic(pickaxeCopperID.getIntValue(), ChickenMod.toolCopper).setName("pickaxeCopper");

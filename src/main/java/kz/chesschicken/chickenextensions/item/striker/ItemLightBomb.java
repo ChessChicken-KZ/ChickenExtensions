@@ -1,4 +1,4 @@
-package kz.chesschicken.chickenextensions.item;
+package kz.chesschicken.chickenextensions.item.striker;
 
 import net.fabricmc.loader.api.FabricLoader;
 import net.minecraft.client.Minecraft;
@@ -22,7 +22,6 @@ public class ItemLightBomb extends ItemBase
 
     @Override
     public ItemInstance use(ItemInstance item, Level level, PlayerBase player) {
-        CustomReach.setHandBlockReach(3.0F);
         if(mc.hitResult != null)
         {
             if(mc.hitResult.type == HitType.TILE)

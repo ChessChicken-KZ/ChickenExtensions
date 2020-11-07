@@ -5,6 +5,7 @@ import kz.chesschicken.chickenextensions.api.common.RegisteringBiome;
 import kz.chesschicken.chickenextensions.api.common.RegisteringMetals;
 import kz.chesschicken.chickenextensions.api.common.RegisteringPopulator;
 import kz.chesschicken.chickenextensions.api.common.RegisteringClass;
+import net.fabricmc.loader.discovery.DirectoryModCandidateFinder;
 import net.minecraft.block.BlockBase;
 import net.minecraft.item.ItemBase;
 import net.minecraft.item.ItemInstance;
@@ -23,15 +24,14 @@ import net.modificationstation.stationloader.api.common.mod.StationMod;
 import net.modificationstation.stationloader.api.common.recipe.CraftingRegistry;
 import net.modificationstation.stationloader.api.common.recipe.SmeltingRegistry;
 import net.modificationstation.stationloader.impl.client.texture.TextureFactory;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 
 import java.awt.*;
+import java.util.HashMap;
 
 public class ChickenMod implements StationMod, TextureRegister, RecipeRegister
 {
-    protected static Logger MODLOGGER;
     public static ChickenMod INSTANCE;
+    public static HashMap<Integer, Integer> color16 = new HashMap<Integer, Integer>() {};
     public ChickenMod()
     {
         INSTANCE = this;
@@ -45,10 +45,9 @@ public class ChickenMod implements StationMod, TextureRegister, RecipeRegister
     @Override
     public void preInit()
     {
-        MODLOGGER = LogManager.getFormatterLogger("ChickenExtensions|StationMod");
-        MODLOGGER.info("Hello world!");
         RegisteringClass registeringClass = new RegisteringClass();
         RegisteringMetals registeringMetals = new RegisteringMetals();
+        RegisteringBiome registeringBiome = new RegisteringBiome();
 
         toolGems = GeneralFactory.INSTANCE.newInst(ToolMaterial.class, "chickenextensions:GEMS",3, 1561, 8.0F, 3);
         toolCopper = GeneralFactory.INSTANCE.newInst(ToolMaterial.class, "chickenextensions:COPPER", 1, 220, 5.0F, 2);
@@ -65,8 +64,8 @@ public class ChickenMod implements StationMod, TextureRegister, RecipeRegister
 
         EntityRegister.EVENT.register(registeringClass);
         RecipeRegister.EVENT.register(this);
-        BiomeRegister.EVENT.register(new RegisteringBiome());
-        BiomeByClimateProvider.EVENT.register(new RegisteringBiome());
+        BiomeRegister.EVENT.register(registeringBiome);
+        BiomeByClimateProvider.EVENT.register(registeringBiome);
         ChunkPopulator.EVENT.register(new RegisteringPopulator());
         loadCustomConfigPart();
 
@@ -245,40 +244,12 @@ public class ChickenMod implements StationMod, TextureRegister, RecipeRegister
         switch (type) {
             case CRAFTING_SHAPED: {
 
-
-                CraftingRegistry.INSTANCE.addShapedRecipe(new ItemInstance(RegisteringClass.lampCeiling), "WWW", "XXX", " X ",  Character.valueOf('X'), BlockBase.TORCH, Character.valueOf('W'), new ItemInstance(BlockBase.STONE_SLAB, 1 ,2));
-                CraftingRegistry.INSTANCE.addShapedRecipe(new ItemInstance(RegisteringClass.sandStoneStairs), "  X", " XX", "XXX", Character.valueOf('X'), BlockBase.SANDSTONE);
-                CraftingRegistry.INSTANCE.addShapedRecipe(new ItemInstance(RegisteringClass.stoneSmoothStairs), "  X", " XX", "XXX",  Character.valueOf('X'), BlockBase.STONE_SLAB);
-
-                CraftingRegistry.INSTANCE.addShapedRecipe(new ItemInstance(RegisteringClass.extendedSlabs, 3, 0), "XXX", Character.valueOf('X'), BlockBase.NETHERRACK);
-                CraftingRegistry.INSTANCE.addShapedRecipe(new ItemInstance(RegisteringClass.extendedSlabs, 3, 1), "XXX",  Character.valueOf('X'), BlockBase.MOSSY_COBBLESTONE);
-                CraftingRegistry.INSTANCE.addShapedRecipe(new ItemInstance(RegisteringClass.extendedSlabs, 3, 2), "XXX",  Character.valueOf('X'), BlockBase.BRICK);
-                CraftingRegistry.INSTANCE.addShapedRecipe(new ItemInstance(RegisteringClass.extendedSlabs, 3, 3), "XXX",  Character.valueOf('X'), BlockBase.COBBLESTONE);
-                CraftingRegistry.INSTANCE.addShapedRecipe(new ItemInstance(RegisteringClass.extendedSlabs, 3, 4), "XXX",  Character.valueOf('X'), new ItemInstance(RegisteringClass.blockCouple1, 1, 0));
-                CraftingRegistry.INSTANCE.addShapedRecipe(new ItemInstance(RegisteringClass.extendedSlabs, 3, 5), "XXX",  Character.valueOf('X'), new ItemInstance(RegisteringClass.blockCouple1, 1, 1));
-                CraftingRegistry.INSTANCE.addShapedRecipe(new ItemInstance(RegisteringClass.extendedSlabs, 3, 6), "XXX",  Character.valueOf('X'), new ItemInstance(RegisteringClass.blockCouple1, 1, 2));
-                CraftingRegistry.INSTANCE.addShapedRecipe(new ItemInstance(RegisteringClass.extendedSlabs, 3, 7), "XXX",  Character.valueOf('X'), new ItemInstance(RegisteringClass.blockCouple1, 1, 3));
-                CraftingRegistry.INSTANCE.addShapedRecipe(new ItemInstance(RegisteringClass.extendedSlabs, 3, 8), "XXX", Character.valueOf('X'), BlockBase.STONE);
-                CraftingRegistry.INSTANCE.addShapedRecipe(new ItemInstance(RegisteringClass.itemBiomeLocator), "XWX", "WAW", "XWX", Character.valueOf('X'), BlockBase.SAPLING, Character.valueOf('W'), ItemBase.goldIngot, Character.valueOf('A'), BlockBase.CACTUS);
-
-                CraftingRegistry.INSTANCE.addShapedRecipe(new ItemInstance(RegisteringClass.blockCouple1, 4, 8), "XX", "XX", Character.valueOf('X'), BlockBase.SNOW);
+                CraftingRegistry.INSTANCE.addShapedRecipe(new ItemInstance(RegisteringClass.blockCouple1, 4, 8), "XX", "XX", Character.valueOf('X'), BlockBase.SNOW_BLOCK);
                 CraftingRegistry.INSTANCE.addShapedRecipe(new ItemInstance(RegisteringClass.itemTile), "X", "X", Character.valueOf('X'), RegisteringClass.itemSlakedLime);
 
                 CraftingRegistry.INSTANCE.addShapedRecipe(new ItemInstance(RegisteringClass.blockCouple1, 4, 7), "XX", "XX", Character.valueOf('X'), RegisteringClass.itemLimestone);
                 CraftingRegistry.INSTANCE.addShapedRecipe(new ItemInstance(RegisteringClass.blockCouple1, 4, 9), "XX", "XX", Character.valueOf('X'), RegisteringClass.itemSlakedLime);
 
-                break;
-            }
-            case CRAFTING_SHAPELESS: {
-                CraftingRegistry.INSTANCE.addShapelessRecipe(new ItemInstance(RegisteringClass.itemIronNugget, 9), ItemBase.ironIngot);
-                CraftingRegistry.INSTANCE.addShapelessRecipe(new ItemInstance(RegisteringClass.itemGoldNugget, 9), ItemBase.goldIngot);
-                CraftingRegistry.INSTANCE.addShapelessRecipe(new ItemInstance(RegisteringClass.itemDiamondNugget, 9), ItemBase.diamond);
-
-                //DEBUG
-                CraftingRegistry.INSTANCE.addShapelessRecipe(new ItemInstance(RegisteringClass.lampCeiling), BlockBase.DIRT);
-                CraftingRegistry.INSTANCE.addShapelessRecipe(new ItemInstance(RegisteringClass.furnitureNightstand), ItemBase.stick);
-                CraftingRegistry.INSTANCE.addShapelessRecipe(new ItemInstance(RegisteringClass.furnitureBox), BlockBase.WOOD);
-                //DEBUG
                 break;
             }
             case SMELTING: {

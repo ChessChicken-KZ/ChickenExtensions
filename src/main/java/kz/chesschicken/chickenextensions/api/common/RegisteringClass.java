@@ -12,7 +12,7 @@ import kz.chesschicken.chickenextensions.block.furniture.BlockContainerFurniture
 import kz.chesschicken.chickenextensions.entity.BloodyPigman;
 import kz.chesschicken.chickenextensions.item.ItemBasic;
 import kz.chesschicken.chickenextensions.item.ItemBiomeLocator;
-import kz.chesschicken.chickenextensions.item.ItemLightBomb;
+import kz.chesschicken.chickenextensions.item.striker.ItemLightBomb;
 import kz.chesschicken.chickenextensions.item.mobcatcher.ItemMobCatcher;
 import kz.chesschicken.chickenextensions.item.goldenegg.GoldenEgg;
 import net.minecraft.block.BlockBase;
@@ -180,7 +180,7 @@ public class RegisteringClass implements ItemRegister, BlockRegister, EntityRegi
         stoneSmoothStairs = new StairsExtended(stoneSmoothStairsID.getIntValue(), BlockBase.STONE_SLAB.getTextureForSide(0), BlockBase.STONE_SLAB.id).setName("chickenextensions:stoneSmoothStairs");
         sandStoneStairs = new StairsExtended(sandStoneStairsID.getIntValue(), BlockBase.SANDSTONE.getTextureForSide(1), BlockBase.SANDSTONE.id).setName("chickenextensions:sandStoneStairs");
         extendedSlabs = new SlabsExtended(extendedSlabsID.getIntValue(), false).setName("chickenextensions:extendedSlabs");
-        extendedDoubleSlabs = new SlabsExtended(extendedDoubleSlabsID.getIntValue(), true).setName("chickenextensions:extendedSlabs");
+        extendedDoubleSlabs = new SlabsExtended(extendedDoubleSlabsID.getIntValue(), true).setName("chickenextensions:extendedDoubleSlabs");
         lampCeiling = new BlockCeilingLamp(lampCeilingID.getIntValue()).setName("chickenextensions:lampCeiling");
         furnitureCabinet = new BlockContainerFurniture(furnitureCabinetID.getIntValue()).setName("chickenextensions:furnitureCabinet");
         furnitureNightstand = new BlockContainerFurniture(furnitureNightstandID.getIntValue()).setName("chickenextensions:furnitureNightstand");
