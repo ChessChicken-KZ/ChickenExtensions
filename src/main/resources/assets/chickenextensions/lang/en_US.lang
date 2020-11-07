@@ -147,10 +147,12 @@ item.chickenextensions\:itemAquamarine.name=Aquamarine
 item.chickenextensions\:itemRuby.name=Ruby
 item.chickenextensions\:itemSaphire.name=Saphire
 item.chickenextensions\:itemCopper.name=Copper ingot
+item.chickenextensions\:itemTin.name=Tin ingot
 
 item.chickenextensions\:nuggetRuby.name=Ruby Nugget
 item.chickenextensions\:nuggetSaphire.name=Saphire Nugget
-item.chickenextensions\:nuggetCopper.name=Copper ingot Nugget
+item.chickenextensions\:nuggetCopper.name=Copper Nugget
+item.chickenextensions\:nuggetTin.name=Tin Nugget
 
 item.chickenextensions\:helmetRuby.name=Ruby Helmet
 item.chickenextensions\:chestplateRuby.name=Ruby Chestplate
@@ -170,7 +172,9 @@ item.chickenextensions\:bootsCopper.name=Copper Boots
 tile.chickenextensions\:allMetalsOre0.name=Ruby Ore
 tile.chickenextensions\:allMetalsOre1.name=Saphire Ore
 tile.chickenextensions\:allMetalsOre2.name=Copper Ore
+tile.chickenextensions\:allMetalsOre3.name=Tin Ore
 
 tile.chickenextensions\:allMetalsBlock0.name=Ruby Block
 tile.chickenextensions\:allMetalsBlock1.name=Saphire Block
 tile.chickenextensions\:allMetalsBlock2.name=Copper Block
+tile.chickenextensions\:allMetalsBlock3.name=Tin Block

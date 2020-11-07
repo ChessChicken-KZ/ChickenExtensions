@@ -9,8 +9,6 @@ import net.minecraft.item.ItemInstance;
 import net.minecraft.level.Level;
 import org.spongepowered.asm.mixin.Mixin;
 
-import java.util.Random;
-
 @Mixin(Sheep.class)
 public class SheepMeatMixin extends AnimalBase {
     public SheepMeatMixin(Level arg) { super(arg); }

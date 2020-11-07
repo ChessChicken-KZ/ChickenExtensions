@@ -12,6 +12,7 @@ import kz.chesschicken.chickenextensions.block.furniture.BlockContainerFurniture
 import kz.chesschicken.chickenextensions.entity.BloodyPigman;
 import kz.chesschicken.chickenextensions.item.ItemBasic;
 import kz.chesschicken.chickenextensions.item.ItemBiomeLocator;
+import kz.chesschicken.chickenextensions.item.obsidianboat.ItemObsidianBoat;
 import kz.chesschicken.chickenextensions.item.striker.ItemLightBomb;
 import kz.chesschicken.chickenextensions.item.mobcatcher.ItemMobCatcher;
 import kz.chesschicken.chickenextensions.item.goldenegg.GoldenEgg;
@@ -32,7 +33,7 @@ import uk.co.benjiweber.expressions.functions.TriConsumer;
 
 import java.util.List;
 
-public class RegisteringClass implements ItemRegister, BlockRegister, EntityRegister, PlayerHandlerRegister {
+public class RegisteringClass implements ItemRegister, BlockRegister {
     public static ItemBase itemLightShoker;
     public static ItemBase itemBrickSoul;
     public static ItemBase itemBrickNether;
@@ -80,6 +81,8 @@ public class RegisteringClass implements ItemRegister, BlockRegister, EntityRegi
     public static ItemBase itemSlakedLime;
     public static BlockBase blockChandelier;
 
+    public static ItemBase boatObsidian;
+
 
     @Override
     public void registerItems()
@@ -105,6 +108,7 @@ public class RegisteringClass implements ItemRegister, BlockRegister, EntityRegi
         Property itemLimestoneID = itemIdsCategory.getProperty("itemLimestone", 149);
         Property itemTileID = itemIdsCategory.getProperty("itemTile", 150);
         Property itemSlakedLimeID = itemIdsCategory.getProperty("itemSlakedLime", 151);
+        Property boatObsidianID = itemIdsCategory.getProperty("boatObsidian", 177);
 
         itemLightShoker = new ItemLightBomb(itemLightBombID.getIntValue()).setName("chickenextensions:itemLightShoker");
         itemBrickSoul = new ItemBasic(itemBrickSoulID.getIntValue()).setName("chickenextensions:itemBrickSoul");
@@ -125,7 +129,7 @@ public class RegisteringClass implements ItemRegister, BlockRegister, EntityRegi
         itemLimestone = new ItemBasic(itemLimestoneID.getIntValue()).setName("chickenextensions:itemLimestone");
         itemTile = new ItemBasic(itemTileID.getIntValue()).setName("chickenextensions:itemTile");
         itemSlakedLime = new ItemBasic(itemSlakedLimeID.getIntValue()).setName("chickenextensions:itemSlakedLime");
-
+        boatObsidian = new ItemObsidianBoat(boatObsidianID.getIntValue()).setName("chickenextensions:boatObsidian");
 
     }
 
@@ -200,20 +204,4 @@ public class RegisteringClass implements ItemRegister, BlockRegister, EntityRegi
 
     }
 
-
-    @Override
-    public void registerEntities(TriConsumer<Class<? extends EntityBase>, String, Integer> triConsumer) {
-        Configuration config = ChickenMod.INSTANCE.getDefaultConfig();
-        Category mobIDsCategory = config.getCategory("Mob IDs");
-        Property bloodPigmanID = mobIDsCategory.getProperty("bloodPigmanID", 20);
-
-
-        triConsumer.accept(BloodyPigman.class, "BloodPigman", bloodPigmanID.getIntValue());
-        config.save();
-    }
-
-    @Override
-    public void registerPlayerHandlers(List<PlayerHandler> list, PlayerBase playerBase) {
-        list.add(new CustomPlayerHandler(playerBase));
-    }
 }

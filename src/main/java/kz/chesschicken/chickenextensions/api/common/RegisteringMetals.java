@@ -19,8 +19,6 @@ import net.modificationstation.stationloader.api.common.event.block.BlockRegiste
 import net.modificationstation.stationloader.api.common.event.item.ItemRegister;
 import net.modificationstation.stationloader.impl.client.texture.TextureFactory;
 
-import java.awt.*;
-
 /**
  * Because of 0.0.3, I'll start inserting material textures here
  *
@@ -48,6 +46,8 @@ public class RegisteringMetals implements TextureRegister, ItemRegister, BlockRe
         nuggetSaphire.setTexturePosition(TextureFactory.INSTANCE.addTexture(TextureRegistry.getRegistry("GUI_ITEMS"), "/assets/chickenextensions/textures/item/nuggets/saphire.png"));
         itemCopper.setTexturePosition(TextureFactory.INSTANCE.addTexture(TextureRegistry.getRegistry("GUI_ITEMS"), "/assets/chickenextensions/textures/item/materials/copper.png"));
         nuggetCopper.setTexturePosition(TextureFactory.INSTANCE.addTexture(TextureRegistry.getRegistry("GUI_ITEMS"), "/assets/chickenextensions/textures/item/nuggets/copper.png"));
+        itemTin.setTexturePosition(TextureFactory.INSTANCE.addTexture(TextureRegistry.getRegistry("GUI_ITEMS"), "/assets/chickenextensions/textures/item/materials/tin.png"));
+        nuggetTin.setTexturePosition(TextureFactory.INSTANCE.addTexture(TextureRegistry.getRegistry("GUI_ITEMS"), "/assets/chickenextensions/textures/item/nuggets/tin.png"));
 
 
         //BLOCKS
@@ -56,10 +56,13 @@ public class RegisteringMetals implements TextureRegister, ItemRegister, BlockRe
         textureOreRuby = TextureFactory.INSTANCE.addTexture(TextureRegistry.getRegistry("TERRAIN"), "/assets/chickenextensions/textures/block/ore/ruby.png");
         textureOreSaphire = TextureFactory.INSTANCE.addTexture(TextureRegistry.getRegistry("TERRAIN"), "/assets/chickenextensions/textures/block/ore/saphire.png");
         textureOreCopper = TextureFactory.INSTANCE.addTexture(TextureRegistry.getRegistry("TERRAIN"), "/assets/chickenextensions/textures/block/ore/copper.png");
+        textureBlockTin = TextureFactory.INSTANCE.addTexture(TextureRegistry.getRegistry("TERRAIN"), "/assets/chickenextensions/textures/block/ore/tin.png");
+
 
         textureBlockRuby = TextureFactory.INSTANCE.addTexture(TextureRegistry.getRegistry("TERRAIN"), "/assets/chickenextensions/textures/block/oreblock/ruby.png");
         textureBlockSaphire = TextureFactory.INSTANCE.addTexture(TextureRegistry.getRegistry("TERRAIN"), "/assets/chickenextensions/textures/block/oreblock/saphire.png");
         textureBlockCopper = TextureFactory.INSTANCE.addTexture(TextureRegistry.getRegistry("TERRAIN"), "/assets/chickenextensions/textures/block/oreblock/copper.png");
+        textureBlockTin = TextureFactory.INSTANCE.addTexture(TextureRegistry.getRegistry("TERRAIN"), "/assets/chickenextensions/textures/block/oreblock/tin.png");
 
         helmetCopper.setTexturePosition(TextureFactory.INSTANCE.addTexture(TextureRegistry.getRegistry("GUI_ITEMS"), "/assets/chickenextensions/textures/item/tool/armor/copper_helmet.png"));
         chestplateCopper.setTexturePosition(TextureFactory.INSTANCE.addTexture(TextureRegistry.getRegistry("GUI_ITEMS"), "/assets/chickenextensions/textures/item/tool/armor/copper_chestplate.png"));
@@ -131,6 +134,9 @@ public class RegisteringMetals implements TextureRegister, ItemRegister, BlockRe
 
     public static ItemBase swordSaphire;
     public static ItemBase pickaxeSaphire;
+
+    public static ItemBase itemTin;
+    public static ItemBase nuggetTin;
 
 
     @Override
@@ -213,8 +219,10 @@ public class RegisteringMetals implements TextureRegister, ItemRegister, BlockRe
         swordSaphire = new Sword(swordSaphireID.getIntValue(), ChickenMod.toolGems).setName("swordSaphire");
         pickaxeSaphire = new PickaxeBasic(pickaxeSaphireID.getIntValue(), ChickenMod.toolGems).setName("pickaxeSaphire");
 
-
-
+        Property itemTinID = itemIdsCategory.getProperty("itemTin", 175);
+        Property nuggetTinID = itemIdsCategory.getProperty("nuggetTin", 176);
+        itemTin = new ItemBasic(itemTinID.getIntValue()).setName("itemTin");
+        nuggetTin = new ItemBasic(nuggetTinID.getIntValue()).setName("nuggetTin");
 
         config.save();
     }

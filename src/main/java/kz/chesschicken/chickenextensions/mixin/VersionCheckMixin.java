@@ -2,6 +2,8 @@ package kz.chesschicken.chickenextensions.mixin;
 
 import kz.chesschicken.chickenextensions.ChickenMod;
 import kz.chesschicken.chickenextensions.api.common.VersionGui;
+import net.fabricmc.api.EnvType;
+import net.fabricmc.api.Environment;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.screen.ScreenBase;
 import org.spongepowered.asm.mixin.Mixin;
@@ -15,6 +17,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.URL;
 
+@Environment(EnvType.CLIENT)
 @Mixin(Minecraft.class)
 public abstract class VersionCheckMixin {
     @Shadow public abstract void openScreen(ScreenBase screen);
@@ -22,8 +25,9 @@ public abstract class VersionCheckMixin {
     @Inject(method = "init", at = @At("TAIL"))
     private void rungui(CallbackInfo ci)
     {
-        if(!isNewVersion())
-            this.openScreen(new VersionGui());
+        if(ChickenMod.isCheckVersion)
+            if(!isNewVersion())
+                this.openScreen(new VersionGui());
     }
 
     private boolean isNewVersion()

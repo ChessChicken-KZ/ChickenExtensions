@@ -1,19 +1,22 @@
 package kz.chesschicken.chickenextensions;
 
 
-import kz.chesschicken.chickenextensions.api.common.RegisteringBiome;
-import kz.chesschicken.chickenextensions.api.common.RegisteringMetals;
-import kz.chesschicken.chickenextensions.api.common.RegisteringPopulator;
-import kz.chesschicken.chickenextensions.api.common.RegisteringClass;
+import kz.chesschicken.chickenextensions.api.common.*;
 import net.fabricmc.loader.discovery.DirectoryModCandidateFinder;
 import net.minecraft.block.BlockBase;
 import net.minecraft.item.ItemBase;
 import net.minecraft.item.ItemInstance;
 import net.minecraft.item.tool.ToolMaterial;
+import net.modificationstation.stationloader.api.client.event.render.entity.EntityRendererRegister;
 import net.modificationstation.stationloader.api.client.event.texture.TextureRegister;
 import net.modificationstation.stationloader.api.client.texture.TextureRegistry;
+import net.modificationstation.stationloader.api.common.config.Category;
+import net.modificationstation.stationloader.api.common.config.Configuration;
+import net.modificationstation.stationloader.api.common.config.Property;
+import net.modificationstation.stationloader.api.common.entity.player.PlayerHandler;
 import net.modificationstation.stationloader.api.common.event.block.BlockRegister;
 import net.modificationstation.stationloader.api.common.event.entity.EntityRegister;
+import net.modificationstation.stationloader.api.common.event.entity.player.PlayerHandlerRegister;
 import net.modificationstation.stationloader.api.common.event.item.ItemRegister;
 import net.modificationstation.stationloader.api.common.event.level.biome.BiomeByClimateProvider;
 import net.modificationstation.stationloader.api.common.event.level.biome.BiomeRegister;
@@ -39,6 +42,8 @@ public class ChickenMod implements StationMod, TextureRegister, RecipeRegister
 
     public static ToolMaterial toolGems;
     public static ToolMaterial toolCopper;
+    public static boolean isCheckVersion;
+    public static boolean isDeathChest;
 
     @Override
     public void preInit()
@@ -46,6 +51,7 @@ public class ChickenMod implements StationMod, TextureRegister, RecipeRegister
         RegisteringClass registeringClass = new RegisteringClass();
         RegisteringMetals registeringMetals = new RegisteringMetals();
         RegisteringBiome registeringBiome = new RegisteringBiome();
+        RegisteringEntity registeringEntity = new RegisteringEntity();
 
         toolGems = GeneralFactory.INSTANCE.newInst(ToolMaterial.class, "chickenextensions:GEMS",3, 1561, 8.0F, 3);
         toolCopper = GeneralFactory.INSTANCE.newInst(ToolMaterial.class, "chickenextensions:COPPER", 1, 220, 5.0F, 2);
@@ -59,12 +65,14 @@ public class ChickenMod implements StationMod, TextureRegister, RecipeRegister
 
         TextureRegister.EVENT.register(this);
         TextureRegister.EVENT.register(registeringMetals);
+        EntityRendererRegister.EVENT.register(registeringEntity);
 
-        EntityRegister.EVENT.register(registeringClass);
+        EntityRegister.EVENT.register(registeringEntity);
         RecipeRegister.EVENT.register(this);
         BiomeRegister.EVENT.register(registeringBiome);
         BiomeByClimateProvider.EVENT.register(registeringBiome);
         ChunkPopulator.EVENT.register(new RegisteringPopulator());
+        PlayerHandlerRegister.EVENT.register(registeringEntity);
         loadCustomConfigPart();
 
         getDefaultConfig().load();
@@ -72,7 +80,12 @@ public class ChickenMod implements StationMod, TextureRegister, RecipeRegister
 
     private void loadCustomConfigPart()
     {
-
+        Category miscCategory = getDefaultConfig().getCategory("Misc");
+        Property checkVersion = miscCategory.getProperty("checkVersion", true);
+        Property deathChest = miscCategory.getProperty("deathChest", true);
+        isCheckVersion = checkVersion.getBooleanValue();
+        isDeathChest = deathChest.getBooleanValue();
+        getDefaultConfig().save();
     }
 
 
@@ -181,7 +194,7 @@ public class ChickenMod implements StationMod, TextureRegister, RecipeRegister
         texCeilingLamp = TextureFactory.INSTANCE.addTexture(TextureRegistry.getRegistry("TERRAIN"), "/assets/chickenextensions/textures/block/furniture/blockCeilingLamp.png");
 
         RegisteringClass.itemBrickSoul.setTexturePosition(TextureFactory.INSTANCE.addTexture(TextureRegistry.getRegistry("GUI_ITEMS"), "/assets/chickenextensions/textures/item/materials/brickSoul.png"));
-        RegisteringClass.itemLightShoker.setTexturePosition(TextureFactory.INSTANCE.addTexture(TextureRegistry.getRegistry("GUI_ITEMS"), "/assets/chickenextensions/textures/item/itemLightShoker.png"));
+        RegisteringClass.itemLightShoker.setTexturePosition(TextureFactory.INSTANCE.addTexture(TextureRegistry.getRegistry("GUI_ITEMS"), "/assets/chickenextensions/textures/item/tool/itemLightShoker.png"));
         RegisteringClass.itemBrickNether.setTexturePosition(TextureFactory.INSTANCE.addTexture(TextureRegistry.getRegistry("GUI_ITEMS"), "/assets/chickenextensions/textures/item/materials/brickNether.png"));
 
         RegisteringClass.itemSteakRaw.setTexturePosition(TextureFactory.INSTANCE.addTexture(TextureRegistry.getRegistry("GUI_ITEMS"), "/assets/chickenextensions/textures/item/food/SteakRaw.png"));
@@ -231,6 +244,7 @@ public class ChickenMod implements StationMod, TextureRegister, RecipeRegister
         RegisteringClass.itemSlakedLime.setTexturePosition(TextureFactory.INSTANCE.addTexture(TextureRegistry.getRegistry("GUI_ITEMS"), "/assets/chickenextensions/textures/item/materials/slakedLime.png"));
 
         RegisteringClass.blockChandelier.texture = TextureFactory.INSTANCE.addTexture(TextureRegistry.getRegistry("TERRAIN"), "/assets/chickenextensions/textures/block/furniture/blockChandelier.png");
+        RegisteringClass.boatObsidian.setTexturePosition(TextureFactory.INSTANCE.addTexture(TextureRegistry.getRegistry("GUI_ITEMS"), "/assets/chickenextensions/textures/item/tool/boatObsidian.png"));
 
     }
 

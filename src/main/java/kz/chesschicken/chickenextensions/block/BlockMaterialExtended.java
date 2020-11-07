@@ -24,7 +24,8 @@ public class BlockMaterialExtended extends BlockBase implements BlockItemProvide
                 return RegisteringMetals.textureBlockSaphire;
             case 2:
                 return RegisteringMetals.textureBlockCopper;
-
+            case 3:
+                return RegisteringMetals.textureBlockTin;
             default:
                 return 0;
         }

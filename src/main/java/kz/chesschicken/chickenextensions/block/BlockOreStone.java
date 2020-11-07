@@ -5,6 +5,7 @@ import net.minecraft.block.BlockBase;
 import net.minecraft.block.material.Material;
 import net.minecraft.item.PlaceableTileEntity;
 import net.modificationstation.stationloader.api.common.block.BlockItemProvider;
+import net.modificationstation.stationloader.api.common.event.recipe.RecipeRegister;
 
 import java.util.Random;
 
@@ -36,7 +37,8 @@ public class BlockOreStone extends BlockBase implements BlockItemProvider {
                 return RegisteringMetals.textureOreSaphire;
             case 2:
                 return RegisteringMetals.textureOreCopper;
-
+            case 3:
+                return RegisteringMetals.textureOreTin;
             default:
                 return 0;
         }
