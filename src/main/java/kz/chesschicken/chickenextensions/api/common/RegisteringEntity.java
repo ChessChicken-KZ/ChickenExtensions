@@ -2,6 +2,8 @@ package kz.chesschicken.chickenextensions.api.common;
 
 import kz.chesschicken.chickenextensions.ChickenMod;
 import kz.chesschicken.chickenextensions.api.player.CustomPlayerHandler;
+import kz.chesschicken.chickenextensions.block.furniture.TileEntityArmorChest;
+import kz.chesschicken.chickenextensions.block.furniture.TileEntityExtended;
 import kz.chesschicken.chickenextensions.entity.BloodyPigman;
 import kz.chesschicken.chickenextensions.item.obsidianboat.EntityObsidianBoat;
 import kz.chesschicken.chickenextensions.item.obsidianboat.RenderObisidianBoat;
@@ -13,6 +15,7 @@ import net.modificationstation.stationloader.api.common.config.Category;
 import net.modificationstation.stationloader.api.common.config.Configuration;
 import net.modificationstation.stationloader.api.common.config.Property;
 import net.modificationstation.stationloader.api.common.entity.player.PlayerHandler;
+import net.modificationstation.stationloader.api.common.event.block.TileEntityRegister;
 import net.modificationstation.stationloader.api.common.event.entity.EntityRegister;
 import net.modificationstation.stationloader.api.common.event.entity.player.PlayerHandlerRegister;
 import uk.co.benjiweber.expressions.functions.TriConsumer;
@@ -20,7 +23,7 @@ import uk.co.benjiweber.expressions.functions.TriConsumer;
 import java.util.List;
 import java.util.Map;
 
-public class RegisteringEntity implements EntityRegister, PlayerHandlerRegister, EntityRendererRegister {
+public class RegisteringEntity implements EntityRegister, PlayerHandlerRegister, EntityRendererRegister, TileEntityRegister {
 
 
     @Override
@@ -42,5 +45,11 @@ public class RegisteringEntity implements EntityRegister, PlayerHandlerRegister,
     @Override
     public void registerEntityRenderers(Map<Class<? extends EntityBase>, EntityRenderer> map) {
         map.put(EntityObsidianBoat.class, new RenderObisidianBoat());
+    }
+
+    @Override
+    public void registerTileEntities(Map<Class<?>, String> map) {
+        map.put(TileEntityExtended.class, "TileEntityExtended");
+        map.put(TileEntityArmorChest.class, "TileEntityArmorChest");
     }
 }

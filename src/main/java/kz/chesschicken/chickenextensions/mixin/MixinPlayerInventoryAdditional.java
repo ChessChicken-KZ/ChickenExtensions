@@ -2,6 +2,7 @@ package kz.chesschicken.chickenextensions.mixin;
 
 import kz.chesschicken.chickenextensions.ChickenMod;
 import kz.chesschicken.chickenextensions.api.common.RegisteringClass;
+import kz.chesschicken.chickenextensions.block.furniture.TileEntityArmorChest;
 import kz.chesschicken.chickenextensions.block.furniture.TileEntityExtended;
 import net.fabricmc.loader.api.FabricLoader;
 import net.minecraft.client.Minecraft;
@@ -23,7 +24,7 @@ public class MixinPlayerInventoryAdditional {
     {
         if(ChickenMod.isDeathChest) {
             int ix = (int)player.x;
-            int iy = (int)player.y;
+            int iy = (int)player.y - 1;
             int iz = (int)player.z;
             mc.level.setTile(ix,iy,iz, RegisteringClass.furnitureLocker.id);
             TileEntityExtended chest = (TileEntityExtended) mc.level.getTileEntity(ix,iy,iz);
@@ -34,6 +35,17 @@ public class MixinPlayerInventoryAdditional {
                     chest.setInventoryItem(i, player.inventory.main[i]);
                 }
             }
+
+            mc.level.setTile(ix,iy+1,iz, RegisteringClass.blockArmorLocker.id);
+            TileEntityArmorChest chest1 = (TileEntityArmorChest) mc.level.getTileEntity(ix,iy+1,iz);
+            for(int i = 0; i < chest1.getInventorySize(); i++)
+            {
+                if(player.inventory.armour[i] != null)
+                {
+                    chest1.setInventoryItem(i, player.inventory.armour[i]);
+                }
+            }
+
             ci.cancel();
         }
     }

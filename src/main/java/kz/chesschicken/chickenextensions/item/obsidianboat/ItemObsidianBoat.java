@@ -2,7 +2,6 @@ package kz.chesschicken.chickenextensions.item.obsidianboat;
 
 import net.minecraft.block.BlockBase;
 import net.minecraft.entity.player.PlayerBase;
-import net.minecraft.item.Boat;
 import net.minecraft.item.ItemBase;
 import net.minecraft.item.ItemInstance;
 import net.minecraft.level.Level;

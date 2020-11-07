@@ -1,6 +1,5 @@
 package kz.chesschicken.chickenextensions.item.mobcatcher;
 
-import kz.chesschicken.chickenextensions.ChickenMod;
 import net.minecraft.entity.EntityBase;
 import net.minecraft.entity.Living;
 import net.minecraft.entity.animal.Chicken;
@@ -16,10 +15,8 @@ import net.minecraft.util.io.CompoundTag;
 import net.modificationstation.stationloader.api.common.item.HasItemEntity;
 import net.modificationstation.stationloader.api.common.item.ItemEntity;
 import net.modificationstation.stationloader.api.common.item.ItemWithEntity;
-import org.lwjgl.Sys;
 import org.lwjgl.input.Keyboard;
 
-import javax.swing.text.html.parser.Entity;
 import java.util.function.Function;
 import java.util.function.Supplier;
 

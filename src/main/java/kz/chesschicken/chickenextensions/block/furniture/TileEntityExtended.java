@@ -1,18 +1,34 @@
 package kz.chesschicken.chickenextensions.block.furniture;
 
+import kz.chesschicken.chickenextensions.api.common.RegisteringClass;
 import net.minecraft.entity.player.PlayerBase;
 import net.minecraft.inventory.InventoryBase;
 import net.minecraft.item.ItemInstance;
+import net.minecraft.tileentity.TileEntityBase;
 import net.minecraft.tileentity.TileEntityChest;
 import net.minecraft.util.io.CompoundTag;
 import net.minecraft.util.io.ListTag;
 
-public class TileEntityExtended extends TileEntityChest implements InventoryBase {
+public class TileEntityExtended extends TileEntityBase implements InventoryBase {
     private ItemInstance[] contents = new ItemInstance[36];
-private final String name;
-    public TileEntityExtended(String s) {
-        this.name = s;
+
+    private String getTileName()
+    {
+        if(this.level.getTileId(x,y,z) == RegisteringClass.furnitureCabinet.id)
+            return "Cabinet";
+        else if(this.level.getTileId(x,y,z) == RegisteringClass.furnitureNightstand.id)
+            return "Nightstand";
+        else if(this.level.getTileId(x,y,z) == RegisteringClass.furnitureBox.id)
+            return "Box";
+        else if(this.level.getTileId(x,y,z) == RegisteringClass.furnitureLocker.id)
+            return "Locker";
+        else if(this.level.getTileId(x,y,z) == RegisteringClass.furnitureCommode.id)
+            return "Commode";
+        else if(this.level.getTileId(x,y,z) == RegisteringClass.furnitureFridge.id)
+            return "Fridge";
+        return "";
     }
+
 
     public int getInventorySize() {
         return 27;
@@ -44,6 +60,11 @@ private final String name;
         }
     }
 
+    public TileEntityExtended()
+    {
+
+    }
+
     public void setInventoryItem(int slot, ItemInstance arg) {
         this.contents[slot] = arg;
         if (arg != null && arg.count > this.getMaxItemCount()) {
@@ -54,7 +75,7 @@ private final String name;
     }
 
     public String getContainerName() {
-        return name;
+        return getTileName();
     }
 
     public void readIdentifyingData(CompoundTag tag) {
@@ -65,7 +86,7 @@ private final String name;
         for(int var3 = 0; var3 < var2.size(); ++var3) {
             CompoundTag var4 = (CompoundTag)var2.get(var3);
             int var5 = var4.getByte("Slot") & 255;
-            if (var5 < this.contents.length) {
+            if (var5 >= 0 && var5 < this.contents.length) {
                 this.contents[var5] = new ItemInstance(var4);
             }
         }
@@ -73,8 +94,7 @@ private final String name;
     }
 
     public void writeIdentifyingData(CompoundTag tag) {
-        if(tag != null)
-            super.writeIdentifyingData(tag);
+        super.writeIdentifyingData(tag);
         ListTag var2 = new ListTag();
 
         for(int var3 = 0; var3 < this.contents.length; ++var3) {

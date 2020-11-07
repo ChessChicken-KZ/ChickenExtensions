@@ -2,19 +2,16 @@ package kz.chesschicken.chickenextensions;
 
 
 import kz.chesschicken.chickenextensions.api.common.*;
-import net.fabricmc.loader.discovery.DirectoryModCandidateFinder;
 import net.minecraft.block.BlockBase;
-import net.minecraft.item.ItemBase;
 import net.minecraft.item.ItemInstance;
 import net.minecraft.item.tool.ToolMaterial;
 import net.modificationstation.stationloader.api.client.event.render.entity.EntityRendererRegister;
 import net.modificationstation.stationloader.api.client.event.texture.TextureRegister;
 import net.modificationstation.stationloader.api.client.texture.TextureRegistry;
 import net.modificationstation.stationloader.api.common.config.Category;
-import net.modificationstation.stationloader.api.common.config.Configuration;
 import net.modificationstation.stationloader.api.common.config.Property;
-import net.modificationstation.stationloader.api.common.entity.player.PlayerHandler;
 import net.modificationstation.stationloader.api.common.event.block.BlockRegister;
+import net.modificationstation.stationloader.api.common.event.block.TileEntityRegister;
 import net.modificationstation.stationloader.api.common.event.entity.EntityRegister;
 import net.modificationstation.stationloader.api.common.event.entity.player.PlayerHandlerRegister;
 import net.modificationstation.stationloader.api.common.event.item.ItemRegister;
@@ -24,7 +21,6 @@ import net.modificationstation.stationloader.api.common.event.level.gen.ChunkPop
 import net.modificationstation.stationloader.api.common.event.recipe.RecipeRegister;
 import net.modificationstation.stationloader.api.common.factory.GeneralFactory;
 import net.modificationstation.stationloader.api.common.mod.StationMod;
-import net.modificationstation.stationloader.api.common.recipe.CraftingRegistry;
 import net.modificationstation.stationloader.api.common.recipe.SmeltingRegistry;
 import net.modificationstation.stationloader.impl.client.texture.TextureFactory;
 
@@ -67,6 +63,7 @@ public class ChickenMod implements StationMod, TextureRegister, RecipeRegister
         TextureRegister.EVENT.register(registeringMetals);
         EntityRendererRegister.EVENT.register(registeringEntity);
 
+        TileEntityRegister.EVENT.register(registeringEntity);
         EntityRegister.EVENT.register(registeringEntity);
         RecipeRegister.EVENT.register(this);
         BiomeRegister.EVENT.register(registeringBiome);

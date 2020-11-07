@@ -1,6 +1,5 @@
 package kz.chesschicken.chickenextensions.item.tool;
 
-import kz.chesschicken.chickenextensions.api.common.RegisteringMetals;
 import net.minecraft.item.ItemInstance;
 import net.minecraft.item.armour.Armour;
 import net.modificationstation.stationloader.api.client.item.ArmorTextureProvider;

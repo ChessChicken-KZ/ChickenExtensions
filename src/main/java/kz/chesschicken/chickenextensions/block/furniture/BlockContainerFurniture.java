@@ -4,7 +4,10 @@ import kz.chesschicken.chickenextensions.ChickenMod;
 import kz.chesschicken.chickenextensions.api.common.RegisteringClass;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
+import net.minecraft.block.BlockBase;
 import net.minecraft.block.BlockWithEntity;
+import net.minecraft.block.Chest;
+import net.minecraft.block.Furnace;
 import net.minecraft.block.material.Material;
 import net.minecraft.entity.Item;
 import net.minecraft.entity.Living;
@@ -22,10 +25,8 @@ public class BlockContainerFurniture extends BlockWithEntity {
 
     public BlockContainerFurniture(int id) {
         super(id, Material.WOOD);
-        this.texture = 26;
         this.setHardness(2.5F);
         this.sounds(WOOD_SOUNDS);
-        this.disableNotifyOnMetaDataChange();
     }
 
     @Environment(EnvType.CLIENT)
@@ -77,10 +78,38 @@ public class BlockContainerFurniture extends BlockWithEntity {
                 int var6 = arg.getTileMeta(i, j, k);
                 return i1 != var6 ? ChickenMod.texFridgeSide : ChickenMod.texFridgeFront;
             }
-        }
-        return 0;
+        }else
+            return 0;
     }
 
+    private void method_1404(Level arg, int i, int j, int k) {
+        if (!arg.isClient) {
+            int var5 = arg.getTileId(i, j, k - 1);
+            int var6 = arg.getTileId(i, j, k + 1);
+            int var7 = arg.getTileId(i - 1, j, k);
+            int var8 = arg.getTileId(i + 1, j, k);
+            byte var9 = 3;
+            if (BlockBase.FULL_OPAQUE[var5] && !BlockBase.FULL_OPAQUE[var6]) {
+                var9 = 3;
+            }
+
+            if (BlockBase.FULL_OPAQUE[var6] && !BlockBase.FULL_OPAQUE[var5]) {
+                var9 = 2;
+            }
+
+            if (BlockBase.FULL_OPAQUE[var7] && !BlockBase.FULL_OPAQUE[var8]) {
+                var9 = 5;
+            }
+
+            if (BlockBase.FULL_OPAQUE[var8] && !BlockBase.FULL_OPAQUE[var7]) {
+                var9 = 4;
+            }
+
+            arg.setTileMeta(i, j, k, var9);
+        }
+    }
+
+    @Environment(EnvType.CLIENT)
     public int getTextureForSide(int side) {
         if(this.id == RegisteringClass.furnitureCabinet.id)
         {
@@ -173,28 +202,14 @@ public class BlockContainerFurniture extends BlockWithEntity {
     }
 
     protected TileEntityBase createTileEntity() {
-        return new TileEntityExtended(getTileName());
+        return new TileEntityExtended();
     }
 
-    private String getTileName()
-    {
-        if(id == RegisteringClass.furnitureCabinet.id)
-            return "Cabinet";
-        else if(id == RegisteringClass.furnitureNightstand.id)
-            return "Nightstand";
-        else if(id == RegisteringClass.furnitureBox.id)
-            return "Box";
-        else if(id == RegisteringClass.furnitureLocker.id)
-            return "Locker";
-        else if(id == RegisteringClass.furnitureCommode.id)
-            return "Commode";
-        else if(id == RegisteringClass.furnitureFridge.id)
-            return "Fridge";
-        return "";
-    }
 
+
+    @Override
     public void afterPlaced(Level arg, int i, int j, int k, Living arg1) {
-        int var6 = MathHelper.floor((double)(arg1.yaw * 4.0F / 360.0F) + 0.5D);
+        int var6 = MathHelper.floor((double)(arg1.yaw * 4.0F / 360.0F) + 0.5D) & 3;
         if (var6 == 0) {
             arg.setTileMeta(i, j, k, 2);
         }
@@ -212,4 +227,9 @@ public class BlockContainerFurniture extends BlockWithEntity {
         }
     }
 
+    @Override
+    public void onBlockPlaced(Level level, int x, int y, int z) {
+        super.onBlockPlaced(level, x, y, z);
+        this.method_1404(level, x, y, z);
+    }
 }

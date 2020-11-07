@@ -10,7 +10,7 @@ import net.minecraft.item.ItemBase;
 import net.minecraft.item.PlaceableTileEntity;
 import net.minecraft.level.Level;
 import net.minecraft.level.TileView;
-import net.minecraft.level.structure.*;
+import net.minecraft.level.structure.Structure;
 import net.modificationstation.stationloader.api.common.block.BlockItemProvider;
 
 import java.util.Random;

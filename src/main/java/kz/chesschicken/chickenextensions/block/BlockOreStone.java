@@ -5,7 +5,6 @@ import net.minecraft.block.BlockBase;
 import net.minecraft.block.material.Material;
 import net.minecraft.item.PlaceableTileEntity;
 import net.modificationstation.stationloader.api.common.block.BlockItemProvider;
-import net.modificationstation.stationloader.api.common.event.recipe.RecipeRegister;
 
 import java.util.Random;
 
@@ -47,5 +46,11 @@ public class BlockOreStone extends BlockBase implements BlockItemProvider {
     @Override
     public PlaceableTileEntity getBlockItem(int i) {
         return new TileMaterialExtended(i);
+    }
+
+
+
+    protected int droppedMeta(int i) {
+        return i;
     }
 }

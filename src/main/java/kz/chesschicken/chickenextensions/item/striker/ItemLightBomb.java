@@ -9,7 +9,6 @@ import net.minecraft.item.ItemBase;
 import net.minecraft.item.ItemInstance;
 import net.minecraft.level.Level;
 import net.minecraft.util.hit.HitType;
-import net.modificationstation.stationloader.api.common.item.CustomReach;
 
 public class ItemLightBomb extends ItemBase
 {

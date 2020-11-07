@@ -35,4 +35,9 @@ public class BlockMaterialExtended extends BlockBase implements BlockItemProvide
     public PlaceableTileEntity getBlockItem(int i) {
         return new TileMaterialExtended(i);
     }
+
+
+    protected int droppedMeta(int i) {
+        return i;
+    }
 }

@@ -1,7 +1,6 @@
 package kz.chesschicken.chickenextensions.api.common;
 
 import kz.chesschicken.chickenextensions.ChickenMod;
-import kz.chesschicken.chickenextensions.api.player.CustomPlayerHandler;
 import kz.chesschicken.chickenextensions.block.*;
 import kz.chesschicken.chickenextensions.block.colour.*;
 import kz.chesschicken.chickenextensions.block.extensions.FenceExtended;
@@ -9,29 +8,21 @@ import kz.chesschicken.chickenextensions.block.extensions.SlabsExtended;
 import kz.chesschicken.chickenextensions.block.extensions.StairsExtended;
 import kz.chesschicken.chickenextensions.block.extensions.TileItemExtended;
 import kz.chesschicken.chickenextensions.block.furniture.BlockContainerFurniture;
-import kz.chesschicken.chickenextensions.entity.BloodyPigman;
+import kz.chesschicken.chickenextensions.block.furniture.BlockDeathArmorChest;
 import kz.chesschicken.chickenextensions.item.ItemBasic;
 import kz.chesschicken.chickenextensions.item.ItemBiomeLocator;
+import kz.chesschicken.chickenextensions.item.goldenegg.GoldenEgg;
+import kz.chesschicken.chickenextensions.item.mobcatcher.ItemMobCatcher;
 import kz.chesschicken.chickenextensions.item.obsidianboat.ItemObsidianBoat;
 import kz.chesschicken.chickenextensions.item.striker.ItemLightBomb;
-import kz.chesschicken.chickenextensions.item.mobcatcher.ItemMobCatcher;
-import kz.chesschicken.chickenextensions.item.goldenegg.GoldenEgg;
 import net.minecraft.block.BlockBase;
-import net.minecraft.entity.EntityBase;
-import net.minecraft.entity.player.PlayerBase;
 import net.minecraft.item.ItemBase;
 import net.minecraft.item.food.FoodBase;
 import net.modificationstation.stationloader.api.common.config.Category;
 import net.modificationstation.stationloader.api.common.config.Configuration;
 import net.modificationstation.stationloader.api.common.config.Property;
-import net.modificationstation.stationloader.api.common.entity.player.PlayerHandler;
 import net.modificationstation.stationloader.api.common.event.block.BlockRegister;
-import net.modificationstation.stationloader.api.common.event.entity.EntityRegister;
-import net.modificationstation.stationloader.api.common.event.entity.player.PlayerHandlerRegister;
 import net.modificationstation.stationloader.api.common.event.item.ItemRegister;
-import uk.co.benjiweber.expressions.functions.TriConsumer;
-
-import java.util.List;
 
 public class RegisteringClass implements ItemRegister, BlockRegister {
     public static ItemBase itemLightShoker;
@@ -82,6 +73,7 @@ public class RegisteringClass implements ItemRegister, BlockRegister {
     public static BlockBase blockChandelier;
 
     public static ItemBase boatObsidian;
+    public static BlockBase blockArmorLocker;
 
 
     @Override
@@ -165,6 +157,7 @@ public class RegisteringClass implements ItemRegister, BlockRegister {
         Property furnitureCommodeID = blockIdsCategory.getProperty("furnitureCommode", 158);
         Property furnitureFridgeID = blockIdsCategory.getProperty("furnitureFridge", 159);
         Property blockChandelierID = blockIdsCategory.getProperty("blockChandelier", 160);
+        Property blockArmorLockerID = blockIdsCategory.getProperty("blockArmorLocker", 161);
 
         blockCouple1 = new BlockStones(blockCouple1ID.getIntValue()).setName("chickenextensions:blockCouple1");
         blockSaplingC = new TileBlockColour_Sapling(blockSaplingCID.getIntValue()).setName("chickenextensions:blockSaplingC");
@@ -193,6 +186,7 @@ public class RegisteringClass implements ItemRegister, BlockRegister {
         furnitureCommode = new BlockContainerFurniture(furnitureCommodeID.getIntValue()).setName("chickenextensions:furnitureCommode");
         furnitureFridge = new BlockContainerFurniture(furnitureFridgeID.getIntValue()).setName("chickenextensions:furnitureFridge");
         blockChandelier = new BlockCeilingLamp(blockChandelierID.getIntValue()).setName("chickenextensions:blockChandelier");
+        blockArmorLocker = new BlockDeathArmorChest(blockArmorLockerID.getIntValue()).setName("chickenextensions:blockArmorLocker");
 
         ItemBase.byId[blockCouple1.id] = (new TileBlockStones(blockCouple1.id - 256)).setName("chickenextensions:blockCouple1");
         ItemBase.byId[blockSaplingC.id] = (new TileItemColour_Sapling(blockSaplingC.id - 256)).setName("chickenextensions:blockSaplingC");
