@@ -1,4 +1,4 @@
-package kz.chesschicken.chickenextensions.mixin;
+package kz.chesschicken.chickenextensions.mixin.server;
 
 import kz.chesschicken.chickenextensions.api.server.PlayerAsync;
 import net.minecraft.entity.player.PlayerBase;

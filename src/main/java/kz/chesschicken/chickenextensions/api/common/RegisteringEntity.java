@@ -2,7 +2,7 @@ package kz.chesschicken.chickenextensions.api.common;
 
 import kz.chesschicken.chickenextensions.ChickenMod;
 import kz.chesschicken.chickenextensions.api.player.CustomPlayerHandler;
-import kz.chesschicken.chickenextensions.block.furniture.TileEntityArmorChest;
+import kz.chesschicken.chickenextensions.block.furniture.TileCorpseBox;
 import kz.chesschicken.chickenextensions.block.furniture.TileEntityExtended;
 import kz.chesschicken.chickenextensions.entity.BloodyPigman;
 import kz.chesschicken.chickenextensions.item.obsidianboat.EntityObsidianBoat;
@@ -50,6 +50,6 @@ public class RegisteringEntity implements EntityRegister, PlayerHandlerRegister,
     @Override
     public void registerTileEntities(Map<Class<?>, String> map) {
         map.put(TileEntityExtended.class, "TileEntityExtended");
-        map.put(TileEntityArmorChest.class, "TileEntityArmorChest");
+        map.put(TileCorpseBox.class, "TileEntityArmorChest");
     }
 }

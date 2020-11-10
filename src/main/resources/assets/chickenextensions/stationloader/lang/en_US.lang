@@ -178,3 +178,5 @@ tile.chickenextensions\:allMetalsBlock0.name=Ruby Block
 tile.chickenextensions\:allMetalsBlock1.name=Saphire Block
 tile.chickenextensions\:allMetalsBlock2.name=Copper Block
 tile.chickenextensions\:allMetalsBlock3.name=Tin Block
+
+tile.chickenextensions\:corpseBox.name=Corpse Box

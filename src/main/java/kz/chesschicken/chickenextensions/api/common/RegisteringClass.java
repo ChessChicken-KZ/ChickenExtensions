@@ -8,7 +8,7 @@ import kz.chesschicken.chickenextensions.block.extensions.SlabsExtended;
 import kz.chesschicken.chickenextensions.block.extensions.StairsExtended;
 import kz.chesschicken.chickenextensions.block.extensions.TileItemExtended;
 import kz.chesschicken.chickenextensions.block.furniture.BlockContainerFurniture;
-import kz.chesschicken.chickenextensions.block.furniture.BlockDeathArmorChest;
+import kz.chesschicken.chickenextensions.block.furniture.BlockCorpseBox;
 import kz.chesschicken.chickenextensions.item.ItemBasic;
 import kz.chesschicken.chickenextensions.item.ItemBiomeLocator;
 import kz.chesschicken.chickenextensions.item.goldenegg.GoldenEgg;
@@ -73,7 +73,7 @@ public class RegisteringClass implements ItemRegister, BlockRegister {
     public static BlockBase blockChandelier;
 
     public static ItemBase boatObsidian;
-    public static BlockBase blockArmorLocker;
+    public static BlockBase corpseBox;
 
 
     @Override
@@ -157,7 +157,7 @@ public class RegisteringClass implements ItemRegister, BlockRegister {
         Property furnitureCommodeID = blockIdsCategory.getProperty("furnitureCommode", 158);
         Property furnitureFridgeID = blockIdsCategory.getProperty("furnitureFridge", 159);
         Property blockChandelierID = blockIdsCategory.getProperty("blockChandelier", 160);
-        Property blockArmorLockerID = blockIdsCategory.getProperty("blockArmorLocker", 161);
+        Property corpseBoxID = blockIdsCategory.getProperty("corpseBox", 161);
 
         blockCouple1 = new BlockStones(blockCouple1ID.getIntValue()).setName("chickenextensions:blockCouple1");
         blockSaplingC = new TileBlockColour_Sapling(blockSaplingCID.getIntValue()).setName("chickenextensions:blockSaplingC");
@@ -186,7 +186,7 @@ public class RegisteringClass implements ItemRegister, BlockRegister {
         furnitureCommode = new BlockContainerFurniture(furnitureCommodeID.getIntValue()).setName("chickenextensions:furnitureCommode");
         furnitureFridge = new BlockContainerFurniture(furnitureFridgeID.getIntValue()).setName("chickenextensions:furnitureFridge");
         blockChandelier = new BlockCeilingLamp(blockChandelierID.getIntValue()).setName("chickenextensions:blockChandelier");
-        blockArmorLocker = new BlockDeathArmorChest(blockArmorLockerID.getIntValue()).setName("chickenextensions:blockArmorLocker");
+        corpseBox = new BlockCorpseBox(corpseBoxID.getIntValue()).setName("chickenextensions:corpseBox");
 
         ItemBase.byId[blockCouple1.id] = (new TileBlockStones(blockCouple1.id - 256)).setName("chickenextensions:blockCouple1");
         ItemBase.byId[blockSaplingC.id] = (new TileItemColour_Sapling(blockSaplingC.id - 256)).setName("chickenextensions:blockSaplingC");

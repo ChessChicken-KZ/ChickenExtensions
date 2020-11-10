@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients":
+  [
+    {
+      "item": "chickenextensions:itemCopper"
+    }
+  ],
+  "result": {
+    "item": "chickenextensions:nuggetCopper",
+    "count": 9
+  }
+}

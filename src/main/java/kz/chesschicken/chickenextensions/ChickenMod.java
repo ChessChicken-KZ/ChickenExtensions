@@ -41,6 +41,9 @@ public class ChickenMod implements StationMod, TextureRegister, RecipeRegister
     public static boolean isCheckVersion;
     public static boolean isDeathChest;
 
+    public static int[] massiveMainMenuSize = new int[2];
+    public static boolean isMainMenuBlured;
+
     @Override
     public void preInit()
     {
@@ -82,6 +85,13 @@ public class ChickenMod implements StationMod, TextureRegister, RecipeRegister
         Property deathChest = miscCategory.getProperty("deathChest", true);
         isCheckVersion = checkVersion.getBooleanValue();
         isDeathChest = deathChest.getBooleanValue();
+        Category mainmenuCategory = getDefaultConfig().getCategory("MainMenu");
+        Property imageWidth = mainmenuCategory.getProperty("imageWidth", 256);
+        Property imageHeight = mainmenuCategory.getProperty("imageHeight", 256);
+        Property isBlured = mainmenuCategory.getProperty("isBlured", true);
+        massiveMainMenuSize[0] = imageWidth.getIntValue();
+        massiveMainMenuSize[1] = imageHeight.getIntValue();
+        isMainMenuBlured = isBlured.getBooleanValue();
         getDefaultConfig().save();
     }
 

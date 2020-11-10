@@ -1,4 +1,4 @@
-package kz.chesschicken.chickenextensions.mixin;
+package kz.chesschicken.chickenextensions.mixin.common;
 
 import kz.chesschicken.chickenextensions.api.common.RegisteringClass;
 import net.minecraft.entity.EntityBase;
@@ -10,8 +10,8 @@ import net.minecraft.level.Level;
 import org.spongepowered.asm.mixin.Mixin;
 
 @Mixin(Sheep.class)
-public class SheepMeatMixin extends AnimalBase {
-    public SheepMeatMixin(Level arg) { super(arg); }
+public class MixinSheepMeat extends AnimalBase {
+    public MixinSheepMeat(Level arg) { super(arg); }
 
     @Override
     public void onKilledBy(EntityBase arg) {

@@ -8,8 +8,8 @@ import net.minecraft.tileentity.TileEntityBase;
 
 import java.util.Random;
 
-public class BlockDeathArmorChest extends BlockContainerFurniture{
-    public BlockDeathArmorChest(int id) {
+public class BlockCorpseBox extends BlockContainerFurniture{
+    public BlockCorpseBox(int id) {
         super(id);
     }
 
@@ -23,7 +23,7 @@ public class BlockDeathArmorChest extends BlockContainerFurniture{
     }
 
     protected TileEntityBase createTileEntity() {
-        return new TileEntityArmorChest("Armor Chest");
+        return new TileCorpseBox();
     }
 
     @Override

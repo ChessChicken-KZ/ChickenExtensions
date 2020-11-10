@@ -1,4 +1,4 @@
-package kz.chesschicken.chickenextensions.mixin;
+package kz.chesschicken.chickenextensions.mixin.client;
 
 import kz.chesschicken.chickenextensions.ChickenMod;
 import kz.chesschicken.chickenextensions.api.common.VersionGui;
@@ -19,7 +19,7 @@ import java.net.URL;
 
 @Environment(EnvType.CLIENT)
 @Mixin(Minecraft.class)
-public abstract class VersionCheckMixin {
+public abstract class MixinVersionCheck {
     @Shadow public abstract void openScreen(ScreenBase screen);
 
     @Inject(method = "init", at = @At("TAIL"))

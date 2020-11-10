@@ -10,7 +10,7 @@ import net.minecraft.util.io.CompoundTag;
 import net.minecraft.util.io.ListTag;
 
 public class TileEntityExtended extends TileEntityBase implements InventoryBase {
-    private ItemInstance[] contents = new ItemInstance[36];
+    private ItemInstance[] contents = new ItemInstance[this.getInventorySize()];
 
     private String getTileName()
     {

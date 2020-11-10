@@ -4,16 +4,18 @@
   "package": "kz.chesschicken.chickenextensions.mixin",
   "compatibilityLevel": "JAVA_8",
   "mixins": [
-    "CowMeatMixin",
-    "SheepMeatMixin",
-    "ChickenMeatMixin",
-    "MixinPlayerInventoryAdditional"
+    "common.MixinChickenMeat",
+    "common.MixinCowMeat",
+    "common.MixinPlayerInventoryAdditional",
+    "common.MixinSheepMeat"
   ],
   "server": [
-    "MixinCommandHandler"
+    "server.MixinCommandHandler"
   ],
   "client": [
-    "VersionCheckMixin"
+    "client.MixinVersionCheck",
+    "client.MixinMainMenu",
+    "client.MixinPlayerClient"
   ],
   "injectors": {
     "defaultRequire": 1

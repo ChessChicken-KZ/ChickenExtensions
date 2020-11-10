@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern":
+  [
+    "XXX",
+    "XXX",
+    "XXX"
+  ],
+  "key":
+  {
+    "X":
+    {
+      "item": "chickenextensions:nuggetRuby"
+    }
+  },
+  "result":
+  {
+    "item": "chickenextensions:itemRuby",
+    "count": 1
+  }
+}
