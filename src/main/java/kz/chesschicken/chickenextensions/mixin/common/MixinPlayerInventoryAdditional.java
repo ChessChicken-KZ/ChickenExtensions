@@ -16,7 +16,6 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 @Mixin(PlayerInventory.class)
 public class MixinPlayerInventoryAdditional {
     @Shadow public PlayerBase player;
-    private final Minecraft mc = (Minecraft) FabricLoader.getInstance().getGameInstance();
 
     @Inject(method = "dropInventory", at = @At("HEAD"), cancellable = true)
     private void cancelDrop(CallbackInfo ci)
@@ -26,8 +25,8 @@ public class MixinPlayerInventoryAdditional {
             int iy = (int)player.y - 1;
             int iz = (int)player.z;
 
-            mc.level.setTile(ix,iy,iz, RegisteringClass.corpseBox.id);
-            TileCorpseBox chest1 = (TileCorpseBox) mc.level.getTileEntity(ix,iy,iz);
+            player.level.setTile(ix,iy,iz, RegisteringClass.corpseBox.id);
+            TileCorpseBox chest1 = (TileCorpseBox) player.level.getTileEntity(ix,iy,iz);
             for(int i = 0; i < player.inventory.main.length; i++)
             {
                 if(player.inventory.main[i] != null)

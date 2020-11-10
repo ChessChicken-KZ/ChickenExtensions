@@ -15,7 +15,8 @@
   "client": [
     "client.MixinVersionCheck",
     "client.MixinMainMenu",
-    "client.MixinPlayerClient"
+    "client.MixinPlayerClient",
+    "client.MixinPlayerSP"
   ],
   "injectors": {
     "defaultRequire": 1

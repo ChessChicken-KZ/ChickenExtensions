@@ -1,5 +1,7 @@
 package kz.chesschicken.chickenextensions.api.player;
 
+import net.fabricmc.api.EnvType;
+import net.fabricmc.api.Environment;
 import net.minecraft.block.material.Material;
 import net.minecraft.entity.EntityBase;
 import net.minecraft.entity.monster.Zombie;
@@ -26,5 +28,11 @@ public class CustomPlayerHandler implements PlayerHandler {
         return false;
     }
 
-
+    @Override
+    @Environment(EnvType.CLIENT)
+    public boolean sendChatMessage(String s) {
+        if(this.player.level.isClient)
+            return true;
+        return false;
+    }
 }
