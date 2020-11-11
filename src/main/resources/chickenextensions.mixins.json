@@ -17,7 +17,8 @@
     "client.MixinMainMenu",
     "client.MixinPlayerClient",
     "client.MixinPlayerSP",
-    "client.MixingPauseMenu"
+    "client.MixingPauseMenu",
+    "client.MixinGameList"
   ],
   "injectors": {
     "defaultRequire": 1
