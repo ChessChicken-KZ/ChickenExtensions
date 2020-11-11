@@ -1,7 +1,10 @@
 package kz.chesschicken.chickenextensions;
 
 
+import kz.chesschicken.chickenextensions.api.client.CustomPackerSender;
 import kz.chesschicken.chickenextensions.api.common.*;
+import net.fabricmc.api.EnvType;
+import net.fabricmc.loader.api.FabricLoader;
 import net.minecraft.block.BlockBase;
 import net.minecraft.item.ItemInstance;
 import net.minecraft.item.tool.ToolMaterial;
@@ -18,6 +21,7 @@ import net.modificationstation.stationloader.api.common.event.item.ItemRegister;
 import net.modificationstation.stationloader.api.common.event.level.biome.BiomeByClimateProvider;
 import net.modificationstation.stationloader.api.common.event.level.biome.BiomeRegister;
 import net.modificationstation.stationloader.api.common.event.level.gen.ChunkPopulator;
+import net.modificationstation.stationloader.api.common.event.packet.PacketRegister;
 import net.modificationstation.stationloader.api.common.event.recipe.RecipeRegister;
 import net.modificationstation.stationloader.api.common.factory.GeneralFactory;
 import net.modificationstation.stationloader.api.common.mod.StationMod;
@@ -64,16 +68,20 @@ public class ChickenMod implements StationMod, TextureRegister, RecipeRegister
 
         TextureRegister.EVENT.register(this);
         TextureRegister.EVENT.register(registeringMetals);
-        EntityRendererRegister.EVENT.register(registeringEntity);
 
+        EntityRendererRegister.EVENT.register(registeringEntity);
         TileEntityRegister.EVENT.register(registeringEntity);
         EntityRegister.EVENT.register(registeringEntity);
+
         RecipeRegister.EVENT.register(this);
         BiomeRegister.EVENT.register(registeringBiome);
         BiomeByClimateProvider.EVENT.register(registeringBiome);
         ChunkPopulator.EVENT.register(new RegisteringPopulator());
+
         PlayerHandlerRegister.EVENT.register(registeringEntity);
+        PacketRegister.EVENT.register(new CustomPackerSender());
         loadCustomConfigPart();
+
 
         getDefaultConfig().load();
     }

@@ -1,7 +1,6 @@
 package kz.chesschicken.chickenextensions.api.common;
 
 import kz.chesschicken.chickenextensions.ChickenMod;
-import kz.chesschicken.chickenextensions.api.player.CustomPlayerHandler;
 import kz.chesschicken.chickenextensions.block.furniture.TileCorpseBox;
 import kz.chesschicken.chickenextensions.block.furniture.TileEntityExtended;
 import kz.chesschicken.chickenextensions.entity.BloodyPigman;

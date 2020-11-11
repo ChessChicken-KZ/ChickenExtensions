@@ -1,4 +1,4 @@
-package kz.chesschicken.chickenextensions.api.player;
+package kz.chesschicken.chickenextensions.api.common;
 
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
