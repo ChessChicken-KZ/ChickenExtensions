@@ -30,9 +30,11 @@ public class RegisteringEntity implements EntityRegister, PlayerHandlerRegister,
         Configuration config = ChickenMod.INSTANCE.getDefaultConfig();
         Category mobIDsCategory = config.getCategory("Mob IDs");
         Property bloodPigmanID = mobIDsCategory.getProperty("bloodPigmanID", 20);
+        Property boatObsidianID = mobIDsCategory.getProperty("boatObsidianID", 21);
 
 
         triConsumer.accept(BloodyPigman.class, "BloodPigman", bloodPigmanID.getIntValue());
+        triConsumer.accept(EntityObsidianBoat.class, "Obsidian Boat", boatObsidianID.getIntValue());
         config.save();
     }
 

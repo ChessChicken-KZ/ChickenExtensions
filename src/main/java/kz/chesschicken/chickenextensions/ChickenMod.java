@@ -3,8 +3,6 @@ package kz.chesschicken.chickenextensions;
 
 import kz.chesschicken.chickenextensions.api.client.CustomPackerSender;
 import kz.chesschicken.chickenextensions.api.common.*;
-import net.fabricmc.api.EnvType;
-import net.fabricmc.loader.api.FabricLoader;
 import net.minecraft.block.BlockBase;
 import net.minecraft.item.ItemInstance;
 import net.minecraft.item.tool.ToolMaterial;
@@ -12,13 +10,11 @@ import net.modificationstation.stationloader.api.client.event.render.entity.Enti
 import net.modificationstation.stationloader.api.client.event.texture.TextureRegister;
 import net.modificationstation.stationloader.api.client.texture.TextureRegistry;
 import net.modificationstation.stationloader.api.common.config.Category;
-import net.modificationstation.stationloader.api.common.config.Property;
 import net.modificationstation.stationloader.api.common.event.block.BlockRegister;
 import net.modificationstation.stationloader.api.common.event.block.TileEntityRegister;
 import net.modificationstation.stationloader.api.common.event.entity.EntityRegister;
 import net.modificationstation.stationloader.api.common.event.entity.player.PlayerHandlerRegister;
 import net.modificationstation.stationloader.api.common.event.item.ItemRegister;
-import net.modificationstation.stationloader.api.common.event.level.biome.BiomeByClimateProvider;
 import net.modificationstation.stationloader.api.common.event.level.biome.BiomeRegister;
 import net.modificationstation.stationloader.api.common.event.level.gen.ChunkPopulator;
 import net.modificationstation.stationloader.api.common.event.packet.PacketRegister;
@@ -75,7 +71,6 @@ public class ChickenMod implements StationMod, TextureRegister, RecipeRegister
 
         RecipeRegister.EVENT.register(this);
         BiomeRegister.EVENT.register(registeringBiome);
-        BiomeByClimateProvider.EVENT.register(registeringBiome);
         ChunkPopulator.EVENT.register(new RegisteringPopulator());
 
         PlayerHandlerRegister.EVENT.register(registeringEntity);
@@ -86,20 +81,17 @@ public class ChickenMod implements StationMod, TextureRegister, RecipeRegister
         getDefaultConfig().load();
     }
 
+
     private void loadCustomConfigPart()
     {
         Category miscCategory = getDefaultConfig().getCategory("Misc");
-        Property checkVersion = miscCategory.getProperty("checkVersion", true);
-        Property deathChest = miscCategory.getProperty("deathChest", true);
-        isCheckVersion = checkVersion.getBooleanValue();
-        isDeathChest = deathChest.getBooleanValue();
+        isCheckVersion = miscCategory.getProperty("checkVersion", true).getBooleanValue();
+        isDeathChest = miscCategory.getProperty("deathChest", true).getBooleanValue();
+
         Category mainmenuCategory = getDefaultConfig().getCategory("MainMenu");
-        Property imageWidth = mainmenuCategory.getProperty("imageWidth", 256);
-        Property imageHeight = mainmenuCategory.getProperty("imageHeight", 256);
-        Property isBlured = mainmenuCategory.getProperty("isBlured", true);
-        massiveMainMenuSize[0] = imageWidth.getIntValue();
-        massiveMainMenuSize[1] = imageHeight.getIntValue();
-        isMainMenuBlured = isBlured.getBooleanValue();
+        massiveMainMenuSize[0] = mainmenuCategory.getProperty("imageWidth", 256).getIntValue();
+        massiveMainMenuSize[1] = mainmenuCategory.getProperty("imageHeight", 256).getIntValue();
+        isMainMenuBlured = mainmenuCategory.getProperty("isBlured", true).getBooleanValue();
         getDefaultConfig().save();
     }
 

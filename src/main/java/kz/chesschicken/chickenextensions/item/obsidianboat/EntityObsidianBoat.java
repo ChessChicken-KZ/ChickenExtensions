@@ -319,9 +319,10 @@ public class EntityObsidianBoat extends EntityBase {
                 }
             }
 
-            if(this.passenger != null)
+            if(this.passenger != null) {
                 passenger.fire = 0;
-
+                passenger.setPosition(passenger.x, passenger.y + 0.2D, passenger.z);
+            }
             if (this.passenger != null && this.passenger.removed) {
                 this.passenger = null;
             }

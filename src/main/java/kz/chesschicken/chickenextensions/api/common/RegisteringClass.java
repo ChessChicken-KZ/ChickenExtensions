@@ -135,7 +135,7 @@ public class RegisteringClass implements ItemRegister, BlockRegister {
         Property blockNetherrackMossyID = blockIdsCategory.getProperty("blockNetherrackMossy", 133);
         Property blockLeavesCID = blockIdsCategory.getProperty("blockLeavesC", 134);
         Property blockFlowerCID = blockIdsCategory.getProperty("blockFlowerC", 135);
-        Property machineCartDiapenserID = blockIdsCategory.getProperty("machineCartDiapenser", 137);
+        Property machineCartDispenserID = blockIdsCategory.getProperty("machineCartDiapenser", 137);
         Property netherStairsID = blockIdsCategory.getProperty("netherStairs", 138);
         Property mossyCobblestoneStairsID = blockIdsCategory.getProperty("mossyCobblestone", 139);
         Property bricksStairsID = blockIdsCategory.getProperty("bricksStairs", 140);
@@ -164,7 +164,7 @@ public class RegisteringClass implements ItemRegister, BlockRegister {
         blockNetherrackMossy = new BlockNetherrackMossy(blockNetherrackMossyID.getIntValue()).setName("chickenextensions:blockNetherrackMossy");
         blockLeavesC = new TileBlockColour_Leaves(blockLeavesCID.getIntValue()).setName("chickenextensions:blockLeavesC");
         blockFlowerC = new TileBlockColour_Flower(blockFlowerCID.getIntValue()).setName("chickenextensions:blockFlowerC");
-        machineCartDiapenser = new BlockCartDispenser(machineCartDiapenserID.getIntValue()).setName("chickenextensions:machineCartDispenser");
+        machineCartDiapenser = new BlockCartDispenser(machineCartDispenserID.getIntValue()).setName("chickenextensions:machineCartDispenser");
         netherStairs = new StairsExtended(netherStairsID.getIntValue(), BlockBase.NETHERRACK.texture, BlockBase.NETHERRACK.id).setName("chickenextensions:netherStairs");
         mossyCobblestoneStairs = new StairsExtended(mossyCobblestoneStairsID.getIntValue(), BlockBase.MOSSY_COBBLESTONE.texture, BlockBase.MOSSY_COBBLESTONE.id).setName("chickenextensions:mossyCobblestoneStairs");
         bricksStairs =  new StairsExtended(bricksStairsID.getIntValue(), BlockBase.BRICK.texture, BlockBase.BRICK.id).setName("chickenextensions:bricksStairs");
