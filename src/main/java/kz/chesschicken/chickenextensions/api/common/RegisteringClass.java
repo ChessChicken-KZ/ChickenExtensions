@@ -1,12 +1,16 @@
 package kz.chesschicken.chickenextensions.api.common;
 
 import kz.chesschicken.chickenextensions.ChickenMod;
-import kz.chesschicken.chickenextensions.block.*;
-import kz.chesschicken.chickenextensions.block.colour.*;
+import kz.chesschicken.chickenextensions.block.BlockCartDispenser;
+import kz.chesschicken.chickenextensions.block.BlockCeilingLamp;
+import kz.chesschicken.chickenextensions.block.BlockNetherrackMossy;
+import kz.chesschicken.chickenextensions.block.BlockStones;
+import kz.chesschicken.chickenextensions.block.colour.TileBlockColour_Flower;
+import kz.chesschicken.chickenextensions.block.colour.TileBlockColour_Leaves;
+import kz.chesschicken.chickenextensions.block.colour.TileBlockColour_Sapling;
 import kz.chesschicken.chickenextensions.block.extensions.FenceExtended;
 import kz.chesschicken.chickenextensions.block.extensions.SlabsExtended;
 import kz.chesschicken.chickenextensions.block.extensions.StairsExtended;
-import kz.chesschicken.chickenextensions.block.extensions.TileItemExtended;
 import kz.chesschicken.chickenextensions.block.furniture.BlockContainerFurniture;
 import kz.chesschicken.chickenextensions.block.furniture.BlockCorpseBox;
 import kz.chesschicken.chickenextensions.item.ItemBasic;
@@ -188,13 +192,13 @@ public class RegisteringClass implements ItemRegister, BlockRegister {
         blockChandelier = new BlockCeilingLamp(blockChandelierID.getIntValue()).setName("chickenextensions:blockChandelier");
         corpseBox = new BlockCorpseBox(corpseBoxID.getIntValue()).setName("chickenextensions:corpseBox");
 
-        ItemBase.byId[blockCouple1.id] = (new TileBlockStones(blockCouple1.id - 256)).setName("chickenextensions:blockCouple1");
-        ItemBase.byId[blockSaplingC.id] = (new TileItemColour_Sapling(blockSaplingC.id - 256)).setName("chickenextensions:blockSaplingC");
-        ItemBase.byId[blockLeavesC.id] = (new TileItemColour_Leaves(blockLeavesC.id - 256)).setName("chickenextensions:blockLeavesC");
-        ItemBase.byId[blockFlowerC.id] = (new TileItemColour_Flower(blockFlowerC.id - 256)).setName("chickenextensions:blockFlowerC");
-        ItemBase.byId[fenceExtended.id] = (new TileItemExtended(fenceExtended.id - 256)).setName("chickenextensions:fenceExtended");
-        ItemBase.byId[extendedSlabs.id] = (new TileItemExtended(extendedSlabs.id - 256)).setName("chickenextensions:extendedSlabs");
-        ItemBase.byId[extendedDoubleSlabs.id] = (new TileItemExtended(extendedDoubleSlabs.id - 256)).setName("chickenextensions:extendedSlabs");
+        //ItemBase.byId[blockCouple1.id] = (new TileBlockStones(blockCouple1.id - 256)).setName("chickenextensions:blockCouple1");
+        //.byId[blockSaplingC.id] = (new TileItemColour_Sapling(blockSaplingC.id - 256)).setName("chickenextensions:blockSaplingC");
+        //ItemBase.byId[blockLeavesC.id] = (new TileItemColour_Leaves(blockLeavesC.id - 256)).setName("chickenextensions:blockLeavesC");
+        //ItemBase.byId[blockFlowerC.id] = (new TileItemColour_Flower(blockFlowerC.id - 256)).setName("chickenextensions:blockFlowerC");
+        //ItemBase.byId[fenceExtended.id] = (new TileItemExtended(fenceExtended.id - 256)).setName("chickenextensions:fenceExtended");
+        //ItemBase.byId[extendedSlabs.id] = (new TileItemExtended(extendedSlabs.id - 256)).setName("chickenextensions:extendedSlabs");
+        //ItemBase.byId[extendedDoubleSlabs.id] = (new TileItemExtended(extendedDoubleSlabs.id - 256)).setName("chickenextensions:extendedSlabs");
 
     }
 

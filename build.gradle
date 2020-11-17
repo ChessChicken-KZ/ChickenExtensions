@@ -67,11 +67,11 @@ dependencies {
 
 	modImplementation "net.fabricmc:fabric-loader:${project.loader_version}"
 
-	//modImplementation "net.modificationstation:StationLoader:1.2:dev"
+	modImplementation "net.modificationstation:StationLoader:1.3:dev"
 
 	//modImplementation "net.glasslauncher:HMI-Fabric:5.0.2-Unofficial:dev"
 
-	modImplementation files('newlibs/StationLoader-1.2-dev.jar')
+	//modImplementation files('newlibs/StationLoader-1.2-dev.jar')
 }
 
 

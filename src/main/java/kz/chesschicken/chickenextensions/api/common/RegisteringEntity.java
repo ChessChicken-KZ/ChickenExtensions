@@ -51,6 +51,6 @@ public class RegisteringEntity implements EntityRegister, PlayerHandlerRegister,
     @Override
     public void registerTileEntities(Map<Class<?>, String> map) {
         map.put(TileEntityExtended.class, "TileEntityExtended");
-        map.put(TileCorpseBox.class, "TileEntityArmorChest");
+        map.put(TileCorpseBox.class, "TileCorpseBox");
     }
 }

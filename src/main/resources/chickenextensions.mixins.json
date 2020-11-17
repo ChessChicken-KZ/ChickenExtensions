@@ -8,7 +8,8 @@
     "common.MixinChickenMeat",
     "common.MixinCowMeat",
     "common.MixinPlayerInventoryAdditional",
-    "common.MixinSheepMeat"
+    "common.MixinSheepMeat",
+    "common.OverworldRelease"
   ],
   "server": [
     "server.MixinCommandHandler"

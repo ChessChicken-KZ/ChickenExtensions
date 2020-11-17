@@ -44,7 +44,7 @@ public abstract class MixinVersionCheck {
         catch (IOException e) {
             e.printStackTrace();
         }
-        return i.equals(ChickenMod.VERSION);
+        return i.equals(ChickenMod.INSTANCE.VERSION);
     }
 
 }

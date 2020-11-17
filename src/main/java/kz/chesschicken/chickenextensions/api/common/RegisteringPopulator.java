@@ -10,12 +10,12 @@ import net.minecraft.level.biome.Biome;
 import net.minecraft.level.source.LevelSource;
 import net.minecraft.level.source.NetherLevelSource;
 import net.minecraft.level.source.OverworldLevelSource;
+import net.minecraft.level.structure.BirchTree;
+import net.minecraft.level.structure.OakTree;
 import net.modificationstation.stationloader.api.common.event.level.gen.ChunkPopulator;
-import net.modificationstation.stationloader.api.common.factory.GeneralFactory;
 
 import java.util.Random;
 import java.util.concurrent.ThreadLocalRandom;
-import java.util.function.Function;
 
 public class RegisteringPopulator implements ChunkPopulator {
     @Override
@@ -78,6 +78,25 @@ public class RegisteringPopulator implements ChunkPopulator {
                 SoulBrickDungeon structure = new SoulBrickDungeon();
                 if(structure.generate(level,random,chunkpX,chunkpY,chunkpZ))
                     structure.generate(level,random,chunkpX,chunkpY,chunkpZ);
+            }
+        }
+        if(biome == Biome.FOREST)
+        {
+            for(int iq = 0; iq < 8; iq++)
+            {
+                int chunkpX = i + random.nextInt(16);
+                int chunkpZ = j + random.nextInt(16);
+                int chunkpY = level.getHeight(i,j);
+                OakTree structure = new OakTree();
+                structure.generate(level,random,chunkpX,chunkpY,chunkpZ);
+            }
+            for(int iq = 0; iq < 2; iq++)
+            {
+                int chunkpX = i + random.nextInt(16);
+                int chunkpZ = j + random.nextInt(16);
+                int chunkpY = level.getHeight(i,j);
+                BirchTree structure = new BirchTree();
+                structure.generate(level,random,chunkpX,chunkpY,chunkpZ);
             }
         }
     }

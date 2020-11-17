@@ -34,7 +34,7 @@ public class ChickenMod implements StationMod, TextureRegister, RecipeRegister
         INSTANCE = this;
     }
 
-    public static String VERSION = "0.0.3era-alpha";
+    public String VERSION;
 
     public static ToolMaterial toolGems;
     public static ToolMaterial toolCopper;
@@ -43,17 +43,16 @@ public class ChickenMod implements StationMod, TextureRegister, RecipeRegister
 
     public static int[] massiveMainMenuSize = new int[2];
     public static boolean isMainMenuBlured;
+    public static boolean isCustomWorldGen;
 
     @Override
     public void preInit()
     {
+        VERSION =  getData().getVersion().getFriendlyString();
         RegisteringClass registeringClass = new RegisteringClass();
         RegisteringMetals registeringMetals = new RegisteringMetals();
         RegisteringBiome registeringBiome = new RegisteringBiome();
         RegisteringEntity registeringEntity = new RegisteringEntity();
-
-        toolGems = GeneralFactory.INSTANCE.newInst(ToolMaterial.class, "chickenextensions:GEMS",3, 1561, 8.0F, 3);
-        toolCopper = GeneralFactory.INSTANCE.newInst(ToolMaterial.class, "chickenextensions:COPPER", 1, 220, 5.0F, 2);
 
 
 
@@ -79,7 +78,14 @@ public class ChickenMod implements StationMod, TextureRegister, RecipeRegister
 
 
         getDefaultConfig().load();
+
+        toolGems = GeneralFactory.INSTANCE.newInst(ToolMaterial.class, "chickenextensions:GEMS",3, 1561, 8.0F, 3);
+        toolCopper = GeneralFactory.INSTANCE.newInst(ToolMaterial.class, "chickenextensions:COPPER", 1, 220, 5.0F, 2);
     }
+
+
+
+
 
 
     private void loadCustomConfigPart()
@@ -87,6 +93,7 @@ public class ChickenMod implements StationMod, TextureRegister, RecipeRegister
         Category miscCategory = getDefaultConfig().getCategory("Misc");
         isCheckVersion = miscCategory.getProperty("checkVersion", true).getBooleanValue();
         isDeathChest = miscCategory.getProperty("deathChest", true).getBooleanValue();
+        isCustomWorldGen = miscCategory.getProperty("isCustomWorldGen", false).getBooleanValue();
 
         Category mainmenuCategory = getDefaultConfig().getCategory("MainMenu");
         massiveMainMenuSize[0] = mainmenuCategory.getProperty("imageWidth", 256).getIntValue();
