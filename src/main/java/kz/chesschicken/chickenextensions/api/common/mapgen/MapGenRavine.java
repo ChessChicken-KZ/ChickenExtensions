@@ -4,7 +4,6 @@ import net.minecraft.block.BlockBase;
 import net.minecraft.util.maths.MathHelper;
 
 import java.util.Random;
-import java.util.logging.Level;
 
 public class MapGenRavine extends MapGenBase
 {
@@ -52,9 +51,9 @@ public class MapGenRavine extends MapGenBase
             var30 *= (double)var19.nextFloat() * 0.25D + 0.75D;
             float var32 = MathHelper.cos(par14);
             float var33 = MathHelper.sin(par14);
-            par6 += (double)(MathHelper.cos(par13) * var32);
-            par8 += (double)var33;
-            par10 += (double)(MathHelper.sin(par13) * var32);
+            par6 += MathHelper.cos(par13) * var32;
+            par8 += var33;
+            par10 += MathHelper.sin(par13) * var32;
             par14 *= 0.7F;
             par14 += var25 * 0.05F;
             par13 += var24 * 0.05F;
@@ -67,8 +66,8 @@ public class MapGenRavine extends MapGenBase
             {
                 double var34 = par6 - var20;
                 double var36 = par10 - var22;
-                double var38 = (double)(par16 - par15);
-                double var40 = (double)(par12 + 2.0F + 16.0F);
+                double var38 = par16 - par15;
+                double var40 = par12 + 2.0F + 16.0F;
 
                 if (var34 * var34 + var36 * var36 - var38 * var38 > var40 * var40)
                 {
@@ -126,7 +125,7 @@ public class MapGenRavine extends MapGenBase
                             {
                                 var44 = (var41 * 16 + var42) * 128 + var43;
 
-                                if (var43 >= 0 && var43 < 128)
+                                if (var43 < 128)
                                 {
                                     if (par5ArrayOfByte[var44] == BlockBase.FLOWING_WATER.id || par5ArrayOfByte[var44] == BlockBase.STILL_WATER.id)
                                     {
@@ -206,7 +205,7 @@ public class MapGenRavine extends MapGenBase
     /**
      * Recursively called by generate() (generate) and optionally by itself.
      */
-    protected void recursiveGenerate(Level par1World, int par2, int par3, int par4, int par5, byte[] par6ArrayOfByte)
+    protected void recursiveGenerate(int par2, int par3, int par4, int par5, byte[] par6ArrayOfByte)
     {
         if (this.rand.nextInt(50) == 0)
         {

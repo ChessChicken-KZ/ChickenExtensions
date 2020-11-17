@@ -4,7 +4,6 @@ import net.minecraft.block.BlockBase;
 import net.minecraft.util.maths.MathHelper;
 
 import java.util.Random;
-import java.util.logging.Level;
 
 public class MapGenCaves  extends MapGenBase
 {
@@ -49,9 +48,9 @@ public class MapGenCaves  extends MapGenBase
             double var31 = var29 * par17;
             float var33 = MathHelper.cos(par14);
             float var34 = MathHelper.sin(par14);
-            par6 += (double)(MathHelper.cos(par13) * var33);
-            par8 += (double)var34;
-            par10 += (double)(MathHelper.sin(par13) * var33);
+            par6 += MathHelper.cos(par13) * var33;
+            par8 += var34;
+            par10 += MathHelper.sin(par13) * var33;
 
             if (var28)
             {
@@ -80,8 +79,8 @@ public class MapGenCaves  extends MapGenBase
             {
                 double var35 = par6 - var19;
                 double var37 = par10 - var21;
-                double var39 = (double)(par16 - par15);
-                double var41 = (double)(par12 + 2.0F + 16.0F);
+                double var39 = par16 - par15;
+                double var41 = par12 + 2.0F + 16.0F;
 
                 if (var35 * var35 + var37 * var37 - var39 * var39 > var41 * var41)
                 {
@@ -139,7 +138,7 @@ public class MapGenCaves  extends MapGenBase
                             {
                                 var45 = (var42 * 16 + var43) * 128 + var44;
 
-                                if (var44 >= 0 && var44 < 128)
+                                if (var44 < 128)
                                 {
                                     if (par5ArrayOfByte[var45] == BlockBase.FLOWING_WATER.id || par5ArrayOfByte[var45] == BlockBase.STILL_WATER.id)
                                     {
@@ -219,7 +218,7 @@ public class MapGenCaves  extends MapGenBase
     /**
      * Recursively called by generate() (generate) and optionally by itself.
      */
-    protected void recursiveGenerate(Level par1World, int par2, int par3, int par4, int par5, byte[] par6ArrayOfByte)
+    protected void recursiveGenerate(int par2, int par3, int par4, int par5, byte[] par6ArrayOfByte)
     {
         int var7 = this.rand.nextInt(this.rand.nextInt(this.rand.nextInt(40) + 1) + 1);
 

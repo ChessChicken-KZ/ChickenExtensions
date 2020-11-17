@@ -9,7 +9,6 @@ import net.minecraft.block.BlockBase;
 import net.minecraft.level.Level;
 import net.minecraft.level.biome.Biome;
 import net.minecraft.level.chunk.Chunk;
-import net.minecraft.level.source.LevelSource;
 import net.minecraft.level.source.OverworldLevelSource;
 import net.minecraft.util.maths.MathHelper;
 import net.minecraft.util.noise.PerlinOctaveNoise;
@@ -208,8 +207,8 @@ public abstract class OverworldRelease {
             this.shapeChunk(par1, par2, bytes, null, null);
             this.biomes = this.level.getBiomeSource().getBiomes(this.biomes, par1 * 16, par2 * 16, 16, 16);
             this.buildSurface(par1, par2, bytes, this.biomes);
-            this.caveGenerator.generate((LevelSource) this, this.level, par1, par2, bytes);
-            this.ravineGenerator.generate((LevelSource) this, this.level, par1, par2, bytes);
+            this.caveGenerator.generate(this.level, par1, par2, bytes);
+            this.ravineGenerator.generate(this.level, par1, par2, bytes);
 
             Chunk chunk = new Chunk(this.level, bytes, par1, par2);
             chunk.generateHeightmap();
