@@ -1,10 +1,10 @@
 package kz.chesschicken.chickenextensions.mixin.common;
 
 import kz.chesschicken.chickenextensions.ChickenMod;
+import kz.chesschicken.chickenextensions.api.common.BiomeClass;
 import kz.chesschicken.chickenextensions.api.common.mapgen.MapGenBase;
 import kz.chesschicken.chickenextensions.api.common.mapgen.MapGenCaves;
 import kz.chesschicken.chickenextensions.api.common.mapgen.MapGenRavine;
-import kz.chesschicken.chickenextensions.biome.BiomeDoubler;
 import net.minecraft.block.BlockBase;
 import net.minecraft.level.Level;
 import net.minecraft.level.biome.Biome;
@@ -253,12 +253,12 @@ public abstract class OverworldRelease {
                     for (int q3 = -var19; q3 <= var19; ++q3) {
                         for (int q4 = -var19; q4 <= var19; ++q4) {
                             Biome var23 = this.biomes[q1 + q3 + 2 + (q2 + q4 + 2) * (x4 + 5)];
-                            float var24 = this.heightDoubleNOISE[q3 + 2 + (q4 + 2) * 5] / (BiomeDoubler.minHeight.get(var23) + 2.0F);
-                            if (BiomeDoubler.minHeight.get(var23) > BiomeDoubler.minHeight.get(var20)) {
+                            float var24 = this.heightDoubleNOISE[q3 + 2 + (q4 + 2) * 5] / (BiomeClass.minHeight.get(var23) + 2.0F);
+                            if (BiomeClass.minHeight.get(var23) > BiomeClass.minHeight.get(var20)) {
                                 var24 /= 2.0F;
                             }
-                            var16 += BiomeDoubler.maxHeight.get(var23) * var24;
-                            var17 += BiomeDoubler.minHeight.get(var23) * var24;
+                            var16 += BiomeClass.maxHeight.get(var23) * var24;
+                            var17 += BiomeClass.minHeight.get(var23) * var24;
                             var18 += var24;
                         }
                     }

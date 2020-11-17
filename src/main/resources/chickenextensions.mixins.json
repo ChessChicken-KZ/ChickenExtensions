@@ -17,6 +17,7 @@
   "client": [
     "client.MixinGameList",
     "client.MixingPauseMenu",
+    "client.MixinGrassColor",
     "client.MixinMainMenu",
     "client.MixinPlayerClient",
     "client.MixinPlayerSP",

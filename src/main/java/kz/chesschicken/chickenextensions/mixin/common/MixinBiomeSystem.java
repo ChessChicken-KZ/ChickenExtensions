@@ -1,6 +1,6 @@
 package kz.chesschicken.chickenextensions.mixin.common;
 
-import kz.chesschicken.chickenextensions.biome.BiomeDoubler;
+import kz.chesschicken.chickenextensions.api.common.BiomeClass;
 import net.minecraft.level.biome.Biome;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
@@ -17,7 +17,7 @@ public class MixinBiomeSystem {
     {
 
         if (getFirstSwitch != (Math.floor(temperature * 10))) {
-            randomBiome = BiomeDoubler.getRandomBiome();
+            randomBiome = BiomeClass.getRandomBiome();
             getFirstSwitch = Math.floor(temperature * 10);
         }
         cir.setReturnValue(randomBiome);

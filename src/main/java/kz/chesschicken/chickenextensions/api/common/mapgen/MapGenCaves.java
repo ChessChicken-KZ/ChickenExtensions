@@ -7,21 +7,15 @@ import java.util.Random;
 
 public class MapGenCaves  extends MapGenBase
 {
-    /**
-     * Generates a larger initial cave node than usual. Called 25% of the time.
-     */
     protected void generateLargeCaveNode(long par1, int par3, int par4, byte[] par5ArrayOfByte, double par6, double par8, double par10)
     {
         this.generateCaveNode(par1, par3, par4, par5ArrayOfByte, par6, par8, par10, 1.0F + this.rand.nextFloat() * 6.0F, 0.0F, 0.0F, -1, -1, 0.5D);
     }
 
-    /**
-     * Generates a node in the current cave system recursion tree.
-     */
     protected void generateCaveNode(long par1, int par3, int par4, byte[] par5ArrayOfByte, double par6, double par8, double par10, float par12, float par13, float par14, int par15, int par16, double par17)
     {
-        double var19 = (double)(par3 * 16 + 8);
-        double var21 = (double)(par4 * 16 + 8);
+        double var19 = par3 * 16 + 8;
+        double var21 = par4 * 16 + 8;
         float var23 = 0.0F;
         float var24 = 0.0F;
         Random var25 = new Random(par1);
@@ -215,9 +209,6 @@ public class MapGenCaves  extends MapGenBase
         }
     }
 
-    /**
-     * Recursively called by generate() (generate) and optionally by itself.
-     */
     protected void recursiveGenerate(int par2, int par3, int par4, int par5, byte[] par6ArrayOfByte)
     {
         int var7 = this.rand.nextInt(this.rand.nextInt(this.rand.nextInt(40) + 1) + 1);
@@ -229,9 +220,9 @@ public class MapGenCaves  extends MapGenBase
 
         for (int var8 = 0; var8 < var7; ++var8)
         {
-            double var9 = (double)(par2 * 16 + this.rand.nextInt(16));
-            double var11 = (double)this.rand.nextInt(this.rand.nextInt(120) + 8);
-            double var13 = (double)(par3 * 16 + this.rand.nextInt(16));
+            double var9 = par2 * 16 + this.rand.nextInt(16);
+            double var11 = this.rand.nextInt(this.rand.nextInt(120) + 8);
+            double var13 = par3 * 16 + this.rand.nextInt(16);
             int var15 = 1;
 
             if (this.rand.nextInt(4) == 0)

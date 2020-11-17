@@ -1,16 +1,13 @@
 package kz.chesschicken.chickenextensions.mixin.client;
 
 
-import kz.chesschicken.chickenextensions.api.common.CustomPlayerHandler;
 import net.fabricmc.loader.api.FabricLoader;
 import net.minecraft.client.Minecraft;
 import net.minecraft.entity.player.PlayerBase;
 import org.objectweb.asm.Opcodes;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
-import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.Redirect;
-import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 @Mixin(PlayerBase.class)
 public class MixinPlayerClient {
@@ -20,13 +17,6 @@ public class MixinPlayerClient {
     private void getPlayerCloakUrl(PlayerBase playerBase, String value)
     {
         playerBase.playerCloakUrl = "http://assets.rubeta.net/cloaks/" + playerBase.name + ".png";
-    }
-
-    @Inject(method = "tick", at = @At("TAIL"))
-    private void i(CallbackInfo ci)
-    {
-        CustomPlayerHandler.processInfinityFly(mc.player);
-
     }
 
 

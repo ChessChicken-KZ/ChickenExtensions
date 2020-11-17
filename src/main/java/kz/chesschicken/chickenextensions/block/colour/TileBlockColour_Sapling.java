@@ -1,6 +1,7 @@
 package kz.chesschicken.chickenextensions.block.colour;
 
 import kz.chesschicken.chickenextensions.ChickenMod;
+import kz.chesschicken.chickenextensions.api.common.BiomeClass;
 import kz.chesschicken.chickenextensions.api.common.structure.ColourTreeStructure;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
@@ -26,7 +27,7 @@ public class TileBlockColour_Sapling extends Plant implements BlockItemProvider 
 
     @Environment(EnvType.CLIENT)
     public int getColor(TileView arg, int x, int y, int z) {
-        return ChickenMod.INSTANCE.get16ColorCode(arg.getTileMeta(x, y, z));
+        return BiomeClass.get16ColorCode(arg.getTileMeta(x, y, z));
     }
 
 

@@ -1,6 +1,7 @@
 package kz.chesschicken.chickenextensions.block.colour;
 
 import kz.chesschicken.chickenextensions.ChickenMod;
+import kz.chesschicken.chickenextensions.api.common.BiomeClass;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 import net.minecraft.item.ItemInstance;
@@ -26,5 +27,5 @@ public class TileItemColour_Leaves extends PlaceableTileEntity {
         return ChickenMod.textColourLeaves;
     }
 
-    @Override public int getNameColour(int i) { return ChickenMod.INSTANCE.get16ColorCode(i); }
+    @Override public int getNameColour(int i) { return BiomeClass.get16ColorCode(i); }
 }

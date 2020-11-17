@@ -25,7 +25,6 @@ public class MixinMainMenu extends ScreenBase
     private int viewportTexture;
     private Minecraft mc = (Minecraft) FabricLoader.getInstance().getGameInstance();
 
-    //@Inject(method = "render(IIF)V", at = @At(value = "INVOKE", target = "Lnet/minecraft/client/gui/screen/menu/MainMenu;renderBackground()V", shift = At.Shift.AFTER))
     @Redirect(method = "render(IIF)V", at = @At(value = "INVOKE", target = "Lnet/minecraft/client/gui/screen/menu/MainMenu;renderBackground()V"))
     private void injected(MainMenu mainMenu, int mouseX, int mouseY, float delta) {
         renderSkybox(mouseX,mouseY,delta);

@@ -7,13 +7,13 @@ import java.util.Random;
 
 public class MapGenRavine extends MapGenBase
 {
-    private float[] field_35627_a = new float[1024];
+    private final float[] field_35627_a = new float[1024];
 
     protected void generateRavine(long par1, int par3, int par4, byte[] par5ArrayOfByte, double par6, double par8, double par10, float par12, float par13, float par14, int par15, int par16, double par17)
     {
         Random var19 = new Random(par1);
-        double var20 = (double)(par3 * 16 + 8);
-        double var22 = (double)(par4 * 16 + 8);
+        double var20 = par3 * 16 + 8;
+        double var22 = par4 * 16 + 8;
         float var24 = 0.0F;
         float var25 = 0.0F;
 
@@ -202,16 +202,13 @@ public class MapGenRavine extends MapGenBase
         }
     }
 
-    /**
-     * Recursively called by generate() (generate) and optionally by itself.
-     */
     protected void recursiveGenerate(int par2, int par3, int par4, int par5, byte[] par6ArrayOfByte)
     {
         if (this.rand.nextInt(50) == 0)
         {
-            double var7 = (double)(par2 * 16 + this.rand.nextInt(16));
-            double var9 = (double)(this.rand.nextInt(this.rand.nextInt(40) + 8) + 20);
-            double var11 = (double)(par3 * 16 + this.rand.nextInt(16));
+            double var7 = par2 * 16 + this.rand.nextInt(16);
+            double var9 = this.rand.nextInt(this.rand.nextInt(40) + 8) + 20;
+            double var11 = par3 * 16 + this.rand.nextInt(16);
             byte var13 = 1;
 
             for (int var14 = 0; var14 < var13; ++var14)

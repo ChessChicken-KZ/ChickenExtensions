@@ -1,6 +1,7 @@
 package kz.chesschicken.chickenextensions.block.colour;
 
 import kz.chesschicken.chickenextensions.ChickenMod;
+import kz.chesschicken.chickenextensions.api.common.BiomeClass;
 import kz.chesschicken.chickenextensions.api.common.RegisteringClass;
 import net.minecraft.block.Plant;
 import net.minecraft.item.PlaceableTileEntity;
@@ -21,7 +22,7 @@ public class TileBlockColour_Flower extends Plant implements BlockItemProvider {
 
     @Override
     public int getColor(TileView arg, int x, int y, int z) {
-        return ChickenMod.INSTANCE.get16ColorCode(arg.getTileMeta(x, y, z));
+        return BiomeClass.get16ColorCode(arg.getTileMeta(x, y, z));
     }
 
     @Override

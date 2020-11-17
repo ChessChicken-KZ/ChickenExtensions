@@ -1,6 +1,6 @@
 package kz.chesschicken.chickenextensions.block.colour;
 
-import kz.chesschicken.chickenextensions.ChickenMod;
+import kz.chesschicken.chickenextensions.api.common.BiomeClass;
 import kz.chesschicken.chickenextensions.api.common.RegisteringClass;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
@@ -30,7 +30,7 @@ public class TileItemColour_Sapling extends PlaceableTileEntity {
         return RegisteringClass.blockSaplingC.getTextureForSide(0, damage);
     }
 
-    @Override public int getNameColour(int i) { return ChickenMod.INSTANCE.get16ColorCode(i); }
+    @Override public int getNameColour(int i) { return BiomeClass.get16ColorCode(i); }
 
 
 

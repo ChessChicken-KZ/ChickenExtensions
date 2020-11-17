@@ -1,6 +1,7 @@
 package kz.chesschicken.chickenextensions.block.colour;
 
 import kz.chesschicken.chickenextensions.ChickenMod;
+import kz.chesschicken.chickenextensions.api.common.BiomeClass;
 import kz.chesschicken.chickenextensions.api.common.RegisteringClass;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
@@ -40,12 +41,12 @@ public class TileBlockColour_Leaves extends net.minecraft.class_307 implements B
 
     @Environment(EnvType.CLIENT)
     public int method_1589(int i) {
-        return ChickenMod.INSTANCE.get16ColorCode(i);
+        return BiomeClass.get16ColorCode(i);
     }
 
     @Environment(EnvType.CLIENT)
     public int getColor(TileView arg, int x, int y, int z) {
-        return ChickenMod.INSTANCE.get16ColorCode(arg.getTileMeta(x,y,z));
+        return BiomeClass.get16ColorCode(arg.getTileMeta(x,y,z));
     }
 
     public void onBlockRemoved(Level level, int x, int y, int z) {
