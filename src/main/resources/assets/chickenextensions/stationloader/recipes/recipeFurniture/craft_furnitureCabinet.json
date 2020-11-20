@@ -3,23 +3,27 @@
   "pattern":
   [
     "WWW",
-    "XXX",
-    " X "
+    "EXE",
+    "WWW"
   ],
   "key":
   {
     "X":
     {
-      "item": "minecraft:torch"
+      "item": "minecraft:chest"
     },
     "W":
     {
       "item": "minecraft:stoneSlab",
       "damage": 2
+    },
+    "E":
+    {
+      "item": "minecraft:wood"
     }
   },
   "result":
   {
-    "item": "chickenextensions:lampCeiling"
+    "item": "chickenextensions:furnitureCabinet"
   }
 }

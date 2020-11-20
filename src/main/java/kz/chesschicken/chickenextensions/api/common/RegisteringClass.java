@@ -65,12 +65,16 @@ public class RegisteringClass implements ItemRegister, BlockRegister {
     public static BlockBase extendedDoubleSlabs;
     public static BlockBase lampCeiling;
     public static ItemBase itemBiomeLocator;
+
+    //
     public static BlockBase furnitureCabinet;
     public static BlockBase furnitureNightstand;
     public static BlockBase furnitureBox;
     public static BlockBase furnitureLocker;
     public static BlockBase furnitureCommode;
     public static BlockBase furnitureFridge;
+    //
+
     public static ItemBase itemLimestone;
     public static ItemBase itemTile;
     public static ItemBase itemSlakedLime;

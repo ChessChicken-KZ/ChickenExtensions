@@ -1,7 +1,6 @@
 package kz.chesschicken.chickenextensions;
 
 
-import kz.chesschicken.chickenextensions.api.client.CustomPackerSender;
 import kz.chesschicken.chickenextensions.api.common.*;
 import net.minecraft.block.BlockBase;
 import net.minecraft.item.ItemInstance;
@@ -227,9 +226,8 @@ public class ChickenMod implements StationMod, TextureRegister, RecipeRegister
                 SmeltingRegistry.INSTANCE.addSmeltingRecipe(RegisteringClass.itemSteakRaw.id, new ItemInstance(RegisteringClass.itemSteakCooked));
                 SmeltingRegistry.INSTANCE.addSmeltingRecipe(RegisteringClass.itemMuttonRaw.id, new ItemInstance(RegisteringClass.itemMuttonCooked));
                 SmeltingRegistry.INSTANCE.addSmeltingRecipe(RegisteringClass.itemChickenRaw.id, new ItemInstance(RegisteringClass.itemChickenCooked));
-                SmeltingRegistry.INSTANCE.addSmeltingRecipe(new ItemInstance(RegisteringClass.blockCouple1, 1,9), new ItemInstance(RegisteringClass.blockCouple1, 1, 7));
+                SmeltingRegistry.INSTANCE.addSmeltingRecipe(new ItemInstance(RegisteringClass.blockCouple1, 1,7), new ItemInstance(RegisteringClass.blockCouple1, 1, 9));
                 SmeltingRegistry.INSTANCE.addSmeltingRecipe(RegisteringClass.itemLimestone.id, new ItemInstance(RegisteringClass.itemSlakedLime));
-
                 break;
             }
         }

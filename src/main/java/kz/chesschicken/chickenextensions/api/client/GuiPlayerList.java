@@ -1,5 +1,6 @@
 package kz.chesschicken.chickenextensions.api.client;
 
+import kz.chesschicken.chickenextensions.api.common.CustomPackerSender;
 import net.minecraft.client.gui.screen.ScreenBase;
 import net.minecraft.client.gui.widgets.Button;
 import org.lwjgl.input.Keyboard;

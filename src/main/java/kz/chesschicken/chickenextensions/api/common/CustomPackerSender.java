@@ -1,10 +1,8 @@
-package kz.chesschicken.chickenextensions.api.client;
+package kz.chesschicken.chickenextensions.api.common;
 
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 import net.fabricmc.loader.api.FabricLoader;
-import net.fabricmc.loader.launch.FabricServerTweaker;
-import net.fabricmc.loader.launch.server.FabricServerLauncher;
 import net.minecraft.entity.player.PlayerBase;
 import net.minecraft.packet.AbstractPacket;
 import net.minecraft.server.MinecraftServer;
@@ -12,7 +10,6 @@ import net.modificationstation.stationloader.api.common.event.packet.PacketRegis
 import net.modificationstation.stationloader.api.common.factory.GeneralFactory;
 import net.modificationstation.stationloader.api.common.packet.CustomData;
 import net.modificationstation.stationloader.api.common.packet.PacketHelper;
-import net.modificationstation.stationloader.api.common.registry.ModIDRegistry;
 import uk.co.benjiweber.expressions.functions.QuadConsumer;
 
 import java.util.List;
@@ -38,7 +35,6 @@ public class CustomPackerSender implements PacketRegister {
     public void registerPackets(QuadConsumer<Integer, Boolean, Boolean, Class<? extends AbstractPacket>> quadConsumer, Map<String, BiConsumer<PlayerBase, CustomData>> map) {
         map.put("playerlist", this::handleSendPlayers);
         map.put("playerlistResult", this::handleSendRes);
-        System.out.println(ModIDRegistry.packet.get("chickenextensions").get("playerlist").getClass().getName());
     }
 
     public void handleSendPlayers(PlayerBase playerBase, CustomData customData)

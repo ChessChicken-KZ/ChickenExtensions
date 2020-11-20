@@ -1,6 +1,6 @@
 package kz.chesschicken.chickenextensions.mixin.client;
 
-import kz.chesschicken.chickenextensions.api.client.CustomPackerSender;
+import kz.chesschicken.chickenextensions.api.common.CustomPackerSender;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.InGame;
 import net.minecraft.client.render.Tessellator;
