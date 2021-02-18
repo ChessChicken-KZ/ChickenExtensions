@@ -19,7 +19,7 @@
 
   "environment": "*",
   "entrypoints": {
-    "stationmod": [
+    "stationapi:mod": [
       "kz.chesschicken.chickenextensions.ChickenMod"
     ]
   },
@@ -28,8 +28,6 @@
   ],
 
   "depends": {
-    "fabricloader": "*",
-    "minecraft": "1.0.0-beta.7.3",
-    "stationloader": "*"
+    "minecraft": "1.0.0-beta.7.3"
   }
 }

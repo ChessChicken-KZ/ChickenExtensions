@@ -4,24 +4,12 @@
   "package": "kz.chesschicken.chickenextensions.mixin",
   "compatibilityLevel": "JAVA_8",
   "mixins": [
-    "common.MixinBiomeSystem",
-    "common.MixinChickenMeat",
-    "common.MixinCowMeat",
-    "common.MixinPlayerInventoryAdditional",
-    "common.MixinSheepMeat",
-    "common.OverworldRelease"
+
   ],
   "server": [
-    "server.MixinCommandHandler"
   ],
   "client": [
-    "client.MixinGameList",
-    "client.MixingPauseMenu",
-    "client.MixinGrassColor",
-    "client.MixinMainMenu",
-    "client.MixinPlayerClient",
-    "client.MixinPlayerSP",
-    "client.MixinVersionCheck"
+
   ],
   "injectors": {
     "defaultRequire": 1
