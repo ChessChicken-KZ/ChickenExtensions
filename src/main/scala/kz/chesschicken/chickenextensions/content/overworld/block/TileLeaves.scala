@@ -1,20 +1,25 @@
 package kz.chesschicken.chickenextensions.content.overworld.block
 
 import kz.chesschicken.chickenextensions.ChickenMod
-import kz.chesschicken.chickenextensions.content.overworld.OverworldBase
+import kz.chesschicken.chickenextensions.content.overworld.OverworldListener
 import net.minecraft.block.{BlockBase, LeavesBase}
 import net.minecraft.block.material.Material
 import net.minecraft.entity.player.PlayerBase
 import net.minecraft.item.{Block, ItemBase, ItemInstance}
-import net.modificationstation.stationapi.api.common.block.{BlockItemProvider, BlockRegistry}
 import net.modificationstation.stationapi.api.common.registry.Identifier
 import net.minecraft.level.Level
 import net.minecraft.stat.Stats
+import net.modificationstation.stationapi.api.common.block.{BlockRegistry, HasCustomBlockItemFactory}
 
 import java.util.Random
+import net.fabricmc.api.EnvType
+import net.fabricmc.api.Environment
+import net.minecraft.level.TileView
+import net.modificationstation.stationapi.template.common.block.TemplateLeaves
 
-
-class TileLeaves() extends LeavesBase(BlockRegistry.INSTANCE.getNextSerializedID, OverworldBase.textureColourLeaves, Material.LEAVES, false) with BlockItemProvider{
+@HasCustomBlockItemFactory(classOf[ItemTileBase])
+class TileLeaves() extends TemplateLeaves(BlockRegistry.INSTANCE.getNextSerializedID, OverworldListener.textureColourLeaves)
+{
   var field_1171: Array[Int] = _
 
   def this (id: Identifier)
@@ -30,20 +35,13 @@ class TileLeaves() extends LeavesBase(BlockRegistry.INSTANCE.getNextSerializedID
     this.setTicksRandomly(true)
   }
 
-  override def getBlockItem(i: Int): Block = new ItemTileBase(i)
 
-  import net.fabricmc.api.EnvType
-  import net.fabricmc.api.Environment
 
   @Environment(EnvType.CLIENT) def method_1589(i: Int): Int = ChickenMod.get16ColorCode(i)
 
-  import net.fabricmc.api.EnvType
-  import net.fabricmc.api.Environment
-  import net.minecraft.level.TileView
+
 
   @Environment(EnvType.CLIENT) def getColor(arg: TileView, x: Int, y: Int, z: Int): Int = ChickenMod.get16ColorCode(arg.getTileMeta(x, y, z))
-
-  import kz.chesschicken.chickenextensions.content.overworld.OverworldBase
 
   override def onBlockRemoved(level: Level, x: Int, y: Int, z: Int): Unit = {
     val var5 = 1
@@ -52,7 +50,7 @@ class TileLeaves() extends LeavesBase(BlockRegistry.INSTANCE.getNextSerializedID
       for (var8 <- -var5 to var5) {
         for (var9 <- -var5 to var5) {
           val var10 = level.getTileId(x + var7, y + var8, z + var9)
-          if (var10 == OverworldBase.colourLeaves.id) {
+          if (var10 == OverworldListener.colourLeaves.id) {
             val var11 = level.getTileMeta(x + var7, y + var8, z + var9)
             level.method_223(x + var7, y + var8, z + var9, var11)
           }
@@ -129,7 +127,7 @@ class TileLeaves() extends LeavesBase(BlockRegistry.INSTANCE.getNextSerializedID
               }) {
                 var15 = level.getTileId(x + var12, y + var13, z + var14)
                 if (var15 == BlockBase.LOG.id) field_1171((var12 + var11) * var10 + (var13 + var11) * var9 + var14 + var11) = 0
-                else if (var15 == OverworldBase.colourLeaves.id) field_1171((var12 + var11) * var10 + (var13 + var11) * var9 + var14 + var11) = -2
+                else if (var15 == OverworldListener.colourLeaves.id) field_1171((var12 + var11) * var10 + (var13 + var11) * var9 + var14 + var11) = -2
                 else field_1171((var12 + var11) * var10 + (var13 + var11) * var9 + var14 + var11) = -1
 
                 var14 += 1
@@ -154,13 +152,13 @@ class TileLeaves() extends LeavesBase(BlockRegistry.INSTANCE.getNextSerializedID
 
   override def getDropCount(rand: Random): Int = if (rand.nextInt(20) eq 0) 1 else 0
 
-  override def getDropId(meta: Int, rand: Random): Int = OverworldBase.colourSapling.id
+  override def getDropId(meta: Int, rand: Random): Int = OverworldListener.colourSapling.id
 
 
   override def afterBreak(arg: Level, arg1: PlayerBase, x: Int, y: Int, z: Int, i1: Int): Unit = {
     if (!arg.isClient && arg1.getHeldItem != null && arg1.getHeldItem.itemId == ItemBase.shears.id) {
       arg1.increaseStat(Stats.STAT_MINE_BLOCK(this.id), 1)
-      this.drop(arg, x, y, z, new ItemInstance(OverworldBase.colourLeaves.id, 1, i1))
+      this.drop(arg, x, y, z, new ItemInstance(OverworldListener.colourLeaves.id, 1, i1))
     }
     else super.afterBreak(arg, arg1, x, y, z, i1)
   }
@@ -169,5 +167,5 @@ class TileLeaves() extends LeavesBase(BlockRegistry.INSTANCE.getNextSerializedID
 
   override def isFullOpaque: Boolean = !isTransparent
 
-  override def getTextureForSide(side: Int, meta: Int): Int = OverworldBase.textureColourLeaves
+  override def getTextureForSide(side: Int, meta: Int): Int = OverworldListener.textureColourLeaves
 }

@@ -1,27 +1,22 @@
 package kz.chesschicken.chickenextensions.content.overworld
 
-import kz.chesschicken.chickenextensions.content.overworld.OverworldBase._
-import kz.chesschicken.chickenextensions.content.overworld.block.{TileFlower, TileLeaves}
+import kz.chesschicken.chickenextensions.content.overworld.OverworldListener._
+import kz.chesschicken.chickenextensions.content.overworld.block.{TileFlower, TileLeaves, TileSapling}
 import net.minecraft.block.BlockBase
-import net.minecraft.client.render.entity.EntityRenderer
-import net.minecraft.entity.EntityBase
 import net.minecraft.item.ItemBase
-import net.modificationstation.stationapi.api.client.event.render.entity.EntityRendererRegister
-import net.modificationstation.stationapi.api.client.event.texture.TextureRegister
 import net.modificationstation.stationapi.api.client.texture.{TextureFactory, TextureRegistry}
-import net.modificationstation.stationapi.api.common.block.BlockRegistry
-import net.modificationstation.stationapi.api.common.entity.EntityHandlerRegistry
-import net.modificationstation.stationapi.api.common.event.block.BlockRegister
-import net.modificationstation.stationapi.api.common.event.entity.EntityRegister
-import net.modificationstation.stationapi.api.common.event.item.ItemRegister
-import net.modificationstation.stationapi.api.common.item.ItemRegistry
+import net.modificationstation.stationapi.api.common.event.EventListener
+import net.modificationstation.stationapi.api.common.event.registry.RegistryEvent
 import net.modificationstation.stationapi.api.common.registry.{Identifier, ModID}
-import uk.co.benjiweber.expressions.functions.TriConsumer
+import net.modificationstation.stationapi.api.common.mod.entrypoint.Entrypoint
+import net.modificationstation.stationapi.api.common.util.Null
+import net.modificationstation.stationapi.template.common.block.{TemplateRedstoneTorch, TemplateTorch}
 
-import java.util
-
-object OverworldBase
+object OverworldListener
 {
+  @Entrypoint.ModID val MOD_ID: ModID = Null.get
+
+  var boneTorch : net.minecraft.block.BlockBase = _
   var itemSteakRaw: ItemBase = _
   var itemSteakCooked: ItemBase = _
   var itemMuttonRaw: ItemBase = _
@@ -41,21 +36,20 @@ object OverworldBase
   var textureColourFlower = 0
 }
 
+class OverworldListener {
 
-class OverworldBase extends java.lang.Object with ItemRegister with BlockRegister with EntityRegister with EntityRendererRegister with TextureRegister {
-  override def registerItems(itemRegistry: ItemRegistry, modID: ModID): Unit = ???
 
-  override def registerBlocks(blockRegistry: BlockRegistry, modID: ModID): Unit = {
-    colourSapling = new Nothing(Identifier.of(modID, "coloursapling")).setName("coloursapling")
-    colourLeaves = new TileLeaves(Identifier.of(modID, "colourleaves")).setName("colourleaves")
-    colourFlower = new TileFlower(Identifier.of(modID, "colourflower")).setName("colourflower")
+  @EventListener
+  def registerBlocks(event: RegistryEvent.Blocks): Unit =
+  {
+    boneTorch = new TemplateTorch(Identifier.of(MOD_ID, "bonetorch"), 0).setTranslationKey(MOD_ID, "bonetorch")
+    colourSapling = new TileSapling(Identifier.of(MOD_ID, "coloursapling")).setTranslationKey(MOD_ID, "coloursapling")
+    colourLeaves = new TileLeaves(Identifier.of(MOD_ID, "colourleaves")).setTranslationKey(MOD_ID,"colourleaves")
+    colourFlower = new TileFlower(Identifier.of(MOD_ID, "colourflower")).setTranslationKey(MOD_ID, "colourflower")
   }
 
-  override def registerEntities(triConsumer: TriConsumer[Class[_ <: EntityBase], String, Integer], entityHandlerRegistry: EntityHandlerRegistry, modID: ModID): Unit = ???
-
-  override def registerEntityRenderers(map: util.Map[Class[_ <: EntityBase], EntityRenderer]): Unit = ???
-
-  override def registerTextures(): Unit = {
+  @EventListener
+  def registerTextures(): Unit = {
     itemSteakRaw.setTexturePosition(TextureFactory.INSTANCE.addTexture(TextureRegistry.getRegistry("GUI_ITEMS"), "/assets/goldenfeaturessap/textures/content/overworld/item/steakRaw.png"))
     itemSteakCooked.setTexturePosition(TextureFactory.INSTANCE.addTexture(TextureRegistry.getRegistry("GUI_ITEMS"), "/assets/goldenfeaturessap/textures/content/overworld/item/steakCooked.png"))
     itemMuttonRaw.setTexturePosition(TextureFactory.INSTANCE.addTexture(TextureRegistry.getRegistry("GUI_ITEMS"), "/assets/goldenfeaturessap/textures/content/overworld/item/muttonRaw.png"))
@@ -64,4 +58,6 @@ class OverworldBase extends java.lang.Object with ItemRegister with BlockRegiste
     itemChickenCooked.setTexturePosition(TextureFactory.INSTANCE.addTexture(TextureRegistry.getRegistry("GUI_ITEMS"), "/assets/goldenfeaturessap/textures/content/overworld/item/chickenCooked.png"))
     itemRottenFlesh.setTexturePosition(TextureFactory.INSTANCE.addTexture(TextureRegistry.getRegistry("GUI_ITEMS"), "/assets/goldenfeaturessap/textures/content/overworld/item/fleshRotten.png"))
   }
+
+
 }

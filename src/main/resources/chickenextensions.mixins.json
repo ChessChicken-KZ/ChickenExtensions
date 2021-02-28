@@ -4,12 +4,19 @@
   "package": "kz.chesschicken.chickenextensions.mixin",
   "compatibilityLevel": "JAVA_8",
   "mixins": [
-
+    "MixinColour",
+    "nether.MixinNetherDimension",
+    "nether.NetherGenerator",
+    "nether.biome.MixinBiome",
+    "nether.biome.MixinHell",
+    "overworld.MixinChickenMeat",
+    "overworld.MixinCowMeat",
+    "overworld.MixinSheepMeat",
+    "overworld.MixinZombie"
   ],
   "server": [
   ],
   "client": [
-
   ],
   "injectors": {
     "defaultRequire": 1

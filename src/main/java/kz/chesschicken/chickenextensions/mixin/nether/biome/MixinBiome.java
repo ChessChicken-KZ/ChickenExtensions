@@ -1,6 +1,6 @@
 package kz.chesschicken.chickenextensions.mixin.nether.biome;
 
-import kz.chesschicken.goldenfeaturessap.content.overworld.entity.CreeperBlue;
+//import kz.chesschicken.goldenfeaturessap.content.overworld.entity.CreeperBlue;
 import net.minecraft.entity.EntityEntry;
 import net.minecraft.level.biome.Biome;
 import org.spongepowered.asm.mixin.Mixin;
@@ -18,10 +18,10 @@ import java.util.List;
 public class MixinBiome {
     @Shadow protected List monsters;
 
-    @Inject(method = "<init>", at = @At("TAIL"))
-    private void addMobs(CallbackInfo ci)
-    {
-        this.monsters.add(new EntityEntry(CreeperBlue.class, 10));
-    }
+    //@Inject(method = "<init>", at = @At("TAIL"))
+    //private void addMobs(CallbackInfo ci)
+    //{
+    //    this.monsters.add(new EntityEntry(CreeperBlue.class, 10));
+    //}
 
 }

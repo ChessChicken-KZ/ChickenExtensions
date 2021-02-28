@@ -1,7 +1,6 @@
 package kz.chesschicken.chickenextensions.mixin.nether;
 
 
-import kz.chesschicken.goldenfeaturessap.content.nether.NetherSource;
 import net.minecraft.level.dimension.Dimension;
 import net.minecraft.level.dimension.Nether;
 import net.minecraft.level.gen.BiomeSource;

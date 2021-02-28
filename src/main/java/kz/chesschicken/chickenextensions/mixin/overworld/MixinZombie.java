@@ -1,7 +1,7 @@
 package kz.chesschicken.chickenextensions.mixin.overworld;
 
 
-import kz.chesschicken.chickenextensions.content.overworld.OverworldBase;
+import kz.chesschicken.chickenextensions.content.overworld.OverworldListener;
 import net.minecraft.entity.monster.Zombie;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
@@ -16,7 +16,7 @@ public class MixinZombie {
     @Inject(method = "getMobDrops", at = @At("HEAD"), cancellable = true)
     private void fleshMeat(CallbackInfoReturnable<Integer> cir)
     {
-        cir.setReturnValue(OverworldBase.itemRottenFlesh().id);
+        cir.setReturnValue(OverworldListener.itemRottenFlesh().id);
         cir.cancel();
     }
 

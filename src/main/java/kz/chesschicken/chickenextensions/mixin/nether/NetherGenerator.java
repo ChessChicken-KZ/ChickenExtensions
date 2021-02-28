@@ -1,6 +1,6 @@
 package kz.chesschicken.chickenextensions.mixin.nether;
 
-import kz.chesschicken.chickenextensions.content.nether.NetherBase;
+
 import net.minecraft.block.BlockBase;
 import net.minecraft.block.Sand;
 import net.minecraft.level.Level;
@@ -41,7 +41,7 @@ public abstract class NetherGenerator implements LevelSource {
 
     private Biome[] arrayBiome_CUSTOM;
 
-    @Inject(method = "method_1182", at = @At("HEAD"), cancellable = true)
+    @Inject(method = "generate", at = @At("HEAD"), cancellable = true)
     private void biomeInject(int par1, int par2, byte[] par3ArrayOfByte, CallbackInfo ci)
     {
 

@@ -19,8 +19,8 @@
 
   "environment": "*",
   "entrypoints": {
-    "stationapi:mod": [
-      "kz.chesschicken.chickenextensions.ChickenMod"
+    "stationapi:event_bus": [
+      "kz.chesschicken.chickenextensions.content/oerworld."
     ]
   },
   "mixins": [

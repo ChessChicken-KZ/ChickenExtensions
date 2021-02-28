@@ -1,6 +1,6 @@
 package kz.chesschicken.chickenextensions.mixin.overworld;
 
-import kz.chesschicken.chickenextensions.content.overworld.OverworldBase;
+import kz.chesschicken.chickenextensions.content.overworld.OverworldListener;
 import net.minecraft.entity.EntityBase;
 import net.minecraft.entity.Item;
 import net.minecraft.entity.animal.AnimalBase;
@@ -19,7 +19,7 @@ public class MixinChickenMeat extends AnimalBase {
     @Override
     public void onKilledBy(EntityBase arg) {
 
-            Item lol = new Item(level, this.x, this.y, this.z, new ItemInstance(this.fire > 0 ? OverworldBase.itemChickenCooked() : OverworldBase.itemChickenRaw(), 1));
+            Item lol = new Item(level, this.x, this.y, this.z, new ItemInstance(this.fire > 0 ? OverworldListener.itemChickenCooked() : OverworldListener.itemChickenRaw(), 1));
             level.spawnEntity(lol);
 
     }
